@@ -11,6 +11,7 @@
 @interface Table : UIViewController {
   IBOutlet UITableView *mainMenu;
   
+  NSArray *menuItems;
   
 }
 
