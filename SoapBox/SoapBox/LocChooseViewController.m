@@ -153,7 +153,7 @@ didChangeDragState:(MKAnnotationViewDragState)newState
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Are you sure"
                                                     message:@"you want to change the location of this item?"
-                                                   delegate:self cancelButtonTitle:@"YES" otherButtonTitles:@"NO", nil];
+                                                   delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"YES", nil];
     [alert show];
     
 }

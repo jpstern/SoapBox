@@ -137,33 +137,28 @@
     
     
     
-    addPhotoBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, DEVICEHEIGHT-229+offset, 150, 150)];
+    addPhotoBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, DEVICEHEIGHT-260+offset, 180, 210)];
     addPhotoBtn.backgroundColor = secondaryColor;
     [addPhotoBtn addTarget:self action:@selector(takePhoto) forControlEvents:UIControlEventTouchUpInside];
-    //UIImage *photoImage = [self changeColorTo:[UIColor darkGrayColor] fromImage:[UIImage imageNamed:@"camera-white.png"]];
-    [addPhotoBtn setBackgroundImage:[UIImage imageNamed:@"camera-white.png"] forState:UIControlStateHighlighted];
     [addPhotoBtn setTitle:@"Take a photo" forState:UIControlStateNormal];
-    //[addPhotoBtn setBackgroundImage:photoImage forState:UIControlStateNormal];
+    [addPhotoBtn setBackgroundColor:[UIColor lightGrayColor]];
+    [addPhotoBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+
     
     
-    addLocBtn = [[UIButton alloc] initWithFrame:CGRectMake(200, DEVICEHEIGHT-244+offset, 120, 100)];
+    addLocBtn = [[UIButton alloc] initWithFrame:CGRectMake(180, DEVICEHEIGHT-260+offset, 140, 110)];
     addLocBtn.backgroundColor = secondaryColor;
     [addLocBtn addTarget:self action:@selector(changeLocation) forControlEvents:UIControlEventTouchUpInside];
-    //UIImage *locImage = [self changeColorTo:[UIColor darkGrayColor]  fromImage:[UIImage imageNamed:@"pin-black.png.png"]];
-    [addLocBtn setBackgroundImage:[UIImage imageNamed:@"pin-black.png"] forState:UIControlStateHighlighted];
-    [addLocBtn setTitle:@"Set the\nLocation" forState:UIControlStateNormal];
-    //[addLocBtn setBackgroundImage:locImage forState:UIControlStateNormal];
+    [addLocBtn setTitle:@"Set the pin" forState:UIControlStateNormal];
+    [addLocBtn setBackgroundColor:[UIColor grayColor]];
+    [addLocBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
-    addTagBtn = [[UIButton alloc] initWithFrame:CGRectMake(200, DEVICEHEIGHT-144+offset, 120, 100)];
+    addTagBtn = [[UIButton alloc] initWithFrame:CGRectMake(180, DEVICEHEIGHT-154+offset, 140, 100)];
     addTagBtn.backgroundColor = secondaryColor;
     [addTagBtn addTarget:self action:@selector(displayTags:) forControlEvents:UIControlEventTouchUpInside];
-    UIImage *tagPhoto = [self changeColorTo:[UIColor darkGrayColor] fromImage:[UIImage imageNamed:@"tag-flat.png"]];
-    [addTagBtn setBackgroundImage:[UIImage imageNamed:@"tag-flat.png"] forState:UIControlStateHighlighted];
-    [addTagBtn setBackgroundImage:tagPhoto forState:UIControlStateNormal];
-    
-    //[addTagBtn setTitle:@"Add\ntag" forState:UIControlStateNormal];
-    //[addLocBtn setTitle:@"Current\nLocation" forState:UIControlStateNormal];
-    //[addPhotoBtn setTitle:@"Take a pic" forState:UIControlStateNormal];
+    [addTagBtn setTitle:@"Add tags" forState:UIControlStateNormal];
+    [addTagBtn setBackgroundColor:[UIColor blackColor]];
+    [addTagBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     
     //ADD ALL THE IMAGES
     
