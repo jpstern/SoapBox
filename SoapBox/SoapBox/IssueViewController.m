@@ -23,14 +23,22 @@
     return self;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    }
+
 - (void)finishedWithEmail:(NSString *)email body:(NSString *)body{
+    /*
     [self dismissViewControllerAnimated:YES completion:nil];
     NSArray *addresses = [email componentsSeparatedByString:@","];
     
     [PFCloud callFunctionInBackground:@"email" withParameters:@{@"address": [NSJSONSerialization dataWithJSONObject:addresses options:nil error:nil], @"subject": @"Hello World", @"text": body} block:^(id object, NSError *error) {
+    NSLog(@"Body: %@, %@, %@", body, addresses, email);
+    [PFCloud callFunctionInBackground:@"email" withParameters:@{@"to": addresses, @"subject": @"Hello World", @"message": body} block:^(id object, NSError *error) {
         NSLog(@"Object %@, Error, %@", object, error);
     }];
-
+    }
+     */
 }
 
 - (void)canceled {

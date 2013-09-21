@@ -42,31 +42,10 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+  [self.navigationController.navigationBar setBackgroundColor:[UIColor redColor]];
   [[self tableView] setBackgroundColor:[UIColor colorWithRed:31.0/255 green:31.0/255 blue:31.0/255 alpha:1.0]];
   [[self tableView] setSeparatorColor:[UIColor blackColor]];
-  
-  if ([self.title isEqualToString:@"My Issues"]) {
-    PFQuery *query = [[PFQuery alloc] initWithClassName:@"Issue"];
-    [query whereKey:@"User" equalTo:[PFUser currentUser]];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-      NSLog(@"Objects: %@, Error: %@", objects, error);
-      NSMutableArray *array = [NSMutableArray array];
-      for (PFObject *object in objects) {
-        Issue *newIssue = [[Issue alloc] init];
-        PFGeoPoint *geoPoint = [object valueForKey:@"Location"];
-        newIssue.location = CLLocationCoordinate2DMake(geoPoint.latitude, geoPoint.longitude);
-        newIssue.title = [object valueForKey:@"Title"];
-        newIssue.description = [object valueForKey:@"Description"];
-        newIssue.image = [object valueForKey:@"Image"];
-        NSLog(@"Issue: %@", newIssue);
-        [array addObject:newIssue];
-      }
-      self.issues = array;
-      [self.tableView reloadData];
-    }];
-  }
 }
-
 
 #pragma mark - Table view data source
 
@@ -91,6 +70,10 @@
       cell = [nib objectAtIndex:0];
     }
     Issue *issue = [self.issues objectAtIndex:indexPath.row];
+<<<<<<< HEAD
+    //cell.textLabel.text = issue.title;
+    
+=======
   
   // title of the issue.
   [cell.title setText: issue.title];
@@ -111,6 +94,7 @@
   
   [cell.trend setBackgroundColor:[UIColor darkGrayColor]];
   [cell setBackgroundColor:[UIColor clearColor]];
+>>>>>>> 7f0cbb1843d7a76acb52e0c8a212640ec630da2e
     // Configure the cell...
     
     return cell;
@@ -157,6 +141,26 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    if ([self.title isEqualToString:@"My Issues"]) {
+    PFQuery *query = [[PFQuery alloc] initWithClassName:@"Issue"];
+    [query whereKey:@"User" equalTo:[PFUser currentUser]];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        NSLog(@"Objects: %@, Error: %@", objects, error);
+        NSMutableArray *array = [NSMutableArray array];
+        for (PFObject *object in objects) {
+            Issue *newIssue = [[Issue alloc] init];
+            PFGeoPoint *geoPoint = [object valueForKey:@"Location"];
+            newIssue.location = CLLocationCoordinate2DMake(geoPoint.latitude, geoPoint.longitude);
+            newIssue.title = [object valueForKey:@"Title"];
+            newIssue.description = [object valueForKey:@"Description"];
+            newIssue.image = [object valueForKey:@"Image"];
+            NSLog(@"Issue: %@", newIssue);
+            [array addObject:newIssue];
+        }
+        self.issues = array;
+        [self.tableView reloadData];
+    }];
+    }
 }
 
 
@@ -178,4 +182,3 @@
  
 
 @end
-

@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0403EFEB17EDBF9E00696605 /* soapbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 0403EFEA17EDBF9E00696605 /* soapbox.png */; };
-		0403EFF817EE13B300696605 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0403EFF717EE13B300696605 /* CustomCell.m */; };
-		0403EFFA17EE13D300696605 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0403EFF917EE13D300696605 /* CustomCell.xib */; };
 		0403EFFC17EE299700696605 /* backgroundPattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 0403EFFB17EE299700696605 /* backgroundPattern.png */; };
+		045AA87E17EE4CD8006499F5 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 045AA87C17EE4CD8006499F5 /* CustomCell.m */; };
+		045AA87F17EE4CD8006499F5 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045AA87D17EE4CD8006499F5 /* CustomCell.xib */; };
 		046C385F17ED802200460C13 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046C385E17ED802200460C13 /* MainMenuViewController.m */; };
 		046C386717ED8ADF00460C13 /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046C386617ED8ADF00460C13 /* MainMenuViewController.xib */; };
 		046C387117ED8FEE00460C13 /* DummyMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046C386917ED8FEE00460C13 /* DummyMapViewController.m */; };
@@ -62,7 +62,7 @@
 		38FBF7B217ED67A9004695DA /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FBF7B117ED67A9004695DA /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		38FBF7B417ED67B7004695DA /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FBF7B317ED67B7004695DA /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		38FBF7B617ED68B9004695DA /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FBF7B517ED68B9004695DA /* libsqlite3.dylib */; };
-		38FD03DB17EDEB7E0038379D /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FBF79A17ED5A2B004695DA /* FacebookSDK.framework */; };
+		38FCC07517EE5715007F1179 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FBF79A17ED5A2B004695DA /* FacebookSDK.framework */; };
 		5E79FB6C17EDD6CD00430435 /* IssueListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79FB6A17EDD6CD00430435 /* IssueListViewController.m */; };
 		5E79FB6D17EDD6CD00430435 /* IssueListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E79FB6B17EDD6CD00430435 /* IssueListViewController.xib */; };
 		5E79FB6E17EDD72A00430435 /* Issue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB0A1AB17ED7CB6003E6935 /* Issue.m */; };
@@ -108,10 +108,10 @@
 
 /* Begin PBXFileReference section */
 		0403EFEA17EDBF9E00696605 /* soapbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soapbox.png; sourceTree = "<group>"; };
-		0403EFF617EE13B300696605 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomCell.h; path = ../../../CustomCell.h; sourceTree = "<group>"; };
-		0403EFF717EE13B300696605 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomCell.m; path = ../../../CustomCell.m; sourceTree = "<group>"; };
-		0403EFF917EE13D300696605 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		0403EFFB17EE299700696605 /* backgroundPattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundPattern.png; sourceTree = "<group>"; };
+		045AA87B17EE4CD8006499F5 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
+		045AA87C17EE4CD8006499F5 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
+		045AA87D17EE4CD8006499F5 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		046C385D17ED802200460C13 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		046C385E17ED802200460C13 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		046C386617ED8ADF00460C13 /* MainMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenuViewController.xib; sourceTree = "<group>"; };
@@ -231,7 +231,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38FD03DB17EDEB7E0038379D /* FacebookSDK.framework in Frameworks */,
+				38FCC07517EE5715007F1179 /* FacebookSDK.framework in Frameworks */,
 				38FBF79917ED56BD004695DA /* Parse.framework in Frameworks */,
 				383FDAAB17EDD09700F80046 /* libz.dylib in Frameworks */,
 				38FBF7A617ED6480004695DA /* MobileCoreServices.framework in Frameworks */,
@@ -430,9 +430,9 @@
 				5E79FB6917EDD6CD00430435 /* IssueListViewController.h */,
 				5E79FB6A17EDD6CD00430435 /* IssueListViewController.m */,
 				5E79FB6B17EDD6CD00430435 /* IssueListViewController.xib */,
-				0403EFF617EE13B300696605 /* CustomCell.h */,
-				0403EFF717EE13B300696605 /* CustomCell.m */,
-				0403EFF917EE13D300696605 /* CustomCell.xib */,
+				045AA87B17EE4CD8006499F5 /* CustomCell.h */,
+				045AA87C17EE4CD8006499F5 /* CustomCell.m */,
+				045AA87D17EE4CD8006499F5 /* CustomCell.xib */,
 				804DA67717ED54A800F86495 /* AppDelegate.h */,
 				804DA67817ED54A800F86495 /* AppDelegate.m */,
 				804DA67D17ED54A800F86495 /* ViewController.h */,
@@ -534,7 +534,6 @@
 				TargetAttributes = {
 					804DA66417ED54A800F86495 = {
 						DevelopmentTeam = 5G84J3W3H2;
-            83e1cb8c224f3da85e996aa3ef4b7b4e03e0b0ad
 					};
 					804DA68517ED54A800F86495 = {
 						TestTargetID = 804DA66417ED54A800F86495;
@@ -568,6 +567,7 @@
 				383FDAA317EDC1A400F80046 /* search@2x.png in Resources */,
 				5EECC1ED17ED8F5600BDDF4E /* IssueViewController.xib in Resources */,
 				383FDA8B17EDC16A00F80046 /* arrow.png in Resources */,
+				045AA87F17EE4CD8006499F5 /* CustomCell.xib in Resources */,
 				804DA6A317ED65BF00F86495 /* MasterViewController.xib in Resources */,
 				383FDA9217EDC17700F80046 /* account.png in Resources */,
 				5EECC1EA17ED8F5600BDDF4E /* DummyViewController.xib in Resources */,
@@ -591,7 +591,6 @@
 				38A7942317ED721F0078F048 /* pin_blue_small.png in Resources */,
 				383FDA8E17EDC16A00F80046 /* check.png in Resources */,
 				046C386717ED8ADF00460C13 /* MainMenuViewController.xib in Resources */,
-				0403EFFA17EE13D300696605 /* CustomCell.xib in Resources */,
 				38A7941D17ED70410078F048 /* ViewController.xib in Resources */,
 				382C655917EDAA7F006BBCE2 /* AddNewIssueViewController.xib in Resources */,
 				383FDA8517EDC15100F80046 /* camera-white.png in Resources */,
@@ -636,11 +635,11 @@
 				5EECC1EF17ED8F5600BDDF4E /* UIViewController+MasterContainer.m in Sources */,
 				5EECC1E917ED8F5600BDDF4E /* DummyViewController.m in Sources */,
 				382C655D17EDAD0C006BBCE2 /* LocChooseViewController.m in Sources */,
-				0403EFF817EE13B300696605 /* CustomCell.m in Sources */,
 				38A7942117ED70EB0078F048 /* LocationGetter.m in Sources */,
 				804DA67917ED54A800F86495 /* AppDelegate.m in Sources */,
 				5E79FB6C17EDD6CD00430435 /* IssueListViewController.m in Sources */,
 				5EB0A1A317ED70A2003E6935 /* AddIssueViewController.m in Sources */,
+				045AA87E17EE4CD8006499F5 /* CustomCell.m in Sources */,
 				046C387117ED8FEE00460C13 /* DummyMapViewController.m in Sources */,
 				046C385F17ED802200460C13 /* MainMenuViewController.m in Sources */,
 				804DA67517ED54A800F86495 /* main.m in Sources */,
@@ -778,8 +777,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/gregoryhurray/Desktop/repo-main/SoapBox/SoapBox",
-					/Users/charleyhutchison/SoapBox/SoapBox,
-					"/Users/Jack/Documents/Projects/SoapBox/**",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SoapBox/SoapBox-Prefix.pch";
@@ -807,8 +804,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/gregoryhurray/Desktop/repo-main/SoapBox/SoapBox",
-					/Users/charleyhutchison/SoapBox/SoapBox,
-					"/Users/Jack/Documents/Projects/SoapBox/**",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SoapBox/SoapBox-Prefix.pch";
