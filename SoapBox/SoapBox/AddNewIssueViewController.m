@@ -8,6 +8,7 @@
 
 #import "AddNewIssueViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import <dispatch/dispatch.h>
 
 @interface AddNewIssueViewController ()
 
@@ -225,29 +226,37 @@
         return;
     }
     //everythings good
-    PFObject *issue = [PFObject objectWithClassName:@"Issue"];
-    NSData *data = UIImageJPEGRepresentation(addPhotoBtn.imageView.image, 0.05f);
-    PFFile *imageFile = [PFFile fileWithName:@"image.png" data:data];
-    [imageFile save];
-    [issue setObject:imageFile forKey:@"Image"];
+    backgroundQueue = dispatch_queue_create("upload dispatch queue", NULL);
+    dispatch_async(backgroundQueue, ^{
+        PFObject *issue = [PFObject objectWithClassName:@"Issue"];
+        NSData *data = UIImageJPEGRepresentation(addPhotoBtn.imageView.image, 0.05f);
+        PFFile *imageFile = [PFFile fileWithName:@"image.png" data:data];
+        [imageFile save];
+        [issue setObject:imageFile forKey:@"Image"];
+        
+        PFGeoPoint *location = [PFGeoPoint geoPointWithLatitude:lcVC.coord.latitude longitude:lcVC.coord.longitude];
+        [issue setObject:location forKey:@"Location"];
+        [issue setObject:[PFUser currentUser] forKey:@"User"];
+        [issue setObject:titleTextView.text forKey:@"Title"];
+        [issue setObject:descriptionTextView.text forKey:@"Description"];
+        [issue saveInBackgroundWithBlock:^(BOOL success, NSError *error) {
+            if (success) {
+                [self dismissViewControllerAnimated:YES completion:nil];
+            } else {
+                NSLog(@"%@", [error localizedDescription]);
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                                message:@"Something went wrong"
+                                                               delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                [alert show];
+            }
+        }];
+
+    });
     
-    PFGeoPoint *location = [PFGeoPoint geoPointWithLatitude:lcVC.coord.latitude longitude:lcVC.coord.longitude];
-    [issue setObject:location forKey:@"Location"];
-    [issue setObject:[PFUser currentUser] forKey:@"User"];
-    [issue setObject:titleTextView.text forKey:@"Title"];
-    [issue setObject:descriptionTextView.text forKey:@"Description"];
-    [issue saveInBackgroundWithBlock:^(BOOL success, NSError *error) {
-        if (success) {
-            [self dismissViewControllerAnimated:YES completion:nil];
-        } else {
-            NSLog(@"%@", [error localizedDescription]);
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                            message:@"Something went wrong"
-                                                           delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-            [alert show];
-        }
-    }];
     
+}
+
+- (void)dealloc {
     
 }
 

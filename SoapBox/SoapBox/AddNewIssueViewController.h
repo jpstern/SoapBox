@@ -9,7 +9,9 @@
 #import "LocChooseViewController.h"
 #import <UIKit/UIKit.h>
 
-@interface AddNewIssueViewController : UIViewController <UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface AddNewIssueViewController : UIViewController <UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
+    dispatch_queue_t backgroundQueue;
+}
 
 @property (strong, nonatomic) UIImageView *pictureImageView;
 @property (strong, nonatomic) UITextView *titleTextView;
