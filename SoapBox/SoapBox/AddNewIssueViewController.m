@@ -383,7 +383,7 @@
     
     if (textView.tag == 1) {
         if (textView.text.length < 30) {
-            titleCounter.text = [NSString stringWithFormat:@"%i", 30 - textView.text.length];
+            titleCounter.text = [NSString stringWithFormat:@"%lu", 30 - textView.text.length];
             
             return true;
         } else {
@@ -391,7 +391,7 @@
         }
     } else {
         if (textView.text.length < 130) {
-            descriptionCounter.text = [NSString stringWithFormat:@"%i", 130 - textView.text.length];
+            descriptionCounter.text = [NSString stringWithFormat:@"%lu", 130 - textView.text.length];
             return true;
         } else {
             return false;

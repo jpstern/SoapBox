@@ -37,14 +37,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-<<<<<<< HEAD
     [self.navigationController setNavigationBarHidden:YES];
     
-=======
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(loadAddScreen:)];
     self.navigationItem.rightBarButtonItem = addButton;
   
->>>>>>> 16d1c9548a0cf5b0f3d195a3d00f27555ec255c1
     /* once we need it
      
      UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh)];

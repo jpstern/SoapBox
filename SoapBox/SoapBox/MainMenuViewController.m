@@ -84,12 +84,20 @@
     Issue *issue = [[Issue alloc] init];
     issue.title = @"Test";
     issueController.issues = @[issue];
+    issueController.title = @"My Issues";
     [self.navigationController pushViewController:issueController animated:YES];
     [self closeContainer];
     returnFromPush = YES;
 }
 - (IBAction)friendsIssues:(id)sender {
-  
+    IssueListViewController *issueController = [[IssueListViewController alloc] initWithNibName:@"IssueListViewController" bundle:[NSBundle mainBundle]];
+    Issue *issue = [[Issue alloc] init];
+    issue.title = @"Test";
+    issueController.issues = @[issue];
+    issueController.title = @"Friend's Issues";
+    [self.navigationController pushViewController:issueController animated:YES];
+    [self closeContainer];
+    returnFromPush = YES;
 }
 - (IBAction)about:(id)sender {
   

@@ -106,7 +106,7 @@ didChangeDragState:(MKAnnotationViewDragState)newState
     _coord = CLLocationCoordinate2DMake(point.coordinate.latitude, point.coordinate.longitude);
     [_mapView2 selectAnnotation:point animated:YES];
     NSLog(@"view did appear" );
-    NSLog(@"annotations count is %i\n\n", [_mapView2.annotations count]);
+    NSLog(@"annotations count is %lu\n\n", (unsigned long)[_mapView2.annotations count]);
 }
 
 -(void) viewWillAppear:(BOOL)animated{
