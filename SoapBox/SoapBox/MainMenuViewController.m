@@ -7,7 +7,7 @@
 //
 
 #import "MainMenuViewController.h"
-#import "AddIssueViewController.h"
+#import "AddNewIssueViewController.h"
 
 @interface MainMenuViewController ()
 
@@ -43,7 +43,7 @@
 
 -(void)showIssueController {
     
-    AddIssueViewController *addIssue = [[AddIssueViewController alloc] init];
+    AddNewIssueViewController *addIssue = [[AddNewIssueViewController alloc] init];
     UINavigationController *addIssueNav = [[UINavigationController alloc] initWithRootViewController:addIssue];
     
     [self presentViewController:addIssueNav animated:YES completion:^{
@@ -57,7 +57,7 @@
 	// Do any additional setup after loading the view.
   
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Drop" style:UIBarButtonItemStylePlain target:self action:@selector(openContainer)];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"+" style:UIBarButtonItemStylePlain target:self action:@selector(showIssueController)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showIssueController)];
   
   // Sets up the frames of the 4 buttons and the logo.
   // borders of buttons

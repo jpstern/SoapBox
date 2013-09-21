@@ -23,9 +23,9 @@
     if ([PFUser currentUser] && // Check if a user is cached
         [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) // Check if user is linked to Facebook
     {
-        // Push the next view controller without animation
-        MapViewController *mVC = [[MapViewController alloc] initWithNibName:@"MapViewController" bundle:nil ];
-        [self.navigationController pushViewController:mVC animated:YES];
+        
+        // do nothing?????
+        
     }
 }
 
