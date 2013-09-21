@@ -16,7 +16,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    //parse stuff
+    [Parse setApplicationId:@"O2JrkM3f26Qa3otfbrtDHTnYlPDLptOvN76HAgEn"
+                  clientKey:@"1G7S10E6ZAHg9lqDN2fjXum0rwnCEjpDZ34Hs69o"];
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    //FB STUFF
+    [PFFacebookUtils initializeFacebook];
     
     MasterViewController *master = [[MasterViewController alloc] init];
     [self.window setRootViewController:master];
@@ -40,6 +49,12 @@
     
     // Override point for customization after application launch.
     return YES;
+}
+
+// for parse
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return [PFFacebookUtils handleOpenURL:url];
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application
