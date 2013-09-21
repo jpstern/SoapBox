@@ -7,18 +7,33 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <viewController id="A1H-LO-2uH" customClass="Table">
-            <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="dMt-yP-Zwf">
+            <layoutGuides>
+                <viewControllerLayoutGuide type="top" id="yeY-uY-uL6"/>
+                <viewControllerLayoutGuide type="bottom" id="Hmz-9m-yWm"/>
+            </layoutGuides>
+            <view key="view" contentMode="scaleToFill" id="o31-WY-hh5">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-            </tableView>
+                <subviews>
+                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="KjI-1y-CG6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="-1" id="eol-SS-bnu"/>
+                            <outlet property="delegate" destination="-1" id="CZb-0b-xeJ"/>
+                        </connections>
+                    </tableView>
+                </subviews>
+                <color key="backgroundColor" red="0.22745934311224492" green="0.22745934311224492" blue="0.22745934311224492" alpha="1" colorSpace="calibratedRGB"/>
+            </view>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <connections>
-                <outlet property="h" destination="dMt-yP-Zwf" id="3hX-92-aZL"/>
+                <outlet property="mainMenu" destination="KjI-1y-CG6" id="qsw-CU-vDr"/>
             </connections>
         </viewController>
     </objects>
