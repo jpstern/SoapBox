@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddIssueViewController">
             <connections>
-                <outlet property="descriptionTextField" destination="Kbb-RK-RkH" id="sfL-OC-vhB"/>
-                <outlet property="textField" destination="Hr5-h6-Xuc" id="6wI-lM-1Zj"/>
-                <outlet property="titleTextField" destination="Hr5-h6-Xuc" id="e1M-aj-jao"/>
                 <outlet property="descriptionTextField" destination="Kbb-RK-RkH" id="0Hk-CM-qeT"/>
+                <outlet property="textField" destination="Hr5-h6-Xuc" id="6wI-lM-1Zj"/>
                 <outlet property="titleTextField" destination="Hr5-h6-Xuc" id="pD4-cu-qVn"/>
                 <outlet property="view" destination="1" id="C7w-hB-rje"/>
             </connections>
@@ -26,7 +24,6 @@
                     <textInputTraits key="textInputTraits" returnKeyType="done"/>
                     <connections>
                         <action selector="textFieldEdited:" destination="-1" eventType="valueChanged" id="C04-3R-xKP"/>
-                        <outlet property="delegate" destination="-1" id="U1v-A1-qeM"/>
                         <outlet property="delegate" destination="-1" id="Ift-yO-iH5"/>
                     </connections>
                 </textField>
@@ -61,7 +58,7 @@
                 </textField>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>

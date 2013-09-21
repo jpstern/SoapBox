@@ -10,13 +10,7 @@
 #import "IssueListViewController.h"
 #import "Issue.h"
 
-@interface MainMenuViewController : UIViewController{
-  IBOutlet UIButton *myIssues;
-  IBOutlet UIButton *friendsIssues;
-  IBOutlet UIButton *about;
-  IBOutlet UIButton *settings;
-}
-
+@interface MainMenuViewController : UIViewController
 
 @property (nonatomic, strong) IBOutlet UIButton *myIssues;
 @property (nonatomic, strong) IBOutlet UIButton *friendsIssues;
