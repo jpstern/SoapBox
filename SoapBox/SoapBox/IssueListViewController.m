@@ -39,13 +39,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
-  [[self tableView] setBackgroundColor:[UIColor colorWithRed:31.0/255 green:31.0/255 blue:31.0/255 alpha:1.0]];
-  [[self tableView] setSeparatorColor:[UIColor blackColor]];
 
-}
 
 #pragma mark - Table view data source
 
@@ -134,8 +128,11 @@
 }
 */
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [[self tableView] setBackgroundColor:[UIColor colorWithRed:31.0/255 green:31.0/255 blue:31.0/255 alpha:1.0]];
+    [[self tableView] setSeparatorColor:[UIColor blackColor]];
     if ([self.title isEqualToString:@"My Issues"]) {
     PFQuery *query = [[PFQuery alloc] initWithClassName:@"Issue"];
     [query whereKey:@"User" equalTo:[PFUser currentUser]];
