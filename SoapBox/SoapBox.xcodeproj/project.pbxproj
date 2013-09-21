@@ -1,0 +1,475 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		804DA66917ED54A800F86495 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 804DA66817ED54A800F86495 /* Foundation.framework */; };
+		804DA66B17ED54A800F86495 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 804DA66A17ED54A800F86495 /* CoreGraphics.framework */; };
+		804DA66D17ED54A800F86495 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 804DA66C17ED54A800F86495 /* UIKit.framework */; };
+		804DA67317ED54A800F86495 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 804DA67117ED54A800F86495 /* InfoPlist.strings */; };
+		804DA67517ED54A800F86495 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 804DA67417ED54A800F86495 /* main.m */; };
+		804DA67917ED54A800F86495 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 804DA67817ED54A800F86495 /* AppDelegate.m */; };
+		804DA67C17ED54A800F86495 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 804DA67A17ED54A800F86495 /* Main.storyboard */; };
+		804DA67F17ED54A800F86495 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 804DA67E17ED54A800F86495 /* ViewController.m */; };
+		804DA68117ED54A800F86495 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 804DA68017ED54A800F86495 /* Images.xcassets */; };
+		804DA68817ED54A800F86495 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 804DA68717ED54A800F86495 /* XCTest.framework */; };
+		804DA68917ED54A800F86495 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 804DA66817ED54A800F86495 /* Foundation.framework */; };
+		804DA68A17ED54A800F86495 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 804DA66C17ED54A800F86495 /* UIKit.framework */; };
+		804DA69217ED54A800F86495 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 804DA69017ED54A800F86495 /* InfoPlist.strings */; };
+		804DA69417ED54A800F86495 /* SoapBoxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 804DA69317ED54A800F86495 /* SoapBoxTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		804DA68B17ED54A800F86495 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 804DA65D17ED54A800F86495 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 804DA66417ED54A800F86495;
+			remoteInfo = SoapBox;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		804DA66517ED54A800F86495 /* SoapBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoapBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		804DA66817ED54A800F86495 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		804DA66A17ED54A800F86495 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		804DA66C17ED54A800F86495 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		804DA67017ED54A800F86495 /* SoapBox-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SoapBox-Info.plist"; sourceTree = "<group>"; };
+		804DA67217ED54A800F86495 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		804DA67417ED54A800F86495 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		804DA67617ED54A800F86495 /* SoapBox-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SoapBox-Prefix.pch"; sourceTree = "<group>"; };
+		804DA67717ED54A800F86495 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		804DA67817ED54A800F86495 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		804DA67B17ED54A800F86495 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		804DA67D17ED54A800F86495 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		804DA67E17ED54A800F86495 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		804DA68017ED54A800F86495 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		804DA68617ED54A800F86495 /* SoapBoxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoapBoxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		804DA68717ED54A800F86495 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		804DA68F17ED54A800F86495 /* SoapBoxTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SoapBoxTests-Info.plist"; sourceTree = "<group>"; };
+		804DA69117ED54A800F86495 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		804DA69317ED54A800F86495 /* SoapBoxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SoapBoxTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		804DA66217ED54A800F86495 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				804DA66B17ED54A800F86495 /* CoreGraphics.framework in Frameworks */,
+				804DA66D17ED54A800F86495 /* UIKit.framework in Frameworks */,
+				804DA66917ED54A800F86495 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		804DA68317ED54A800F86495 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				804DA68817ED54A800F86495 /* XCTest.framework in Frameworks */,
+				804DA68A17ED54A800F86495 /* UIKit.framework in Frameworks */,
+				804DA68917ED54A800F86495 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		804DA65C17ED54A800F86495 = {
+			isa = PBXGroup;
+			children = (
+				804DA66E17ED54A800F86495 /* SoapBox */,
+				804DA68D17ED54A800F86495 /* SoapBoxTests */,
+				804DA66717ED54A800F86495 /* Frameworks */,
+				804DA66617ED54A800F86495 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		804DA66617ED54A800F86495 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				804DA66517ED54A800F86495 /* SoapBox.app */,
+				804DA68617ED54A800F86495 /* SoapBoxTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		804DA66717ED54A800F86495 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				804DA66817ED54A800F86495 /* Foundation.framework */,
+				804DA66A17ED54A800F86495 /* CoreGraphics.framework */,
+				804DA66C17ED54A800F86495 /* UIKit.framework */,
+				804DA68717ED54A800F86495 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		804DA66E17ED54A800F86495 /* SoapBox */ = {
+			isa = PBXGroup;
+			children = (
+				804DA67717ED54A800F86495 /* AppDelegate.h */,
+				804DA67817ED54A800F86495 /* AppDelegate.m */,
+				804DA67A17ED54A800F86495 /* Main.storyboard */,
+				804DA67D17ED54A800F86495 /* ViewController.h */,
+				804DA67E17ED54A800F86495 /* ViewController.m */,
+				804DA68017ED54A800F86495 /* Images.xcassets */,
+				804DA66F17ED54A800F86495 /* Supporting Files */,
+			);
+			path = SoapBox;
+			sourceTree = "<group>";
+		};
+		804DA66F17ED54A800F86495 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				804DA67017ED54A800F86495 /* SoapBox-Info.plist */,
+				804DA67117ED54A800F86495 /* InfoPlist.strings */,
+				804DA67417ED54A800F86495 /* main.m */,
+				804DA67617ED54A800F86495 /* SoapBox-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		804DA68D17ED54A800F86495 /* SoapBoxTests */ = {
+			isa = PBXGroup;
+			children = (
+				804DA69317ED54A800F86495 /* SoapBoxTests.m */,
+				804DA68E17ED54A800F86495 /* Supporting Files */,
+			);
+			path = SoapBoxTests;
+			sourceTree = "<group>";
+		};
+		804DA68E17ED54A800F86495 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				804DA68F17ED54A800F86495 /* SoapBoxTests-Info.plist */,
+				804DA69017ED54A800F86495 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		804DA66417ED54A800F86495 /* SoapBox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 804DA69717ED54A800F86495 /* Build configuration list for PBXNativeTarget "SoapBox" */;
+			buildPhases = (
+				804DA66117ED54A800F86495 /* Sources */,
+				804DA66217ED54A800F86495 /* Frameworks */,
+				804DA66317ED54A800F86495 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SoapBox;
+			productName = SoapBox;
+			productReference = 804DA66517ED54A800F86495 /* SoapBox.app */;
+			productType = "com.apple.product-type.application";
+		};
+		804DA68517ED54A800F86495 /* SoapBoxTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 804DA69A17ED54A800F86495 /* Build configuration list for PBXNativeTarget "SoapBoxTests" */;
+			buildPhases = (
+				804DA68217ED54A800F86495 /* Sources */,
+				804DA68317ED54A800F86495 /* Frameworks */,
+				804DA68417ED54A800F86495 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				804DA68C17ED54A800F86495 /* PBXTargetDependency */,
+			);
+			name = SoapBoxTests;
+			productName = SoapBoxTests;
+			productReference = 804DA68617ED54A800F86495 /* SoapBoxTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		804DA65D17ED54A800F86495 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = Josh;
+				TargetAttributes = {
+					804DA68517ED54A800F86495 = {
+						TestTargetID = 804DA66417ED54A800F86495;
+					};
+				};
+			};
+			buildConfigurationList = 804DA66017ED54A800F86495 /* Build configuration list for PBXProject "SoapBox" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 804DA65C17ED54A800F86495;
+			productRefGroup = 804DA66617ED54A800F86495 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				804DA66417ED54A800F86495 /* SoapBox */,
+				804DA68517ED54A800F86495 /* SoapBoxTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		804DA66317ED54A800F86495 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				804DA68117ED54A800F86495 /* Images.xcassets in Resources */,
+				804DA67317ED54A800F86495 /* InfoPlist.strings in Resources */,
+				804DA67C17ED54A800F86495 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		804DA68417ED54A800F86495 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				804DA69217ED54A800F86495 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		804DA66117ED54A800F86495 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				804DA67F17ED54A800F86495 /* ViewController.m in Sources */,
+				804DA67917ED54A800F86495 /* AppDelegate.m in Sources */,
+				804DA67517ED54A800F86495 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		804DA68217ED54A800F86495 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				804DA69417ED54A800F86495 /* SoapBoxTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		804DA68C17ED54A800F86495 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 804DA66417ED54A800F86495 /* SoapBox */;
+			targetProxy = 804DA68B17ED54A800F86495 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		804DA67117ED54A800F86495 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				804DA67217ED54A800F86495 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		804DA67A17ED54A800F86495 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				804DA67B17ED54A800F86495 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		804DA69017ED54A800F86495 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				804DA69117ED54A800F86495 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		804DA69517ED54A800F86495 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		804DA69617ED54A800F86495 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		804DA69817ED54A800F86495 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SoapBox/SoapBox-Prefix.pch";
+				INFOPLIST_FILE = "SoapBox/SoapBox-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		804DA69917ED54A800F86495 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SoapBox/SoapBox-Prefix.pch";
+				INFOPLIST_FILE = "SoapBox/SoapBox-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		804DA69B17ED54A800F86495 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SoapBox.app/SoapBox";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SoapBox/SoapBox-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SoapBoxTests/SoapBoxTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		804DA69C17ED54A800F86495 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SoapBox.app/SoapBox";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SoapBox/SoapBox-Prefix.pch";
+				INFOPLIST_FILE = "SoapBoxTests/SoapBoxTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		804DA66017ED54A800F86495 /* Build configuration list for PBXProject "SoapBox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				804DA69517ED54A800F86495 /* Debug */,
+				804DA69617ED54A800F86495 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		804DA69717ED54A800F86495 /* Build configuration list for PBXNativeTarget "SoapBox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				804DA69817ED54A800F86495 /* Debug */,
+				804DA69917ED54A800F86495 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		804DA69A17ED54A800F86495 /* Build configuration list for PBXNativeTarget "SoapBoxTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				804DA69B17ED54A800F86495 /* Debug */,
+				804DA69C17ED54A800F86495 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 804DA65D17ED54A800F86495 /* Project object */;
+}
