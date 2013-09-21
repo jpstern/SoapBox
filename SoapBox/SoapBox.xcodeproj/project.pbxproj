@@ -14,6 +14,8 @@
 		046C387417ED8FEE00460C13 /* DummyTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046C386D17ED8FEE00460C13 /* DummyTableViewController.xib */; };
 		046C387617ED8FEE00460C13 /* DummyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046C387017ED8FEE00460C13 /* DummyViewController.xib */; };
 		382C651917ED9CBC006BBCE2 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 804DA6A017ED65BF00F86495 /* MasterViewController.m */; };
+		046C387F17ED977900460C13 /* IssuesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046C387D17ED977900460C13 /* IssuesListViewController.m */; };
+		046C388017ED977900460C13 /* IssuesListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046C387E17ED977900460C13 /* IssuesListViewController.xib */; };
 		38A7941A17ED6D1E0078F048 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A7941817ED6D1E0078F048 /* MapViewController.m */; };
 		38A7941B17ED6D1E0078F048 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A7941917ED6D1E0078F048 /* MapViewController.xib */; };
 		38A7941D17ED70410078F048 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A7941C17ED70410078F048 /* ViewController.xib */; };
@@ -84,6 +86,9 @@
 		046C386E17ED8FEE00460C13 /* DummyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DummyViewController.h; sourceTree = "<group>"; };
 		046C386F17ED8FEE00460C13 /* DummyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DummyViewController.m; sourceTree = "<group>"; };
 		046C387017ED8FEE00460C13 /* DummyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DummyViewController.xib; sourceTree = "<group>"; };
+		046C387C17ED977900460C13 /* IssuesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssuesListViewController.h; sourceTree = "<group>"; };
+		046C387D17ED977900460C13 /* IssuesListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssuesListViewController.m; sourceTree = "<group>"; };
+		046C387E17ED977900460C13 /* IssuesListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IssuesListViewController.xib; sourceTree = "<group>"; };
 		38A7941717ED6D1E0078F048 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		38A7941817ED6D1E0078F048 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		38A7941917ED6D1E0078F048 /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
@@ -226,6 +231,7 @@
 		38FBF79C17ED6285004695DA /* XIBS */ = {
 			isa = PBXGroup;
 			children = (
+				046C387E17ED977900460C13 /* IssuesListViewController.xib */,
 				046C386617ED8ADF00460C13 /* MainMenuViewController.xib */,
 				804DA6A117ED65BF00F86495 /* MasterViewController.xib */,
 				804DA6A117ED65BF00F86495 /* MasterViewController.xib */,
@@ -327,6 +333,8 @@
 				5EB0A1AB17ED7CB6003E6935 /* Issue.m */,
 				804DA69F17ED65BF00F86495 /* MasterViewController.h */,
 				804DA6A017ED65BF00F86495 /* MasterViewController.m */,
+				046C387C17ED977900460C13 /* IssuesListViewController.h */,
+				046C387D17ED977900460C13 /* IssuesListViewController.m */,
 				804DA67717ED54A800F86495 /* AppDelegate.h */,
 				804DA67817ED54A800F86495 /* AppDelegate.m */,
 				804DA67D17ED54A800F86495 /* ViewController.h */,
@@ -464,6 +472,7 @@
 				38A7942317ED721F0078F048 /* pin_blue_small.png in Resources */,
 				046C386717ED8ADF00460C13 /* MainMenuViewController.xib in Resources */,
 				38A7941D17ED70410078F048 /* ViewController.xib in Resources */,
+				046C388017ED977900460C13 /* IssuesListViewController.xib in Resources */,
 				5EB0A1A417ED70A2003E6935 /* AddIssueViewController.xib in Resources */,
 				38A7941B17ED6D1E0078F048 /* MapViewController.xib in Resources */,
 				5EECC1E617ED8F5600BDDF4E /* DummyMapViewController.xib in Resources */,
@@ -496,6 +505,7 @@
 				804DA67917ED54A800F86495 /* AppDelegate.m in Sources */,
 				5EB0A1A317ED70A2003E6935 /* AddIssueViewController.m in Sources */,
 				046C387117ED8FEE00460C13 /* DummyMapViewController.m in Sources */,
+				046C387F17ED977900460C13 /* IssuesListViewController.m in Sources */,
 				046C385F17ED802200460C13 /* MainMenuViewController.m in Sources */,
 				804DA67517ED54A800F86495 /* main.m in Sources */,
 				38A7941A17ED6D1E0078F048 /* MapViewController.m in Sources */,

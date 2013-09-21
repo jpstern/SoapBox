@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-//#import "DummyTableViewController.h"
-//#import "DummyMapViewController.h"
+#import "DummyTableViewController.h"
+#import "DummyMapViewController.h"
 
 @interface MasterViewController : UIViewController
 
