@@ -68,7 +68,7 @@
   // logo shit
   [logo.layer setCornerRadius:20];
   [logo.layer setBorderWidth:1];
-  [logo.layer setBorderColor:[UIColor blackColor].CGColor];
+  [logo.layer setBorderColor:[UIColor darkGrayColor].CGColor];
 
 }
 
@@ -81,7 +81,8 @@
 - (IBAction)myIssues:(id)sender {
     IssueListViewController *issueController = [[IssueListViewController alloc] initWithNibName:@"IssueListViewController" bundle:[NSBundle mainBundle]];
     Issue *issue = [[Issue alloc] init];
-    issue.title = @"Test";
+    issue.title = @"Test Issue";
+    issue.description = @"This is a test description for the issue. I think it is long enough beginning.. right.. now!!";
     issue.location = CLLocationCoordinate2DMake(32, -90);
     issueController.issues = @[issue];
     issueController.title = @"My Issues";
@@ -90,7 +91,8 @@
 - (IBAction)friendsIssues:(id)sender {
     IssueListViewController *issueController = [[IssueListViewController alloc] initWithNibName:@"IssueListViewController" bundle:[NSBundle mainBundle]];
     Issue *issue = [[Issue alloc] init];
-    issue.title = @"Test";
+    issue.title = @"Test Issue";
+    issue.description = @"This is a test description for the issue. I think it is long enough beginning.. right.. now!!";
     issueController.issues = @[issue];
     issueController.title = @"Friend's Issues";
     [self.navigationController pushViewController:issueController animated:YES];
@@ -105,13 +107,17 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
+  
+//    [self.view setHidden:NO];
     if (self.masterContainer.containerIsOpen) {
         [self.navigationController setNavigationBarHidden:YES animated:YES];
     }
     else {
         [self.navigationController setNavigationBarHidden:NO animated:YES];
     }
+}
+- (void) viewWillDisappear:(BOOL)animated{
+//  [self.view setHidden:YES];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

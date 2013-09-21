@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Issue.h"
 #import "IssueViewController.h"
+#import "CustomCell.h"
 
 @interface IssueListViewController : UITableViewController
 
