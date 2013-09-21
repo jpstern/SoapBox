@@ -25,7 +25,7 @@
 
 - (void)viewDidLoad
 {
-  [super viewDidLoad];
+    [super viewDidLoad];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -42,9 +42,6 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
-  [[self tableView] setBackgroundColor:[UIColor colorWithRed:31.0/255 green:31.0/255 blue:31.0/255 alpha:1.0]];
-  [[self tableView] setSeparatorColor:[UIColor blackColor]];
-
 }
 
 #pragma mark - Table view data source
@@ -64,32 +61,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    CustomCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-      NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CustomCell" owner:self options:nil];
-      cell = [nib objectAtIndex:0];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     Issue *issue = [self.issues objectAtIndex:indexPath.row];
-  
-  // title of the issue.
-  [cell.title setText: issue.title];
-  [cell.title setTextColor:[UIColor yellowColor]];
-
-  // description of the issue.
-  [cell.description setTextColor:[UIColor yellowColor]];
-  [cell.description setText: issue.description];
-  if ([[cell.description text] length] > 50) {
-    NSRange range = [[cell.description text] rangeOfComposedCharacterSequencesForRange:(NSRange){0, 50}];
-    [cell.description setText: [[cell.description text] substringWithRange:range]];
-    [cell.description setText: [[cell.description text] stringByAppendingString:@" …"]];
-  }
-  
-  // friend who supports the issue (if "friends issues" was selected)
-  [cell.fromFriend setTextColor:[UIColor yellowColor]];
-  [cell.fromFriend setText:@"Friend's Name"];
-  
-  [cell.trend setBackgroundColor:[UIColor darkGrayColor]];
-  [cell setBackgroundColor:[UIColor clearColor]];
+    //cell.textLabel.text = issue.title;
+    
     // Configure the cell...
     
     return cell;

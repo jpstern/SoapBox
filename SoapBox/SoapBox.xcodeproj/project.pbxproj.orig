@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0403EFEB17EDBF9E00696605 /* soapbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 0403EFEA17EDBF9E00696605 /* soapbox.png */; };
+		0403EFF817EE13B300696605 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0403EFF717EE13B300696605 /* CustomCell.m */; };
+		0403EFFA17EE13D300696605 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0403EFF917EE13D300696605 /* CustomCell.xib */; };
+		0403EFFC17EE299700696605 /* backgroundPattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 0403EFFB17EE299700696605 /* backgroundPattern.png */; };
 		046C385F17ED802200460C13 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046C385E17ED802200460C13 /* MainMenuViewController.m */; };
 		046C386717ED8ADF00460C13 /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046C386617ED8ADF00460C13 /* MainMenuViewController.xib */; };
 		046C387117ED8FEE00460C13 /* DummyMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046C386917ED8FEE00460C13 /* DummyMapViewController.m */; };
@@ -19,7 +22,6 @@
 		382C655917EDAA7F006BBCE2 /* AddNewIssueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 382C655717EDAA7E006BBCE2 /* AddNewIssueViewController.xib */; };
 		382C655D17EDAD0C006BBCE2 /* LocChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 382C655B17EDAD0C006BBCE2 /* LocChooseViewController.m */; };
 		382C655E17EDAD0C006BBCE2 /* LocChooseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 382C655C17EDAD0C006BBCE2 /* LocChooseViewController.xib */; };
-		383FDA8317EDBAB800F80046 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FBF79A17ED5A2B004695DA /* FacebookSDK.framework */; };
 		383FDA8517EDC15100F80046 /* camera-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 383FDA8417EDC15100F80046 /* camera-white.png */; };
 		383FDA8B17EDC16A00F80046 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 383FDA8617EDC16A00F80046 /* arrow.png */; };
 		383FDA8C17EDC16A00F80046 /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 383FDA8717EDC16A00F80046 /* arrow@2x.png */; };
@@ -45,6 +47,7 @@
 		38A7941D17ED70410078F048 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A7941C17ED70410078F048 /* ViewController.xib */; };
 		38A7942117ED70EB0078F048 /* LocationGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A7942017ED70EB0078F048 /* LocationGetter.m */; };
 		38A7942317ED721F0078F048 /* pin_blue_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 38A7942217ED721F0078F048 /* pin_blue_small.png */; };
+		38D51E9B17EDFEF300B7563C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 804DA67E17ED54A800F86495 /* ViewController.m */; };
 		38FBF79917ED56BD004695DA /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FBF79817ED56BD004695DA /* Parse.framework */; };
 		38FBF79E17ED6446004695DA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FBF79D17ED6446004695DA /* AudioToolbox.framework */; };
 		38FBF7A017ED644E004695DA /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FBF79F17ED644E004695DA /* CFNetwork.framework */; };
@@ -59,11 +62,13 @@
 		38FBF7B217ED67A9004695DA /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FBF7B117ED67A9004695DA /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		38FBF7B417ED67B7004695DA /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FBF7B317ED67B7004695DA /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		38FBF7B617ED68B9004695DA /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FBF7B517ED68B9004695DA /* libsqlite3.dylib */; };
-		5E92BFE717EDC97400D08F13 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E92BFE617EDC97400D08F13 /* Reveal.framework */; };
-		5E92BFEE17EDCE0200D08F13 /* IssueListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E92BFEC17EDCE0200D08F13 /* IssueListViewController.m */; };
-		5E92BFEF17EDCE0200D08F13 /* IssueListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E92BFED17EDCE0200D08F13 /* IssueListViewController.xib */; };
-		5E92BFF017EDD05300D08F13 /* Issue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB0A1AB17ED7CB6003E6935 /* Issue.m */; };
-		5E92BFF217EDD09D00D08F13 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E92BFF117EDD09D00D08F13 /* MapKit.framework */; };
+		38FD03DB17EDEB7E0038379D /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FBF79A17ED5A2B004695DA /* FacebookSDK.framework */; };
+		5E79FB6C17EDD6CD00430435 /* IssueListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79FB6A17EDD6CD00430435 /* IssueListViewController.m */; };
+		5E79FB6D17EDD6CD00430435 /* IssueListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E79FB6B17EDD6CD00430435 /* IssueListViewController.xib */; };
+		5E79FB6E17EDD72A00430435 /* Issue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB0A1AB17ED7CB6003E6935 /* Issue.m */; };
+		5E79FB6F17EDFAFE00430435 /* IssueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB0A1A617ED7C4C003E6935 /* IssueViewController.m */; };
+		5E79FB7317EE048100430435 /* AddEmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79FB7117EE048100430435 /* AddEmailViewController.m */; };
+		5E79FB7417EE048100430435 /* AddEmailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E79FB7217EE048100430435 /* AddEmailViewController.xib */; };
 		5EB0A1A317ED70A2003E6935 /* AddIssueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB0A1A117ED70A2003E6935 /* AddIssueViewController.m */; };
 		5EB0A1A417ED70A2003E6935 /* AddIssueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EB0A1A217ED70A2003E6935 /* AddIssueViewController.xib */; };
 		5EECC1E617ED8F5600BDDF4E /* DummyMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EECC1D517ED8F5600BDDF4E /* DummyMapViewController.xib */; };
@@ -103,6 +108,10 @@
 
 /* Begin PBXFileReference section */
 		0403EFEA17EDBF9E00696605 /* soapbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soapbox.png; sourceTree = "<group>"; };
+		0403EFF617EE13B300696605 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomCell.h; path = ../../../CustomCell.h; sourceTree = "<group>"; };
+		0403EFF717EE13B300696605 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomCell.m; path = ../../../CustomCell.m; sourceTree = "<group>"; };
+		0403EFF917EE13D300696605 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
+		0403EFFB17EE299700696605 /* backgroundPattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundPattern.png; sourceTree = "<group>"; };
 		046C385D17ED802200460C13 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		046C385E17ED802200460C13 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		046C386617ED8ADF00460C13 /* MainMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenuViewController.xib; sourceTree = "<group>"; };
@@ -115,11 +124,6 @@
 		046C386E17ED8FEE00460C13 /* DummyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DummyViewController.h; sourceTree = "<group>"; };
 		046C386F17ED8FEE00460C13 /* DummyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DummyViewController.m; sourceTree = "<group>"; };
 		046C387017ED8FEE00460C13 /* DummyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DummyViewController.xib; sourceTree = "<group>"; };
-<<<<<<< HEAD
-=======
-		046C387C17ED977900460C13 /* IssuesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssuesListViewController.h; sourceTree = "<group>"; };
-		046C387D17ED977900460C13 /* IssuesListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssuesListViewController.m; sourceTree = "<group>"; };
-		046C387E17ED977900460C13 /* IssuesListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IssuesListViewController.xib; sourceTree = "<group>"; };
 		382C655517EDAA7E006BBCE2 /* AddNewIssueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNewIssueViewController.h; sourceTree = "<group>"; };
 		382C655617EDAA7E006BBCE2 /* AddNewIssueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNewIssueViewController.m; sourceTree = "<group>"; };
 		382C655717EDAA7E006BBCE2 /* AddNewIssueViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddNewIssueViewController.xib; sourceTree = "<group>"; };
@@ -147,7 +151,6 @@
 		383FDAA617EDC1AC00F80046 /* tag-flat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tag-flat.png"; sourceTree = "<group>"; };
 		383FDAA817EDCF0D00F80046 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		383FDAAA17EDD09700F80046 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
->>>>>>> 678da5b9d3de1620965c40ec201e222959d11eae
 		38A7941717ED6D1E0078F048 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		38A7941817ED6D1E0078F048 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		38A7941917ED6D1E0078F048 /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
@@ -170,11 +173,12 @@
 		38FBF7B117ED67A9004695DA /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		38FBF7B317ED67B7004695DA /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		38FBF7B517ED68B9004695DA /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		5E92BFE617EDC97400D08F13 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
-		5E92BFEB17EDCE0200D08F13 /* IssueListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssueListViewController.h; sourceTree = "<group>"; };
-		5E92BFEC17EDCE0200D08F13 /* IssueListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssueListViewController.m; sourceTree = "<group>"; };
-		5E92BFED17EDCE0200D08F13 /* IssueListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IssueListViewController.xib; sourceTree = "<group>"; };
-		5E92BFF117EDD09D00D08F13 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		5E79FB6917EDD6CD00430435 /* IssueListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssueListViewController.h; sourceTree = "<group>"; };
+		5E79FB6A17EDD6CD00430435 /* IssueListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssueListViewController.m; sourceTree = "<group>"; };
+		5E79FB6B17EDD6CD00430435 /* IssueListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IssueListViewController.xib; sourceTree = "<group>"; };
+		5E79FB7017EE048100430435 /* AddEmailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEmailViewController.h; sourceTree = "<group>"; };
+		5E79FB7117EE048100430435 /* AddEmailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEmailViewController.m; sourceTree = "<group>"; };
+		5E79FB7217EE048100430435 /* AddEmailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddEmailViewController.xib; sourceTree = "<group>"; };
 		5EB0A1A017ED70A2003E6935 /* AddIssueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddIssueViewController.h; sourceTree = "<group>"; };
 		5EB0A1A117ED70A2003E6935 /* AddIssueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddIssueViewController.m; sourceTree = "<group>"; };
 		5EB0A1A217ED70A2003E6935 /* AddIssueViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddIssueViewController.xib; sourceTree = "<group>"; };
@@ -227,18 +231,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
-				5E92BFF217EDD09D00D08F13 /* MapKit.framework in Frameworks */,
-				38FBF7A817ED648A004695DA /* QuartzCore.framework in Frameworks */,
-				38FBF7A017ED644E004695DA /* CFNetwork.framework in Frameworks */,
-				5E92BFE717EDC97400D08F13 /* Reveal.framework in Frameworks */,
-				38FBF79B17ED5A2B004695DA /* FacebookSDK.framework in Frameworks */,
-=======
+				38FD03DB17EDEB7E0038379D /* FacebookSDK.framework in Frameworks */,
+				38FBF79917ED56BD004695DA /* Parse.framework in Frameworks */,
 				383FDAAB17EDD09700F80046 /* libz.dylib in Frameworks */,
 				38FBF7A617ED6480004695DA /* MobileCoreServices.framework in Frameworks */,
 				383FDAA917EDCF0D00F80046 /* MapKit.framework in Frameworks */,
-				383FDA8317EDBAB800F80046 /* FacebookSDK.framework in Frameworks */,
->>>>>>> 678da5b9d3de1620965c40ec201e222959d11eae
 				38FBF7B217ED67A9004695DA /* Social.framework in Frameworks */,
 				38FBF7B617ED68B9004695DA /* libsqlite3.dylib in Frameworks */,
 				38FBF7B417ED67B7004695DA /* Accounts.framework in Frameworks */,
@@ -246,17 +243,13 @@
 				38FBF7AE17ED64A9004695DA /* SystemConfiguration.framework in Frameworks */,
 				38FBF7AC17ED649B004695DA /* StoreKit.framework in Frameworks */,
 				38FBF7AA17ED6492004695DA /* Security.framework in Frameworks */,
-<<<<<<< HEAD
-				38FBF7A617ED6480004695DA /* MobileCoreServices.framework in Frameworks */,
-=======
 				38FBF7A817ED648A004695DA /* QuartzCore.framework in Frameworks */,
->>>>>>> 678da5b9d3de1620965c40ec201e222959d11eae
 				38FBF7A417ED6476004695DA /* libz.1.1.3.dylib in Frameworks */,
 				38FBF7A217ED6468004695DA /* CoreLocation.framework in Frameworks */,
 				804DA66B17ED54A800F86495 /* CoreGraphics.framework in Frameworks */,
+				38FBF7A017ED644E004695DA /* CFNetwork.framework in Frameworks */,
 				38FBF79E17ED6446004695DA /* AudioToolbox.framework in Frameworks */,
 				804DA66D17ED54A800F86495 /* UIKit.framework in Frameworks */,
-				38FBF79917ED56BD004695DA /* Parse.framework in Frameworks */,
 				804DA66917ED54A800F86495 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,6 +273,7 @@
 				383FDAA617EDC1AC00F80046 /* tag-flat.png */,
 				383FDA9617EDC1A400F80046 /* menu.png */,
 				383FDA9717EDC1A400F80046 /* menu@2x.png */,
+				0403EFFB17EE299700696605 /* backgroundPattern.png */,
 				383FDA9817EDC1A400F80046 /* pin_blue_small.png */,
 				383FDA9917EDC1A400F80046 /* pin-black.png */,
 				383FDA9A17EDC1A400F80046 /* search.png */,
@@ -369,13 +363,8 @@
 		804DA66717ED54A800F86495 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
-				5E92BFF117EDD09D00D08F13 /* MapKit.framework */,
-				5E92BFE617EDC97400D08F13 /* Reveal.framework */,
-=======
 				383FDAAA17EDD09700F80046 /* libz.dylib */,
 				383FDAA817EDCF0D00F80046 /* MapKit.framework */,
->>>>>>> 678da5b9d3de1620965c40ec201e222959d11eae
 				804DA6B917ED886900F86495 /* FacebookSDK */,
 				38FBF7B517ED68B9004695DA /* libsqlite3.dylib */,
 				38FBF7B317ED67B7004695DA /* Accounts.framework */,
@@ -403,10 +392,10 @@
 		804DA66E17ED54A800F86495 /* SoapBox */ = {
 			isa = PBXGroup;
 			children = (
-				5E92BFEB17EDCE0200D08F13 /* IssueListViewController.h */,
-				5E92BFEC17EDCE0200D08F13 /* IssueListViewController.m */,
-				5E92BFED17EDCE0200D08F13 /* IssueListViewController.xib */,
 				5EECC1E017ED8F5600BDDF4E /* IssueViewController.xib */,
+				5E79FB7017EE048100430435 /* AddEmailViewController.h */,
+				5E79FB7117EE048100430435 /* AddEmailViewController.m */,
+				5E79FB7217EE048100430435 /* AddEmailViewController.xib */,
 				5EECC1E117ED8F5600BDDF4E /* UIViewController+Container.h */,
 				5EECC1D417ED8F5600BDDF4E /* DummyMapViewController.m */,
 				5EECC1E217ED8F5600BDDF4E /* UIViewController+Container.m */,
@@ -438,6 +427,12 @@
 				5EB0A1AB17ED7CB6003E6935 /* Issue.m */,
 				804DA69F17ED65BF00F86495 /* MasterViewController.h */,
 				804DA6A017ED65BF00F86495 /* MasterViewController.m */,
+				5E79FB6917EDD6CD00430435 /* IssueListViewController.h */,
+				5E79FB6A17EDD6CD00430435 /* IssueListViewController.m */,
+				5E79FB6B17EDD6CD00430435 /* IssueListViewController.xib */,
+				0403EFF617EE13B300696605 /* CustomCell.h */,
+				0403EFF717EE13B300696605 /* CustomCell.m */,
+				0403EFF917EE13D300696605 /* CustomCell.xib */,
 				804DA67717ED54A800F86495 /* AppDelegate.h */,
 				804DA67817ED54A800F86495 /* AppDelegate.m */,
 				804DA67D17ED54A800F86495 /* ViewController.h */,
@@ -538,7 +533,12 @@
 				ORGANIZATIONNAME = Josh;
 				TargetAttributes = {
 					804DA66417ED54A800F86495 = {
-						DevelopmentTeam = 43LEM8BQ2H;
+<<<<<<< HEAD
+						DevelopmentTeam = UV5VPY8PJJ;
+=======
+						DevelopmentTeam = 5G84J3W3H2;
+            83e1cb8c224f3da85e996aa3ef4b7b4e03e0b0ad
+>>>>>>> 7f0cbb1843d7a76acb52e0c8a212640ec630da2e
 					};
 					804DA68517ED54A800F86495 = {
 						TestTargetID = 804DA66417ED54A800F86495;
@@ -586,35 +586,31 @@
 				383FDAA017EDC1A400F80046 /* pin_blue_small.png in Resources */,
 				383FDAA517EDC1A400F80046 /* settings@2x.png in Resources */,
 				046C387417ED8FEE00460C13 /* DummyTableViewController.xib in Resources */,
-<<<<<<< HEAD
-				5E92BFEF17EDCE0200D08F13 /* IssueListViewController.xib in Resources */,
-=======
 				383FDA8D17EDC16A00F80046 /* camera-white.png in Resources */,
 				383FDA9317EDC17700F80046 /* account@2x.png in Resources */,
->>>>>>> 678da5b9d3de1620965c40ec201e222959d11eae
 				804DA68117ED54A800F86495 /* Images.xcassets in Resources */,
+				5E79FB6D17EDD6CD00430435 /* IssueListViewController.xib in Resources */,
 				804DA67317ED54A800F86495 /* InfoPlist.strings in Resources */,
 				0403EFEB17EDBF9E00696605 /* soapbox.png in Resources */,
 				38A7942317ED721F0078F048 /* pin_blue_small.png in Resources */,
 				383FDA8E17EDC16A00F80046 /* check.png in Resources */,
 				046C386717ED8ADF00460C13 /* MainMenuViewController.xib in Resources */,
+				0403EFFA17EE13D300696605 /* CustomCell.xib in Resources */,
 				38A7941D17ED70410078F048 /* ViewController.xib in Resources */,
-<<<<<<< HEAD
-=======
 				382C655917EDAA7F006BBCE2 /* AddNewIssueViewController.xib in Resources */,
-				046C388017ED977900460C13 /* IssuesListViewController.xib in Resources */,
 				383FDA8517EDC15100F80046 /* camera-white.png in Resources */,
 				383FDA8F17EDC16A00F80046 /* check@2x.png in Resources */,
 				383FDAA117EDC1A400F80046 /* pin-black.png in Resources */,
 				383FDA9E17EDC1A400F80046 /* menu.png in Resources */,
->>>>>>> 678da5b9d3de1620965c40ec201e222959d11eae
 				5EB0A1A417ED70A2003E6935 /* AddIssueViewController.xib in Resources */,
 				38A7941B17ED6D1E0078F048 /* MapViewController.xib in Resources */,
 				383FDA8C17EDC16A00F80046 /* arrow@2x.png in Resources */,
 				5EECC1E617ED8F5600BDDF4E /* DummyMapViewController.xib in Resources */,
 				383FDAA717EDC1AC00F80046 /* tag-flat.png in Resources */,
+				0403EFFC17EE299700696605 /* backgroundPattern.png in Resources */,
 				383FDA9F17EDC1A400F80046 /* menu@2x.png in Resources */,
 				046C387217ED8FEE00460C13 /* DummyMapViewController.xib in Resources */,
+				5E79FB7417EE048100430435 /* AddEmailViewController.xib in Resources */,
 				804DA6BC17ED8AA100F86495 /* MainMenuViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -634,16 +630,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E92BFF017EDD05300D08F13 /* Issue.m in Sources */,
+				38D51E9B17EDFEF300B7563C /* ViewController.m in Sources */,
+				5E79FB6F17EDFAFE00430435 /* IssueViewController.m in Sources */,
+				5E79FB7317EE048100430435 /* AddEmailViewController.m in Sources */,
+				5E79FB6E17EDD72A00430435 /* Issue.m in Sources */,
 				382C651917ED9CBC006BBCE2 /* MasterViewController.m in Sources */,
 				5EECC1E717ED8F5600BDDF4E /* DummyTableViewController.m in Sources */,
 				5EECC1EE17ED8F5600BDDF4E /* UIViewController+Container.m in Sources */,
 				5EECC1EF17ED8F5600BDDF4E /* UIViewController+MasterContainer.m in Sources */,
 				5EECC1E917ED8F5600BDDF4E /* DummyViewController.m in Sources */,
 				382C655D17EDAD0C006BBCE2 /* LocChooseViewController.m in Sources */,
+				0403EFF817EE13B300696605 /* CustomCell.m in Sources */,
 				38A7942117ED70EB0078F048 /* LocationGetter.m in Sources */,
 				804DA67917ED54A800F86495 /* AppDelegate.m in Sources */,
-				5E92BFEE17EDCE0200D08F13 /* IssueListViewController.m in Sources */,
+				5E79FB6C17EDD6CD00430435 /* IssueListViewController.m in Sources */,
 				5EB0A1A317ED70A2003E6935 /* AddIssueViewController.m in Sources */,
 				046C387117ED8FEE00460C13 /* DummyMapViewController.m in Sources */,
 				046C385F17ED802200460C13 /* MainMenuViewController.m in Sources */,
@@ -781,13 +781,8 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-<<<<<<< HEAD
-					"/Users/charleyhutchison/SoapBox/SoapBox/**",
 					/Users/charleyhutchison/SoapBox/SoapBox,
-=======
 					"/Users/Jack/Documents/Projects/SoapBox/**",
-					"/Users/gregoryhurray/Desktop/repo-main/SoapBox/SoapBox",
->>>>>>> 678da5b9d3de1620965c40ec201e222959d11eae
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SoapBox/SoapBox-Prefix.pch";
@@ -797,15 +792,7 @@
 				);
 				INFOPLIST_FILE = "SoapBox/SoapBox-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-<<<<<<< HEAD
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				OTHER_LDFLAGS = "-ObjC";
-=======
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/gregoryhurray/Desktop/repo-main/SoapBox/SoapBox/FacebookSDK.framework/Versions/A",
-				);
->>>>>>> 678da5b9d3de1620965c40ec201e222959d11eae
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -822,13 +809,8 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-<<<<<<< HEAD
-					"/Users/charleyhutchison/SoapBox/SoapBox/**",
 					/Users/charleyhutchison/SoapBox/SoapBox,
-=======
 					"/Users/Jack/Documents/Projects/SoapBox/**",
-					"/Users/gregoryhurray/Desktop/repo-main/SoapBox/SoapBox",
->>>>>>> 678da5b9d3de1620965c40ec201e222959d11eae
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SoapBox/SoapBox-Prefix.pch";
@@ -838,15 +820,7 @@
 				);
 				INFOPLIST_FILE = "SoapBox/SoapBox-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-<<<<<<< HEAD
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				OTHER_LDFLAGS = "-ObjC";
-=======
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/gregoryhurray/Desktop/repo-main/SoapBox/SoapBox/FacebookSDK.framework/Versions/A",
-				);
->>>>>>> 678da5b9d3de1620965c40ec201e222959d11eae
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
