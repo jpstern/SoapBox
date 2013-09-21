@@ -13,7 +13,6 @@
 		804DA67317ED54A800F86495 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 804DA67117ED54A800F86495 /* InfoPlist.strings */; };
 		804DA67517ED54A800F86495 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 804DA67417ED54A800F86495 /* main.m */; };
 		804DA67917ED54A800F86495 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 804DA67817ED54A800F86495 /* AppDelegate.m */; };
-		804DA67C17ED54A800F86495 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 804DA67A17ED54A800F86495 /* Main.storyboard */; };
 		804DA67F17ED54A800F86495 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 804DA67E17ED54A800F86495 /* ViewController.m */; };
 		804DA68117ED54A800F86495 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 804DA68017ED54A800F86495 /* Images.xcassets */; };
 		804DA68817ED54A800F86495 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 804DA68717ED54A800F86495 /* XCTest.framework */; };
@@ -21,6 +20,7 @@
 		804DA68A17ED54A800F86495 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 804DA66C17ED54A800F86495 /* UIKit.framework */; };
 		804DA69217ED54A800F86495 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 804DA69017ED54A800F86495 /* InfoPlist.strings */; };
 		804DA69417ED54A800F86495 /* SoapBoxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 804DA69317ED54A800F86495 /* SoapBoxTests.m */; };
+		804DA69E17ED556B00F86495 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 804DA69D17ED556B00F86495 /* ViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +44,6 @@
 		804DA67617ED54A800F86495 /* SoapBox-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SoapBox-Prefix.pch"; sourceTree = "<group>"; };
 		804DA67717ED54A800F86495 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		804DA67817ED54A800F86495 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		804DA67B17ED54A800F86495 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		804DA67D17ED54A800F86495 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		804DA67E17ED54A800F86495 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		804DA68017ED54A800F86495 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -53,6 +52,7 @@
 		804DA68F17ED54A800F86495 /* SoapBoxTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SoapBoxTests-Info.plist"; sourceTree = "<group>"; };
 		804DA69117ED54A800F86495 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		804DA69317ED54A800F86495 /* SoapBoxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SoapBoxTests.m; sourceTree = "<group>"; };
+		804DA69D17ED556B00F86495 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,9 +114,9 @@
 			children = (
 				804DA67717ED54A800F86495 /* AppDelegate.h */,
 				804DA67817ED54A800F86495 /* AppDelegate.m */,
-				804DA67A17ED54A800F86495 /* Main.storyboard */,
 				804DA67D17ED54A800F86495 /* ViewController.h */,
 				804DA67E17ED54A800F86495 /* ViewController.m */,
+				804DA69D17ED556B00F86495 /* ViewController.xib */,
 				804DA68017ED54A800F86495 /* Images.xcassets */,
 				804DA66F17ED54A800F86495 /* Supporting Files */,
 			);
@@ -229,8 +229,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				804DA68117ED54A800F86495 /* Images.xcassets in Resources */,
+				804DA69E17ED556B00F86495 /* ViewController.xib in Resources */,
 				804DA67317ED54A800F86495 /* InfoPlist.strings in Resources */,
-				804DA67C17ED54A800F86495 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,14 +280,6 @@
 				804DA67217ED54A800F86495 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		804DA67A17ED54A800F86495 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				804DA67B17ED54A800F86495 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		804DA69017ED54A800F86495 /* InfoPlist.strings */ = {
