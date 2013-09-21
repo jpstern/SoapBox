@@ -26,8 +26,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    if ([self.title isEqualToString:@"My Issues"]) {
     PFQuery *query = [[PFQuery alloc] initWithClassName:@"Issue"];
-    
+    [query whereKey:@"user"  equalTo:[PFUser currentUser]];
+     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            NSLog(@"Got Objects: %@", objects);
+        }
+        else {
+            NSLog(@"Error: %@", error);
+        }
+    }];
+     }
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  

@@ -15,7 +15,6 @@
   IBOutlet UIButton *friendsIssues;
   IBOutlet UIButton *about;
   IBOutlet UIButton *settings;
-    BOOL returnFromPush;
 }
 
 
