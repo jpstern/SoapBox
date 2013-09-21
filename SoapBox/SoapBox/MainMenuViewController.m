@@ -45,6 +45,8 @@
   [friendsIssues.layer setBorderColor:[UIColor colorWithRed:192 green:192 blue:192 alpha:1].CGColor];
   [settings.layer setBorderColor:[UIColor colorWithRed:192 green:192 blue:192 alpha:1].CGColor];
   [about.layer setBorderColor:[UIColor colorWithRed:192 green:192 blue:192 alpha:1].CGColor];
+  
+  [logo setBackgroundColor:[UIColor blackColor]];
 }
 
 - (void)didReceiveMemoryWarning
