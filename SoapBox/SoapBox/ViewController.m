@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "MapViewController.h"
 
 @interface ViewController ()
 
@@ -18,6 +19,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    // Do any additional setup after loading the view, typically from a nib.
+    if ([PFUser currentUser] && // Check if a user is cached
+        [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) // Check if user is linked to Facebook
+    {
+        // Push the next view controller without animation
+        MapViewController *mVC = [[MapViewController alloc] init];
+        [self.navigationController pushViewController:mVC animated:YES];
+    }
 }
 
 /*
@@ -51,12 +60,16 @@
             NSLog(@"User with facebook signed up and logged in!");
            
             //push it real good
+            MapViewController *mVC = [[MapViewController alloc] init];
+            [self.navigationController pushViewController:mVC animated:YES];
             
         } else {
             NSLog(@"User with facebook logged in!");
             
             
             //puch it real good
+            MapViewController *mVC = [[MapViewController alloc] init];
+            [self.navigationController pushViewController:mVC animated:YES];
             
             NSLog(@"made it here");
         }
