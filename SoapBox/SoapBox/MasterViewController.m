@@ -108,6 +108,7 @@
         rect.origin.y = self.view.frame.size.height - 60;
         
         self.childView.frame = rect;
+        
     } completion:^(BOOL finished) {
         
         self.containerIsOpen = YES;
@@ -129,6 +130,7 @@
         rect.origin.y = 60;
         
         self.childView.frame = rect;
+        
     } completion:^(BOOL finished) {
         
         self.containerIsOpen = NO;

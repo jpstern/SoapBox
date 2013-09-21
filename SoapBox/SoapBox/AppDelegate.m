@@ -12,6 +12,8 @@
 #import "DummyTableViewController.h"
 #import "DummyMapViewController.h"
 
+#import "MainMenuViewController.h"
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -30,8 +32,9 @@
     MasterViewController *master = [[MasterViewController alloc] init];
     [self.window setRootViewController:master];
     
-    DummyTableViewController *dummyTable = [[DummyTableViewController alloc] init];
-    UINavigationController *dummyTableNav = [[UINavigationController alloc] initWithRootViewController:dummyTable];
+    MainMenuViewController *menu = [[MainMenuViewController alloc] init];
+//    DummyTableViewController *dummyTable = [[DummyTableViewController alloc] init];
+    UINavigationController *dummyTableNav = [[UINavigationController alloc] initWithRootViewController:menu];
     dummyTableNav.navigationBar.translucent = NO;
     
     master.parentController = dummyTableNav;
@@ -54,6 +57,7 @@
 // for parse
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
   sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    
     return [PFFacebookUtils handleOpenURL:url];
 }
 							

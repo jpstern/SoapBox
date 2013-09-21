@@ -9,6 +9,8 @@
 #import "DummyTableViewController.h"
 #import "DummyViewController.h"
 
+#import "AddIssueViewController.h"
+
 @interface DummyTableViewController ()
 
 @end
@@ -39,12 +41,23 @@
     
 }
 
+-(void)showIssueController {
+    
+    AddIssueViewController *addIssue = [[AddIssueViewController alloc] init];
+    UINavigationController *addIssueNav = [[UINavigationController alloc] initWithRootViewController:addIssue];
+    
+    [self presentViewController:addIssueNav animated:YES completion:^{
+        
+    }];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Hi" style:UIBarButtonItemStylePlain target:self action:@selector(openContainer)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"+" style:UIBarButtonItemStylePlain target:self action:@selector(showIssueController)];
     
 }
 
