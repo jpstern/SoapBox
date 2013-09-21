@@ -22,7 +22,7 @@
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ya-kZ-ftr">
                     <rect key="frame" x="0.0" y="285" width="160" height="100"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.099748883928571397" green="0.099748883928571397" blue="0.099748883928571397" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.073680644132653073" green="0.073680644132653073" blue="0.073680644132653073" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="13"/>
                     <state key="normal" title="My Issues">
                         <color key="titleColor" red="0.95286591200000004" green="0.85442208850000001" blue="0.080946707770000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -35,7 +35,7 @@
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3c-PH-51P">
                     <rect key="frame" x="160" y="285" width="160" height="100"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.099748883928571397" green="0.099748883928571397" blue="0.099748883928571397" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.073680644132653073" green="0.073680644132653073" blue="0.073680644132653073" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="13"/>
                     <state key="normal" title="Friends Issues">
                         <color key="titleColor" red="0.95286591200000004" green="0.85442208850000001" blue="0.080946707770000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -48,7 +48,7 @@
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dBF-au-ofL">
                     <rect key="frame" x="0.0" y="384" width="160" height="100"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.099748883928571397" green="0.099748883928571397" blue="0.099748883928571397" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.073680644132653073" green="0.073680644132653073" blue="0.073680644132653073" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="13"/>
                     <state key="normal" title="Settings">
                         <color key="titleColor" red="0.95286591200000004" green="0.85442208850000001" blue="0.080946707770000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -61,7 +61,7 @@
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="roe-6c-Mty">
                     <rect key="frame" x="160" y="384" width="160" height="100"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.099748883928571397" green="0.099748883928571397" blue="0.099748883928571397" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.073680644132653073" green="0.073680644132653073" blue="0.073680644132653073" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="13"/>
                     <state key="normal" title="About SoapBox">
                         <color key="titleColor" red="0.95286591200000004" green="0.85442208850000001" blue="0.080946707770000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -71,15 +71,18 @@
                         <action selector="about:" destination="-1" eventType="touchDragInside" id="q9D-Nh-k7e"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pbF-eW-aN0">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="soapbox.png" translatesAutoresizingMaskIntoConstraints="NO" id="pbF-eW-aN0">
                     <rect key="frame" x="40" y="35" width="240" height="237"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.099748883930000004" green="0.099748883930000004" blue="0.099748883930000004" alpha="1" colorSpace="calibratedRGB"/>
                 </imageView>
             </subviews>
-            <color key="backgroundColor" red="0.1803651148" green="0.1803651148" blue="0.1803651148" alpha="1" colorSpace="calibratedRGB"/>
-            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <color key="backgroundColor" red="0.12336575255102045" green="0.12336575255102045" blue="0.12336575255102045" alpha="1" colorSpace="calibratedRGB"/>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
+    <resources>
+        <image name="soapbox.png" width="261" height="263"/>
+    </resources>
 </document>

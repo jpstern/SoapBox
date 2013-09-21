@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0403EFEB17EDBF9E00696605 /* soapbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 0403EFEA17EDBF9E00696605 /* soapbox.png */; };
 		046C385F17ED802200460C13 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046C385E17ED802200460C13 /* MainMenuViewController.m */; };
 		046C386717ED8ADF00460C13 /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046C386617ED8ADF00460C13 /* MainMenuViewController.xib */; };
 		046C387117ED8FEE00460C13 /* DummyMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046C386917ED8FEE00460C13 /* DummyMapViewController.m */; };
@@ -98,6 +99,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0403EFEA17EDBF9E00696605 /* soapbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soapbox.png; sourceTree = "<group>"; };
 		046C385D17ED802200460C13 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		046C385E17ED802200460C13 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		046C386617ED8ADF00460C13 /* MainMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenuViewController.xib; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 				383FDA8917EDC16A00F80046 /* check.png */,
 				383FDA8A17EDC16A00F80046 /* check@2x.png */,
 				383FDA8417EDC15100F80046 /* camera-white.png */,
+				0403EFEA17EDBF9E00696605 /* soapbox.png */,
 				38A7942217ED721F0078F048 /* pin_blue_small.png */,
 			);
 			name = icons;
@@ -560,6 +563,7 @@
 				383FDA9317EDC17700F80046 /* account@2x.png in Resources */,
 				804DA68117ED54A800F86495 /* Images.xcassets in Resources */,
 				804DA67317ED54A800F86495 /* InfoPlist.strings in Resources */,
+				0403EFEB17EDBF9E00696605 /* soapbox.png in Resources */,
 				38A7942317ED721F0078F048 /* pin_blue_small.png in Resources */,
 				383FDA8E17EDC16A00F80046 /* check.png in Resources */,
 				046C386717ED8ADF00460C13 /* MainMenuViewController.xib in Resources */,
