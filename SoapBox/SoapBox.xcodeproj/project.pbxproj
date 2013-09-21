@@ -31,6 +31,9 @@
 		38FBF7B617ED68B9004695DA /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FBF7B517ED68B9004695DA /* libsqlite3.dylib */; };
 		5EB0A1A317ED70A2003E6935 /* AddIssueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB0A1A117ED70A2003E6935 /* AddIssueViewController.m */; };
 		5EB0A1A417ED70A2003E6935 /* AddIssueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EB0A1A217ED70A2003E6935 /* AddIssueViewController.xib */; };
+		5EB0A1A817ED7C4C003E6935 /* IssueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB0A1A617ED7C4C003E6935 /* IssueViewController.m */; };
+		5EB0A1A917ED7C4C003E6935 /* IssueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EB0A1A717ED7C4C003E6935 /* IssueViewController.xib */; };
+		5EB0A1AC17ED7CB6003E6935 /* Issue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB0A1AB17ED7CB6003E6935 /* Issue.m */; };
 		804DA66917ED54A800F86495 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 804DA66817ED54A800F86495 /* Foundation.framework */; };
 		804DA66B17ED54A800F86495 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 804DA66A17ED54A800F86495 /* CoreGraphics.framework */; };
 		804DA66D17ED54A800F86495 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 804DA66C17ED54A800F86495 /* UIKit.framework */; };
@@ -46,6 +49,14 @@
 		804DA69417ED54A800F86495 /* SoapBoxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 804DA69317ED54A800F86495 /* SoapBoxTests.m */; };
 		804DA6A217ED65BF00F86495 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 804DA6A017ED65BF00F86495 /* MasterViewController.m */; };
 		804DA6A317ED65BF00F86495 /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 804DA6A117ED65BF00F86495 /* MasterViewController.xib */; };
+		804DA6A717ED6B0300F86495 /* DummyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 804DA6A517ED6B0300F86495 /* DummyTableViewController.m */; };
+		804DA6A817ED6B0300F86495 /* DummyTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 804DA6A617ED6B0300F86495 /* DummyTableViewController.xib */; };
+		804DA6AC17ED6B6100F86495 /* DummyMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 804DA6AA17ED6B6100F86495 /* DummyMapViewController.m */; };
+		804DA6AD17ED6B6100F86495 /* DummyMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 804DA6AB17ED6B6100F86495 /* DummyMapViewController.xib */; };
+		804DA6B017ED7A9800F86495 /* UIViewController+Container.m in Sources */ = {isa = PBXBuildFile; fileRef = 804DA6AF17ED7A9800F86495 /* UIViewController+Container.m */; };
+		804DA6B317ED7EFC00F86495 /* UIViewController+MasterContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 804DA6B217ED7EFC00F86495 /* UIViewController+MasterContainer.m */; };
+		804DA6B717ED811B00F86495 /* DummyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 804DA6B517ED811B00F86495 /* DummyViewController.m */; };
+		804DA6B817ED811B00F86495 /* DummyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 804DA6B617ED811B00F86495 /* DummyViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +99,11 @@
 		5EB0A1A017ED70A2003E6935 /* AddIssueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddIssueViewController.h; sourceTree = "<group>"; };
 		5EB0A1A117ED70A2003E6935 /* AddIssueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddIssueViewController.m; sourceTree = "<group>"; };
 		5EB0A1A217ED70A2003E6935 /* AddIssueViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddIssueViewController.xib; sourceTree = "<group>"; };
+		5EB0A1A517ED7C4C003E6935 /* IssueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssueViewController.h; sourceTree = "<group>"; };
+		5EB0A1A617ED7C4C003E6935 /* IssueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssueViewController.m; sourceTree = "<group>"; };
+		5EB0A1A717ED7C4C003E6935 /* IssueViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IssueViewController.xib; sourceTree = "<group>"; };
+		5EB0A1AA17ED7CB6003E6935 /* Issue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Issue.h; sourceTree = "<group>"; };
+		5EB0A1AB17ED7CB6003E6935 /* Issue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Issue.m; sourceTree = "<group>"; };
 		804DA66517ED54A800F86495 /* SoapBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoapBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		804DA66817ED54A800F86495 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		804DA66A17ED54A800F86495 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -109,6 +125,20 @@
 		804DA69F17ED65BF00F86495 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		804DA6A017ED65BF00F86495 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		804DA6A117ED65BF00F86495 /* MasterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MasterViewController.xib; sourceTree = "<group>"; };
+		804DA6A417ED6B0300F86495 /* DummyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DummyTableViewController.h; sourceTree = "<group>"; };
+		804DA6A517ED6B0300F86495 /* DummyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DummyTableViewController.m; sourceTree = "<group>"; };
+		804DA6A617ED6B0300F86495 /* DummyTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DummyTableViewController.xib; sourceTree = "<group>"; };
+		804DA6A917ED6B6100F86495 /* DummyMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DummyMapViewController.h; sourceTree = "<group>"; };
+		804DA6AA17ED6B6100F86495 /* DummyMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DummyMapViewController.m; sourceTree = "<group>"; };
+		804DA6AB17ED6B6100F86495 /* DummyMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DummyMapViewController.xib; sourceTree = "<group>"; };
+		804DA6AE17ED7A9700F86495 /* UIViewController+Container.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Container.h"; sourceTree = "<group>"; };
+		804DA6AF17ED7A9800F86495 /* UIViewController+Container.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Container.m"; sourceTree = "<group>"; };
+		804DA6B117ED7EFC00F86495 /* UIViewController+MasterContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MasterContainer.h"; sourceTree = "<group>"; };
+		804DA6B217ED7EFC00F86495 /* UIViewController+MasterContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MasterContainer.m"; sourceTree = "<group>"; };
+		804DA6B417ED811B00F86495 /* DummyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DummyViewController.h; sourceTree = "<group>"; };
+		804DA6B517ED811B00F86495 /* DummyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DummyViewController.m; sourceTree = "<group>"; };
+		804DA6B617ED811B00F86495 /* DummyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DummyViewController.xib; sourceTree = "<group>"; };
+		804DA6B917ED886900F86495 /* FacebookSDK */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = FacebookSDK; path = FacebookSDK.framework/Versions/A/FacebookSDK; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38FBF79B17ED5A2B004695DA /* FacebookSDK.framework in Frameworks */,
 				38FBF7B217ED67A9004695DA /* Social.framework in Frameworks */,
 				38FBF7B617ED68B9004695DA /* libsqlite3.dylib in Frameworks */,
 				38FBF7B417ED67B7004695DA /* Accounts.framework in Frameworks */,
@@ -130,7 +161,6 @@
 				804DA66B17ED54A800F86495 /* CoreGraphics.framework in Frameworks */,
 				38FBF7A017ED644E004695DA /* CFNetwork.framework in Frameworks */,
 				38FBF79E17ED6446004695DA /* AudioToolbox.framework in Frameworks */,
-				38FBF79B17ED5A2B004695DA /* FacebookSDK.framework in Frameworks */,
 				804DA66D17ED54A800F86495 /* UIKit.framework in Frameworks */,
 				38FBF79917ED56BD004695DA /* Parse.framework in Frameworks */,
 				804DA66917ED54A800F86495 /* Foundation.framework in Frameworks */,
@@ -218,6 +248,7 @@
 		804DA66717ED54A800F86495 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				804DA6B917ED886900F86495 /* FacebookSDK */,
 				38FBF7B517ED68B9004695DA /* libsqlite3.dylib */,
 				38FBF7B317ED67B7004695DA /* Accounts.framework */,
 				38FBF7B117ED67A9004695DA /* Social.framework */,
@@ -244,8 +275,12 @@
 		804DA66E17ED54A800F86495 /* SoapBox */ = {
 			isa = PBXGroup;
 			children = (
+				5EB0A1A517ED7C4C003E6935 /* IssueViewController.h */,
+				5EB0A1A617ED7C4C003E6935 /* IssueViewController.m */,
 				5EB0A1A017ED70A2003E6935 /* AddIssueViewController.h */,
 				5EB0A1A117ED70A2003E6935 /* AddIssueViewController.m */,
+				5EB0A1AA17ED7CB6003E6935 /* Issue.h */,
+				5EB0A1AB17ED7CB6003E6935 /* Issue.m */,
 				804DA69F17ED65BF00F86495 /* MasterViewController.h */,
 				804DA6A017ED65BF00F86495 /* MasterViewController.m */,
 				804DA67717ED54A800F86495 /* AppDelegate.h */,
@@ -371,6 +406,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				804DA6A817ED6B0300F86495 /* DummyTableViewController.xib in Resources */,
+				5EB0A1A917ED7C4C003E6935 /* IssueViewController.xib in Resources */,
 				804DA6A317ED65BF00F86495 /* MasterViewController.xib in Resources */,
 				804DA68117ED54A800F86495 /* Images.xcassets in Resources */,
 				804DA67317ED54A800F86495 /* InfoPlist.strings in Resources */,
@@ -397,8 +434,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				804DA6AC17ED6B6100F86495 /* DummyMapViewController.m in Sources */,
+				804DA6B017ED7A9800F86495 /* UIViewController+Container.m in Sources */,
+				5EB0A1AC17ED7CB6003E6935 /* Issue.m in Sources */,
+				5EB0A1A817ED7C4C003E6935 /* IssueViewController.m in Sources */,
 				804DA6A217ED65BF00F86495 /* MasterViewController.m in Sources */,
 				804DA67F17ED54A800F86495 /* ViewController.m in Sources */,
+				804DA6B317ED7EFC00F86495 /* UIViewController+MasterContainer.m in Sources */,
+				804DA6B717ED811B00F86495 /* DummyViewController.m in Sources */,
+				804DA6A717ED6B0300F86495 /* DummyTableViewController.m in Sources */,
 				38A7942117ED70EB0078F048 /* LocationGetter.m in Sources */,
 				804DA67917ED54A800F86495 /* AppDelegate.m in Sources */,
 				5EB0A1A317ED70A2003E6935 /* AddIssueViewController.m in Sources */,
@@ -521,6 +565,7 @@
 		804DA69817ED54A800F86495 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -528,10 +573,20 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/Jack/Documents/Projects/SoapBox/**",
+					/Users/JoshStern/MHacks2013/SoapBox/SoapBox,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SoapBox/SoapBox-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Applications/Xcode\\ 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
+				);
 				INFOPLIST_FILE = "SoapBox/SoapBox-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/JoshStern/MHacks2013/SoapBox/SoapBox/FacebookSDK.framework/Versions/A,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -541,6 +596,7 @@
 		804DA69917ED54A800F86495 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -548,10 +604,20 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/Jack/Documents/Projects/SoapBox/**",
+					/Users/JoshStern/MHacks2013/SoapBox/SoapBox,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SoapBox/SoapBox-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Applications/Xcode\\ 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
+				);
 				INFOPLIST_FILE = "SoapBox/SoapBox-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/JoshStern/MHacks2013/SoapBox/SoapBox/FacebookSDK.framework/Versions/A,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;

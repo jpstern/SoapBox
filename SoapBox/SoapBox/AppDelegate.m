@@ -8,12 +8,16 @@
 
 #import "AppDelegate.h"
 
-#import "ViewController.h"
+#import "MasterViewController.h"
+#import "DummyTableViewController.h"
+#import "DummyMapViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     //parse stuff
     [Parse setApplicationId:@"O2JrkM3f26Qa3otfbrtDHTnYlPDLptOvN76HAgEn"
@@ -23,11 +27,24 @@
     //FB STUFF
     [PFFacebookUtils initializeFacebook];
     
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    MasterViewController *master = [[MasterViewController alloc] init];
+    [self.window setRootViewController:master];
     
-    self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
-    self.window.rootViewController = navController;
+    DummyTableViewController *dummyTable = [[DummyTableViewController alloc] init];
+    UINavigationController *dummyTableNav = [[UINavigationController alloc] initWithRootViewController:dummyTable];
+    dummyTableNav.navigationBar.translucent = NO;
+    
+    master.parentController = dummyTableNav;
+    
+    DummyMapViewController *dummyMap = [[DummyMapViewController alloc] init];
+    UINavigationController *dummyMapNav = [[UINavigationController alloc] initWithRootViewController:dummyMap];
+    dummyMapNav.navigationBar.translucent = NO;
+
+    master.childController = dummyMapNav;
+    
+    
+    [[UINavigationBar appearance] setBarTintColor:[UIColor lightGrayColor]];
+    
     [self.window makeKeyAndVisible];
     
     // Override point for customization after application launch.
