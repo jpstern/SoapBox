@@ -55,7 +55,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
   
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Drop" style:UIBarButtonItemStylePlain target:self action:@selector(openContainer)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Menu" style:UIBarButtonItemStylePlain target:self action:@selector(openContainer)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showIssueController)];
   
   // building title for the nav bar
@@ -68,9 +68,17 @@
   [title setFont:[UIFont fontWithName:@"SecretCode" size:13]];
   [self.navigationItem setTitleView:title];
   self.title = @"SOAPBOX BLAH BLAH";
+  [[[self navigationController] navigationItem] setTitle:@"soapbox lower"];
   
   // Sets up the frames of the 4 buttons and the logo.
   // borders of buttons
+  if( !IS_IPHONE_5 ){
+    NSLog(@"Youre running an iPhone 4/4s");
+    [myIssues setFrame:CGRectMake(0.0, DEVICEHEIGHT-200, DEVICEWIDTH/2, 100)];
+    [friendsIssues setFrame:CGRectMake(DEVICEWIDTH/2, DEVICEHEIGHT-200, DEVICEWIDTH/2, 100)];
+    [settings setFrame:CGRectMake(0.0, DEVICEHEIGHT-100, DEVICEWIDTH/2, 100)];
+    [about setFrame:CGRectMake(DEVICEWIDTH/2, DEVICEHEIGHT-100, DEVICEWIDTH/2, 100)];
+  }
   [myIssues.layer setBorderWidth:1], [myIssues.layer setBorderColor:[UIColor blackColor].CGColor];
   [friendsIssues.layer setBorderWidth:1], [friendsIssues.layer setBorderColor:[UIColor blackColor].CGColor];
   [settings.layer setBorderWidth:1], [settings.layer setBorderColor:[UIColor blackColor].CGColor];

@@ -35,18 +35,17 @@
     MainMenuViewController *menu = [[MainMenuViewController alloc] init];
     UINavigationController *dummyTableNav = [[UINavigationController alloc] initWithRootViewController:menu];
     dummyTableNav.navigationBar.translucent = NO;
-    
     master.parentController = dummyTableNav;
   
     MapViewController *map = [[MapViewController alloc] init];
     
     UINavigationController *mapNav = [[UINavigationController alloc] initWithRootViewController:map];
     mapNav.navigationBar.translucent = NO;
-
     master.childController = mapNav;
   
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:19.0/255 green:19.0/255 blue:19.0/255 alpha:1.0]];
-
+  dummyTableNav.navigationItem.title = @"JACK";
+  mapNav.navigationItem.title = @"JACK22";
   
     [self.window makeKeyAndVisible];
     
