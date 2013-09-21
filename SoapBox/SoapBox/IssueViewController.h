@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "Issue.h"
 #import <MapKit/MapKit.h>
+#import "AddEmailViewController.h"
 
-@interface IssueViewController : UIViewController
+@interface IssueViewController : UIViewController <AddEmailDelegate>
 
 @property (nonatomic, strong) Issue *issue;
 @property (weak, nonatomic) IBOutlet UILabel *issueTitle;

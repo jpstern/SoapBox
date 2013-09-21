@@ -23,6 +23,28 @@
     return self;
 }
 
+- (void)finishedWithEmail:(NSString *)email body:(NSString *)body{
+    [self dismissViewControllerAnimated:YES completion:nil];
+    NSArray *addresses = [email componentsSeparatedByString:@","];
+    
+    [PFCloud callFunctionInBackground:@"email" withParameters:@{@"address": [NSJSONSerialization dataWithJSONObject:addresses options: error:nil], @"subject": @"Hello World", @"text": body} block:^(id object, NSError *error) {
+        NSLog(@"Object %@, Error, %@", object, error);
+    }];
+
+}
+
+- (void)canceled {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)addEmail:(UIButton *)sender {
+    AddEmailViewController *emailController = [[AddEmailViewController alloc] initWithNibName:@"AddEmailViewController" bundle:nil];
+    emailController.delegate = self;
+    [self presentViewController:emailController animated:YES completion:^{
+        NSLog(@"SHowing Email View");
+    }];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
