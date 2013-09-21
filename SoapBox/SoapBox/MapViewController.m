@@ -8,6 +8,7 @@
 
 #import "MapViewController.h"
 #import "AddNewIssueViewController.h"
+#import "ViewController.h"
 
 @interface MapViewController ()
 
@@ -38,7 +39,19 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self.navigationController setNavigationBarHidden:YES];
-  
+    if (!([PFUser currentUser] && // Check if a user is cached
+        [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]])) // Check if user is linked to Facebook
+    {
+        ViewController *loginVC = [[ViewController alloc] init];
+        UINavigationController *loginNav = [[UINavigationController alloc] initWithRootViewController:loginVC];
+        
+        [self presentViewController:loginNav animated:YES completion:^{
+            
+        }];
+        
+    }
+    
+    
     /* once we need it
      
      UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh)];

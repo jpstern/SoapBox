@@ -204,14 +204,7 @@
 
 - (void)createItem
 {
-    NSLog(@"\n\n\n titelview.text = |%i| \n\n\n", titleTextView.text == nil);
-    if (!addPhotoBtn.imageView.image) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                        message:@"You need a picture."
-                                                       delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-        [alert show];
-        return;
-    }
+
     //hacky fix lets find a better way
     if(titleTextView.text.length < 2 || [titleTextView.text isEqualToString:@"Title..."]){
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
@@ -231,14 +224,18 @@
         
         PFGeoPoint *location = [PFGeoPoint geoPointWithLatitude:lcVC.coord.latitude longitude:lcVC.coord.longitude];
         [issue setObject:location forKey:@"Location"];
-        [issue setObject:[PFUser currentUser] forKey:@"User"];
+        PFRelation *relation = [issue relationforKey:@"User"];
+        PFUser *user = [PFUser currentUser];
+        if(user){
+            [relation addObject:user];
+        }
         [issue setObject:titleTextView.text forKey:@"Title"];
         [issue setObject:descriptionTextView.text forKey:@"Description"];
         [issue saveInBackgroundWithBlock:^(BOOL success, NSError *error) {
             if (success) {
                 [self dismissViewControllerAnimated:YES completion:nil];
             } else {
-                NSLog(@"%@", [error localizedDescription]);
+                NSLog(@"\n\n%@\n\n", [error localizedDescription]);
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
                                                                 message:@"Something went wrong"
                                                                delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
@@ -367,12 +364,12 @@
     if (textView.tag == 1) {
         if([textView.text isEqualToString:@""]){
             textView.text = @"Title...";
-            textView.textColor = [UIColor blackColor];
+            textView.textColor = [UIColor lightGrayColor];
         }
     } else {
         if([textView.text isEqualToString:@""]){
             textView.text = @"Description...";
-            textView.textColor = [UIColor blackColor];
+            textView.textColor = [UIColor lightGrayColor];
         }
     }
 }
@@ -400,14 +397,14 @@
     }
     
     if (textView.tag == 1) {
-        if (textView.text.length < 30) {
+        if (textView.text.length <= 30) {
             titleCounter.text = [NSString stringWithFormat:@"%i", 30 - textView.text.length];
             return true;
         } else {
             return false;
         }
     } else {
-        if (textView.text.length < 130) {
+        if (textView.text.length <= 130) {
             descriptionCounter.text = [NSString stringWithFormat:@"%i", 130 - textView.text.length];
             return true;
         } else {

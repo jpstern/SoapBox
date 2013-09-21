@@ -26,6 +26,7 @@
         // Custom initialization
         NSLog(@"inintilizing" );
         mapImage = NULL;
+        _coord = CLLocationCoordinate2DMake([[LocationGetter sharedInstance] getLatitude],  [[LocationGetter sharedInstance] getLongitude]);
     }
     return self;
 }
@@ -39,7 +40,6 @@
     
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"Drag and Drop";
-    _coord = CLLocationCoordinate2DMake([[LocationGetter sharedInstance] getLatitude], [[LocationGetter sharedInstance] getLongitude]);
     
     UIButton *checkBtn = [[UIButton alloc] initWithFrame:BARBUTTONFRAME];
     UIImage *check = [UIImage imageNamed:@"check@2x.png"];

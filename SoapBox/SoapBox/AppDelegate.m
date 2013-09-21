@@ -12,8 +12,8 @@
 #import "DummyTableViewController.h"
 #import "DummyMapViewController.h"
 #import "MapViewController.h"
-
 #import "MainMenuViewController.h"
+#import "ViewController.h"
 
 @implementation AppDelegate
 
@@ -40,12 +40,12 @@
     
     master.parentController = dummyTableNav;
   
-  MapViewController *map = [[MapViewController alloc] init];
-//    DummyMapViewController *dummyMap = [[DummyMapViewController alloc] init];
-    UINavigationController *dummyMapNav = [[UINavigationController alloc] initWithRootViewController:map];
-    dummyMapNav.navigationBar.translucent = NO;
+    MapViewController *map = [[MapViewController alloc] init];
+    
+    UINavigationController *mapNav = [[UINavigationController alloc] initWithRootViewController:map];
+    mapNav.navigationBar.translucent = NO;
 
-    master.childController = dummyMapNav;
+    master.childController = mapNav;
     
     
     [[UINavigationBar appearance] setBarTintColor:[UIColor darkGrayColor]];
