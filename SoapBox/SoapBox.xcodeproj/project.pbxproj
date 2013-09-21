@@ -780,8 +780,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/gregoryhurray/Desktop/repo-main/SoapBox/SoapBox",
-					"/Users/Jack/Documents/Projects/SoapBox/**",
+					"/Users/charleyhutchison/SoapBox/SoapBox/**",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SoapBox/SoapBox-Prefix.pch";
@@ -808,8 +807,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/gregoryhurray/Desktop/repo-main/SoapBox/SoapBox",
-					"/Users/Jack/Documents/Projects/SoapBox/**",
+					"/Users/charleyhutchison/SoapBox/SoapBox/**",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SoapBox/SoapBox-Prefix.pch";
