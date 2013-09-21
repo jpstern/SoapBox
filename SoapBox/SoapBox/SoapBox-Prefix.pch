@@ -18,4 +18,5 @@
     #import <FacebookSDK/FacebookSDK.h>
     #import <Parse/Parse.h>
     #import "LocationGetter.h"
+    #import "Constant.h"
 #endif

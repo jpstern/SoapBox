@@ -6,9 +6,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddIssueViewController">
             <connections>
-                <outlet property="descriptionTextField" destination="Kbb-RK-RkH" id="0Hk-CM-qeT"/>
+                <outlet property="descriptionTextField" destination="Kbb-RK-RkH" id="sfL-OC-vhB"/>
                 <outlet property="textField" destination="Hr5-h6-Xuc" id="6wI-lM-1Zj"/>
-                <outlet property="titleTextField" destination="Hr5-h6-Xuc" id="pD4-cu-qVn"/>
+                <outlet property="titleTextField" destination="Hr5-h6-Xuc" id="e1M-aj-jao"/>
                 <outlet property="view" destination="1" id="C7w-hB-rje"/>
             </connections>
         </placeholder>
@@ -24,6 +24,7 @@
                     <textInputTraits key="textInputTraits" returnKeyType="done"/>
                     <connections>
                         <action selector="textFieldEdited:" destination="-1" eventType="valueChanged" id="C04-3R-xKP"/>
+                        <outlet property="delegate" destination="-1" id="U1v-A1-qeM"/>
                     </connections>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bV-TC-vMD">

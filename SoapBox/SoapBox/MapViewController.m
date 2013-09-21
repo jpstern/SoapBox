@@ -7,9 +7,7 @@
 //
 
 #import "MapViewController.h"
-#import "AddIssueViewController.h"
-
-#define METERS_PER_MILE 1609.344
+#import "AddNewIssueViewController.h"
 
 @interface MapViewController ()
 
@@ -53,7 +51,7 @@
 }
 
 -(IBAction)loadAddScreen:(id)sender{
-    AddIssueViewController *aiVC = [[AddIssueViewController alloc] initWithNibName:@"AddIssueViewController" bundle:nil];
+    AddNewIssueViewController *aiVC = [[AddNewIssueViewController alloc] initWithNibName:@"AddNewIssueViewController" bundle:nil];
     UINavigationController *tmpNC = [[UINavigationController alloc] initWithRootViewController:aiVC];
     [self presentViewController:tmpNC animated:YES completion:nil];
 }

@@ -13,9 +13,13 @@
 		046C387217ED8FEE00460C13 /* DummyMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046C386A17ED8FEE00460C13 /* DummyMapViewController.xib */; };
 		046C387417ED8FEE00460C13 /* DummyTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046C386D17ED8FEE00460C13 /* DummyTableViewController.xib */; };
 		046C387617ED8FEE00460C13 /* DummyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046C387017ED8FEE00460C13 /* DummyViewController.xib */; };
-		382C651917ED9CBC006BBCE2 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 804DA6A017ED65BF00F86495 /* MasterViewController.m */; };
 		046C387F17ED977900460C13 /* IssuesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046C387D17ED977900460C13 /* IssuesListViewController.m */; };
 		046C388017ED977900460C13 /* IssuesListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046C387E17ED977900460C13 /* IssuesListViewController.xib */; };
+		382C651917ED9CBC006BBCE2 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 804DA6A017ED65BF00F86495 /* MasterViewController.m */; };
+		382C655817EDAA7F006BBCE2 /* AddNewIssueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 382C655617EDAA7E006BBCE2 /* AddNewIssueViewController.m */; };
+		382C655917EDAA7F006BBCE2 /* AddNewIssueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 382C655717EDAA7E006BBCE2 /* AddNewIssueViewController.xib */; };
+		382C655D17EDAD0C006BBCE2 /* LocChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 382C655B17EDAD0C006BBCE2 /* LocChooseViewController.m */; };
+		382C655E17EDAD0C006BBCE2 /* LocChooseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 382C655C17EDAD0C006BBCE2 /* LocChooseViewController.xib */; };
 		38A7941A17ED6D1E0078F048 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A7941817ED6D1E0078F048 /* MapViewController.m */; };
 		38A7941B17ED6D1E0078F048 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A7941917ED6D1E0078F048 /* MapViewController.xib */; };
 		38A7941D17ED70410078F048 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A7941C17ED70410078F048 /* ViewController.xib */; };
@@ -89,6 +93,13 @@
 		046C387C17ED977900460C13 /* IssuesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssuesListViewController.h; sourceTree = "<group>"; };
 		046C387D17ED977900460C13 /* IssuesListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssuesListViewController.m; sourceTree = "<group>"; };
 		046C387E17ED977900460C13 /* IssuesListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IssuesListViewController.xib; sourceTree = "<group>"; };
+		382C655517EDAA7E006BBCE2 /* AddNewIssueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNewIssueViewController.h; sourceTree = "<group>"; };
+		382C655617EDAA7E006BBCE2 /* AddNewIssueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNewIssueViewController.m; sourceTree = "<group>"; };
+		382C655717EDAA7E006BBCE2 /* AddNewIssueViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddNewIssueViewController.xib; sourceTree = "<group>"; };
+		382C655A17EDAD0C006BBCE2 /* LocChooseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocChooseViewController.h; sourceTree = "<group>"; };
+		382C655B17EDAD0C006BBCE2 /* LocChooseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocChooseViewController.m; sourceTree = "<group>"; };
+		382C655C17EDAD0C006BBCE2 /* LocChooseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocChooseViewController.xib; sourceTree = "<group>"; };
+		382C655F17EDAE11006BBCE2 /* Constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		38A7941717ED6D1E0078F048 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		38A7941817ED6D1E0078F048 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		38A7941917ED6D1E0078F048 /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
@@ -237,7 +248,6 @@
 				804DA6A117ED65BF00F86495 /* MasterViewController.xib */,
 				38A7941C17ED70410078F048 /* ViewController.xib */,
 				38A7941917ED6D1E0078F048 /* MapViewController.xib */,
-				5EB0A1A217ED70A2003E6935 /* AddIssueViewController.xib */,
 			);
 			name = XIBS;
 			sourceTree = "<group>";
@@ -329,6 +339,7 @@
 				5EB0A1A617ED7C4C003E6935 /* IssueViewController.m */,
 				5EB0A1A017ED70A2003E6935 /* AddIssueViewController.h */,
 				5EB0A1A117ED70A2003E6935 /* AddIssueViewController.m */,
+				5EB0A1A217ED70A2003E6935 /* AddIssueViewController.xib */,
 				5EB0A1AA17ED7CB6003E6935 /* Issue.h */,
 				5EB0A1AB17ED7CB6003E6935 /* Issue.m */,
 				804DA69F17ED65BF00F86495 /* MasterViewController.h */,
@@ -347,6 +358,12 @@
 				38A7942417ED745F0078F048 /* View Controllers */,
 				38FBF79C17ED6285004695DA /* XIBS */,
 				804DA66F17ED54A800F86495 /* Supporting Files */,
+				382C655517EDAA7E006BBCE2 /* AddNewIssueViewController.h */,
+				382C655617EDAA7E006BBCE2 /* AddNewIssueViewController.m */,
+				382C655717EDAA7E006BBCE2 /* AddNewIssueViewController.xib */,
+				382C655A17EDAD0C006BBCE2 /* LocChooseViewController.h */,
+				382C655B17EDAD0C006BBCE2 /* LocChooseViewController.m */,
+				382C655C17EDAD0C006BBCE2 /* LocChooseViewController.xib */,
 			);
 			path = SoapBox;
 			sourceTree = "<group>";
@@ -358,6 +375,7 @@
 				804DA67117ED54A800F86495 /* InfoPlist.strings */,
 				804DA67417ED54A800F86495 /* main.m */,
 				804DA67617ED54A800F86495 /* SoapBox-Prefix.pch */,
+				382C655F17EDAE11006BBCE2 /* Constant.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -465,6 +483,7 @@
 				5EECC1E817ED8F5600BDDF4E /* DummyTableViewController.xib in Resources */,
 				5EECC1EB17ED8F5600BDDF4E /* InfoPlist.strings in Resources */,
 				804DA6A317ED65BF00F86495 /* MasterViewController.xib in Resources */,
+				382C655E17EDAD0C006BBCE2 /* LocChooseViewController.xib in Resources */,
 				046C387617ED8FEE00460C13 /* DummyViewController.xib in Resources */,
 				046C387417ED8FEE00460C13 /* DummyTableViewController.xib in Resources */,
 				804DA68117ED54A800F86495 /* Images.xcassets in Resources */,
@@ -472,6 +491,7 @@
 				38A7942317ED721F0078F048 /* pin_blue_small.png in Resources */,
 				046C386717ED8ADF00460C13 /* MainMenuViewController.xib in Resources */,
 				38A7941D17ED70410078F048 /* ViewController.xib in Resources */,
+				382C655917EDAA7F006BBCE2 /* AddNewIssueViewController.xib in Resources */,
 				046C388017ED977900460C13 /* IssuesListViewController.xib in Resources */,
 				5EB0A1A417ED70A2003E6935 /* AddIssueViewController.xib in Resources */,
 				38A7941B17ED6D1E0078F048 /* MapViewController.xib in Resources */,
@@ -501,6 +521,7 @@
 				5EECC1EE17ED8F5600BDDF4E /* UIViewController+Container.m in Sources */,
 				5EECC1EF17ED8F5600BDDF4E /* UIViewController+MasterContainer.m in Sources */,
 				5EECC1E917ED8F5600BDDF4E /* DummyViewController.m in Sources */,
+				382C655D17EDAD0C006BBCE2 /* LocChooseViewController.m in Sources */,
 				38A7942117ED70EB0078F048 /* LocationGetter.m in Sources */,
 				804DA67917ED54A800F86495 /* AppDelegate.m in Sources */,
 				5EB0A1A317ED70A2003E6935 /* AddIssueViewController.m in Sources */,
@@ -509,6 +530,7 @@
 				046C385F17ED802200460C13 /* MainMenuViewController.m in Sources */,
 				804DA67517ED54A800F86495 /* main.m in Sources */,
 				38A7941A17ED6D1E0078F048 /* MapViewController.m in Sources */,
+				382C655817EDAA7F006BBCE2 /* AddNewIssueViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
