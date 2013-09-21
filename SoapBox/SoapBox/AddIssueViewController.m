@@ -24,6 +24,8 @@
     }
     return self;
 }
+- (IBAction)saveIssue:(UIButton *)sender {
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
