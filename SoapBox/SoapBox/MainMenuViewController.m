@@ -82,6 +82,7 @@
     IssueListViewController *issueController = [[IssueListViewController alloc] initWithNibName:@"IssueListViewController" bundle:[NSBundle mainBundle]];
     Issue *issue = [[Issue alloc] init];
     issue.title = @"Test";
+    issue.location = CLLocationCoordinate2DMake(32, -90);
     issueController.issues = @[issue];
     issueController.title = @"My Issues";
     [self.navigationController pushViewController:issueController animated:YES];

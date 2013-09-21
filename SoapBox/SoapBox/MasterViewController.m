@@ -8,6 +8,9 @@
 
 #import "MasterViewController.h"
 
+#define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
+
+
 @interface MasterViewController ()
 
 @end
@@ -105,8 +108,12 @@
     
         CGRect rect = self.childView.frame;
         
+        if (IS_IPHONE_5) {
         rect.origin.y = self.view.frame.size.height - 60;
-        
+        }
+        else {
+            rect.origin.y = self.view.frame.size.height;
+        }
         self.childView.frame = rect;
         
     } completion:^(BOOL finished) {

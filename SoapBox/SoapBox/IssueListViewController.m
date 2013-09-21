@@ -26,18 +26,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if ([self.title isEqualToString:@"My Issues"]) {
-    PFQuery *query = [[PFQuery alloc] initWithClassName:@"Issue"];
-    [query whereKey:@"user"  equalTo:[PFUser currentUser]];
-     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            NSLog(@"Got Objects: %@", objects);
-        }
-        else {
-            NSLog(@"Error: %@", error);
-        }
-    }];
-     }
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -124,7 +112,7 @@
 }
 */
 
-/*
+
 #pragma mark - Table view delegate
 
 // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
@@ -132,14 +120,14 @@
 {
     // Navigation logic may go here, for example:
     // Create the next view controller.
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+    IssueViewController *detailViewController = [[IssueViewController alloc] initWithNibName:@"IssueViewController" bundle:nil];
 
     // Pass the selected object to the new view controller.
-    
+    detailViewController.issue = [self.issues objectAtIndex:indexPath.row];
     // Push the view controller.
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
  
- */
+ 
 
 @end

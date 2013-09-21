@@ -63,6 +63,9 @@
 		5E79FB6C17EDD6CD00430435 /* IssueListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79FB6A17EDD6CD00430435 /* IssueListViewController.m */; };
 		5E79FB6D17EDD6CD00430435 /* IssueListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E79FB6B17EDD6CD00430435 /* IssueListViewController.xib */; };
 		5E79FB6E17EDD72A00430435 /* Issue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB0A1AB17ED7CB6003E6935 /* Issue.m */; };
+		5E79FB6F17EDFAFE00430435 /* IssueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB0A1A617ED7C4C003E6935 /* IssueViewController.m */; };
+		5E79FB7317EE048100430435 /* AddEmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79FB7117EE048100430435 /* AddEmailViewController.m */; };
+		5E79FB7417EE048100430435 /* AddEmailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E79FB7217EE048100430435 /* AddEmailViewController.xib */; };
 		5EB0A1A317ED70A2003E6935 /* AddIssueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB0A1A117ED70A2003E6935 /* AddIssueViewController.m */; };
 		5EB0A1A417ED70A2003E6935 /* AddIssueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EB0A1A217ED70A2003E6935 /* AddIssueViewController.xib */; };
 		5EECC1E617ED8F5600BDDF4E /* DummyMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EECC1D517ED8F5600BDDF4E /* DummyMapViewController.xib */; };
@@ -167,6 +170,9 @@
 		5E79FB6917EDD6CD00430435 /* IssueListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssueListViewController.h; sourceTree = "<group>"; };
 		5E79FB6A17EDD6CD00430435 /* IssueListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssueListViewController.m; sourceTree = "<group>"; };
 		5E79FB6B17EDD6CD00430435 /* IssueListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IssueListViewController.xib; sourceTree = "<group>"; };
+		5E79FB7017EE048100430435 /* AddEmailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEmailViewController.h; sourceTree = "<group>"; };
+		5E79FB7117EE048100430435 /* AddEmailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEmailViewController.m; sourceTree = "<group>"; };
+		5E79FB7217EE048100430435 /* AddEmailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddEmailViewController.xib; sourceTree = "<group>"; };
 		5EB0A1A017ED70A2003E6935 /* AddIssueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddIssueViewController.h; sourceTree = "<group>"; };
 		5EB0A1A117ED70A2003E6935 /* AddIssueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddIssueViewController.m; sourceTree = "<group>"; };
 		5EB0A1A217ED70A2003E6935 /* AddIssueViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddIssueViewController.xib; sourceTree = "<group>"; };
@@ -381,6 +387,9 @@
 			isa = PBXGroup;
 			children = (
 				5EECC1E017ED8F5600BDDF4E /* IssueViewController.xib */,
+				5E79FB7017EE048100430435 /* AddEmailViewController.h */,
+				5E79FB7117EE048100430435 /* AddEmailViewController.m */,
+				5E79FB7217EE048100430435 /* AddEmailViewController.xib */,
 				5EECC1E117ED8F5600BDDF4E /* UIViewController+Container.h */,
 				5EECC1D417ED8F5600BDDF4E /* DummyMapViewController.m */,
 				5EECC1E217ED8F5600BDDF4E /* UIViewController+Container.m */,
@@ -585,6 +594,7 @@
 				383FDAA717EDC1AC00F80046 /* tag-flat.png in Resources */,
 				383FDA9F17EDC1A400F80046 /* menu@2x.png in Resources */,
 				046C387217ED8FEE00460C13 /* DummyMapViewController.xib in Resources */,
+				5E79FB7417EE048100430435 /* AddEmailViewController.xib in Resources */,
 				804DA6BC17ED8AA100F86495 /* MainMenuViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -605,6 +615,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				38D51E9B17EDFEF300B7563C /* ViewController.m in Sources */,
+				5E79FB6F17EDFAFE00430435 /* IssueViewController.m in Sources */,
+				5E79FB7317EE048100430435 /* AddEmailViewController.m in Sources */,
 				5E79FB6E17EDD72A00430435 /* Issue.m in Sources */,
 				382C651917ED9CBC006BBCE2 /* MasterViewController.m in Sources */,
 				5EECC1E717ED8F5600BDDF4E /* DummyTableViewController.m in Sources */,
@@ -753,6 +765,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/gregoryhurray/Desktop/repo-main/SoapBox/SoapBox",
+					/Users/charleyhutchison/SoapBox/SoapBox,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SoapBox/SoapBox-Prefix.pch";
@@ -780,6 +793,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/gregoryhurray/Desktop/repo-main/SoapBox/SoapBox",
+					/Users/charleyhutchison/SoapBox/SoapBox,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SoapBox/SoapBox-Prefix.pch";

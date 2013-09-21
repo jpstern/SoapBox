@@ -29,7 +29,6 @@
     
     //FB STUFF
     [PFFacebookUtils initializeFacebook];
-    
     MasterViewController *master = [[MasterViewController alloc] init];
     [self.window setRootViewController:master];
     

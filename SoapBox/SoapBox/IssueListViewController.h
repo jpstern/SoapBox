@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Issue.h"
+#import "IssueViewController.h"
 
 @interface IssueListViewController : UITableViewController
 
