@@ -36,6 +36,10 @@
 		38FBF7B417ED67B7004695DA /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FBF7B317ED67B7004695DA /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		38FBF7B617ED68B9004695DA /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FBF7B517ED68B9004695DA /* libsqlite3.dylib */; };
 		5E92BFE717EDC97400D08F13 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E92BFE617EDC97400D08F13 /* Reveal.framework */; };
+		5E92BFEE17EDCE0200D08F13 /* IssueListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E92BFEC17EDCE0200D08F13 /* IssueListViewController.m */; };
+		5E92BFEF17EDCE0200D08F13 /* IssueListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E92BFED17EDCE0200D08F13 /* IssueListViewController.xib */; };
+		5E92BFF017EDD05300D08F13 /* Issue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB0A1AB17ED7CB6003E6935 /* Issue.m */; };
+		5E92BFF217EDD09D00D08F13 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E92BFF117EDD09D00D08F13 /* MapKit.framework */; };
 		5EB0A1A317ED70A2003E6935 /* AddIssueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB0A1A117ED70A2003E6935 /* AddIssueViewController.m */; };
 		5EB0A1A417ED70A2003E6935 /* AddIssueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EB0A1A217ED70A2003E6935 /* AddIssueViewController.xib */; };
 		5EECC1E617ED8F5600BDDF4E /* DummyMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EECC1D517ED8F5600BDDF4E /* DummyMapViewController.xib */; };
@@ -110,6 +114,10 @@
 		38FBF7B317ED67B7004695DA /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		38FBF7B517ED68B9004695DA /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		5E92BFE617EDC97400D08F13 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
+		5E92BFEB17EDCE0200D08F13 /* IssueListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssueListViewController.h; sourceTree = "<group>"; };
+		5E92BFEC17EDCE0200D08F13 /* IssueListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssueListViewController.m; sourceTree = "<group>"; };
+		5E92BFED17EDCE0200D08F13 /* IssueListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IssueListViewController.xib; sourceTree = "<group>"; };
+		5E92BFF117EDD09D00D08F13 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		5EB0A1A017ED70A2003E6935 /* AddIssueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddIssueViewController.h; sourceTree = "<group>"; };
 		5EB0A1A117ED70A2003E6935 /* AddIssueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddIssueViewController.m; sourceTree = "<group>"; };
 		5EB0A1A217ED70A2003E6935 /* AddIssueViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddIssueViewController.xib; sourceTree = "<group>"; };
@@ -162,6 +170,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E92BFF217EDD09D00D08F13 /* MapKit.framework in Frameworks */,
 				38FBF7A817ED648A004695DA /* QuartzCore.framework in Frameworks */,
 				38FBF7A017ED644E004695DA /* CFNetwork.framework in Frameworks */,
 				5E92BFE717EDC97400D08F13 /* Reveal.framework in Frameworks */,
@@ -275,6 +284,7 @@
 		804DA66717ED54A800F86495 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5E92BFF117EDD09D00D08F13 /* MapKit.framework */,
 				5E92BFE617EDC97400D08F13 /* Reveal.framework */,
 				804DA6B917ED886900F86495 /* FacebookSDK */,
 				38FBF7B517ED68B9004695DA /* libsqlite3.dylib */,
@@ -303,6 +313,9 @@
 		804DA66E17ED54A800F86495 /* SoapBox */ = {
 			isa = PBXGroup;
 			children = (
+				5E92BFEB17EDCE0200D08F13 /* IssueListViewController.h */,
+				5E92BFEC17EDCE0200D08F13 /* IssueListViewController.m */,
+				5E92BFED17EDCE0200D08F13 /* IssueListViewController.xib */,
 				5EECC1E017ED8F5600BDDF4E /* IssueViewController.xib */,
 				5EECC1E117ED8F5600BDDF4E /* UIViewController+Container.h */,
 				5EECC1D417ED8F5600BDDF4E /* DummyMapViewController.m */,
@@ -466,6 +479,7 @@
 				804DA6A317ED65BF00F86495 /* MasterViewController.xib in Resources */,
 				046C387617ED8FEE00460C13 /* DummyViewController.xib in Resources */,
 				046C387417ED8FEE00460C13 /* DummyTableViewController.xib in Resources */,
+				5E92BFEF17EDCE0200D08F13 /* IssueListViewController.xib in Resources */,
 				804DA68117ED54A800F86495 /* Images.xcassets in Resources */,
 				804DA67317ED54A800F86495 /* InfoPlist.strings in Resources */,
 				0403EFEB17EDBF9E00696605 /* soapbox.png in Resources */,
@@ -495,6 +509,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E92BFF017EDD05300D08F13 /* Issue.m in Sources */,
 				382C651917ED9CBC006BBCE2 /* MasterViewController.m in Sources */,
 				5EECC1E717ED8F5600BDDF4E /* DummyTableViewController.m in Sources */,
 				5EECC1EE17ED8F5600BDDF4E /* UIViewController+Container.m in Sources */,
@@ -502,6 +517,7 @@
 				5EECC1E917ED8F5600BDDF4E /* DummyViewController.m in Sources */,
 				38A7942117ED70EB0078F048 /* LocationGetter.m in Sources */,
 				804DA67917ED54A800F86495 /* AppDelegate.m in Sources */,
+				5E92BFEE17EDCE0200D08F13 /* IssueListViewController.m in Sources */,
 				5EB0A1A317ED70A2003E6935 /* AddIssueViewController.m in Sources */,
 				046C387117ED8FEE00460C13 /* DummyMapViewController.m in Sources */,
 				046C385F17ED802200460C13 /* MainMenuViewController.m in Sources */,

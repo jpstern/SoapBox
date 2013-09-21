@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Issue.h"
 
 @interface IssueListViewController : UITableViewController
+
+@property (nonatomic, strong) NSArray *issues;
 
 @end
