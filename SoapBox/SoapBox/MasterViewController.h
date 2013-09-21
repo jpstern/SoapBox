@@ -7,7 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
+//#import "DummyTableViewController.h"
+//#import "DummyMapViewController.h"
 
 @interface MasterViewController : UIViewController
+
+@property (nonatomic, strong) IBOutlet UIView *parentView;
+@property (nonatomic, strong) IBOutlet UIView *childView;
+
+@property (nonatomic, strong) UINavigationController *parentController;
+@property (nonatomic, strong) UINavigationController *childController;
+
+@property (nonatomic, strong) UITapGestureRecognizer *parentTapGesture;
+@property (nonatomic, strong) UITapGestureRecognizer *childTapGesture;
+
+@property (nonatomic) BOOL containerIsOpen;
+
+-(void)openContainer;
+-(void)closeContainer;
 
 @end
