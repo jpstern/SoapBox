@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Cell.h"
 
 @interface Table : UIViewController {
-  IBOutlet UITableView *mainMenu;
-  
-  NSArray *menuItems;
-  
+  IBOutlet UIButton *myIssues;
+  IBOutlet UIButton *friendsIssues;
+  IBOutlet UIButton *about;
+  IBOutlet UIButton *settings;
+  IBOutlet UIImageView *logo;
+
 }
 
 @end

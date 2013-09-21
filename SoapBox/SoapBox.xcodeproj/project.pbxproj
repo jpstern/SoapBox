@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		38A7941A17ED6D1E0078F048 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A7941817ED6D1E0078F048 /* MapViewController.m */; };
-		38A7941B17ED6D1E0078F048 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A7941917ED6D1E0078F048 /* MapViewController.xib */; };
 		046C385517ED5F6600460C13 /* Table.m in Sources */ = {isa = PBXBuildFile; fileRef = 046C385417ED5F6600460C13 /* Table.m */; };
 		046C385717ED5F8000460C13 /* Table.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046C385617ED5F8000460C13 /* Table.xib */; };
+		38A7941A17ED6D1E0078F048 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A7941817ED6D1E0078F048 /* MapViewController.m */; };
+		38A7941B17ED6D1E0078F048 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A7941917ED6D1E0078F048 /* MapViewController.xib */; };
 		38FBF79917ED56BD004695DA /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FBF79817ED56BD004695DA /* Parse.framework */; };
 		38FBF79B17ED5A2B004695DA /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FBF79A17ED5A2B004695DA /* FacebookSDK.framework */; };
 		38FBF79E17ED6446004695DA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FBF79D17ED6446004695DA /* AudioToolbox.framework */; };
@@ -55,12 +55,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		38A7941717ED6D1E0078F048 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
-		38A7941817ED6D1E0078F048 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
-		38A7941917ED6D1E0078F048 /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
 		046C385317ED5F6600460C13 /* Table.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Table.h; sourceTree = "<group>"; };
 		046C385417ED5F6600460C13 /* Table.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Table.m; sourceTree = "<group>"; };
 		046C385617ED5F8000460C13 /* Table.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Table.xib; sourceTree = "<group>"; };
+		38A7941717ED6D1E0078F048 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		38A7941817ED6D1E0078F048 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		38A7941917ED6D1E0078F048 /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
 		38FBF79817ED56BD004695DA /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		38FBF79A17ED5A2B004695DA /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		38FBF79D17ED6446004695DA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -476,7 +476,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/gregoryhurray/Desktop/repo-main/SoapBox/SoapBox/**",
+					"/Users/Jack/Documents/Projects/SoapBox/**",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SoapBox/SoapBox-Prefix.pch";
@@ -496,7 +496,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/gregoryhurray/Desktop/repo-main/SoapBox/SoapBox/**",
+					"/Users/Jack/Documents/Projects/SoapBox/**",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SoapBox/SoapBox-Prefix.pch";

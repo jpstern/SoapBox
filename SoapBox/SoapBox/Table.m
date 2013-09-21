@@ -8,7 +8,7 @@
 
 #import "Table.h"
 
-@interface Table () <UITableViewDataSource, UITableViewDelegate>
+@interface Table () <UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 
 @end
 
@@ -28,9 +28,11 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
   
-  [mainMenu setFrame:CGRectMake(0, 0, [self view].frame.size.width, [self view].frame.size.height)];
-  [mainMenu setBackgroundColor: [UIColor clearColor] ];
-  menuItems = [[NSArray alloc] initWithObjects:@"Your Issues", @"Friends Issues", @"Settings", @"About", nil];
+  // Sets up the frames of the 4 buttons and the logo.
+  [myIssues setFrame:CGRectMake(0, [self view].frame.size.height/2, [self view].frame.size.width/2, [self view].frame.size.height/4)];
+  [friendsIssues setFrame:CGRectMake([self view].frame.size.width/2, [self view].frame.size.height/2, [self view].frame.size.width/2, [self view].frame.size.height/4)];
+  [settings setFrame:CGRectMake(0, [self view].frame.size.height*3/4, [self view].frame.size.width/2, [self view].frame.size.height/4)];
+  [about setFrame:CGRectMake([self view].frame.size.width/2, [self view].frame.size.height*3/4, [self view].frame.size.width/2, [self view].frame.size.height/4)];
   
 }
 
@@ -40,36 +42,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-//----------------------------------------------------------------
-//          UITableView Datasource and Delegate methods
-//________________________________________________________________
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-  // Return the number of sections.
-  return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-  // Return the number of rows in the section.
-  return [menuItems count];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-  // Configure the cell in each row
-  
-  static NSString *CellIdentifier = @"Cell";
-  UITableViewCell *cell;
-  
-  cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-  if (cell == nil) {
-    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-  }
-  // Configure the cell... setting the text of our cell's label
-  cell.textLabel.text = [menuItems objectAtIndex:indexPath.row];
-  return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  
-}
 
 @end
