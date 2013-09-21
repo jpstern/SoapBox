@@ -37,8 +37,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(loadAddScreen:)];
-    self.navigationItem.rightBarButtonItem = addButton;
+    [self.navigationController setNavigationBarHidden:YES];
     
     /* once we need it
      
@@ -50,11 +49,6 @@
      */
 }
 
--(IBAction)loadAddScreen:(id)sender{
-    AddNewIssueViewController *aiVC = [[AddNewIssueViewController alloc] initWithNibName:@"AddNewIssueViewController" bundle:nil];
-    UINavigationController *tmpNC = [[UINavigationController alloc] initWithRootViewController:aiVC];
-    [self presentViewController:tmpNC animated:YES completion:nil];
-}
 
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
     MKMapRect mRect = _mapView.visibleMapRect;

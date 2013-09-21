@@ -7,14 +7,14 @@
 //
 
 #import "MainMenuViewController.h"
-#import "AddIssueViewController.h"
+#import "AddNewIssueViewController.h"
 
 @interface MainMenuViewController ()
 
 @end
 
 @implementation MainMenuViewController
-@synthesize myIssues, friendsIssues, about, settings, logo;
+@synthesize myIssues, friendsIssues, settings, about, logo;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,7 +28,7 @@
 -(void)openContainer {
     
     [self.masterContainer openContainer];
-    
+
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(closeContainer)];
     [self.view addGestureRecognizer:tap];
     
@@ -42,7 +42,7 @@
 
 -(void)showIssueController {
     
-    AddIssueViewController *addIssue = [[AddIssueViewController alloc] init];
+    AddNewIssueViewController *addIssue = [[AddNewIssueViewController alloc] init];
     UINavigationController *addIssueNav = [[UINavigationController alloc] initWithRootViewController:addIssue];
     
     [self presentViewController:addIssueNav animated:YES completion:^{
@@ -55,27 +55,21 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
   
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Hi" style:UIBarButtonItemStylePlain target:self action:@selector(openContainer)];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"+" style:UIBarButtonItemStylePlain target:self action:@selector(showIssueController)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Drop" style:UIBarButtonItemStylePlain target:self action:@selector(openContainer)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showIssueController)];
   
   // Sets up the frames of the 4 buttons and the logo.
-  [myIssues setFrame:CGRectMake(5, [self view].frame.size.height/2, ([self view].frame.size.width/2)-10, ([self view].frame.size.height/4)-10)];
-  [friendsIssues setFrame:CGRectMake(([self view].frame.size.width/2)+5, [self view].frame.size.height/2, ([self view].frame.size.width/2)-10, ([self view].frame.size.height/4)-10)];
-  [settings setFrame:CGRectMake(5, [self view].frame.size.height*3/4, ([self view].frame.size.width/2)-10, ([self view].frame.size.height/4)-10)];
-  [about setFrame:CGRectMake([self view].frame.size.width/2, [self view].frame.size.height*3/4, ([self view].frame.size.width/2)-10, ([self view].frame.size.height/4)-10)];
-  [logo setFrame:CGRectMake([self view].frame.size.width/2, [self view].frame.size.height/3, 2*[self view].frame.size.width/3, [self view].frame.size.height/4)];
+  // borders of buttons
+  [myIssues.layer setBorderWidth:1], [myIssues.layer setBorderColor:[UIColor blackColor].CGColor];
+  [friendsIssues.layer setBorderWidth:1], [friendsIssues.layer setBorderColor:[UIColor blackColor].CGColor];
+  [settings.layer setBorderWidth:1], [settings.layer setBorderColor:[UIColor blackColor].CGColor];
+  [about.layer setBorderWidth:1], [about.layer setBorderColor:[UIColor blackColor].CGColor];
   
-  [myIssues.layer setBorderWidth:1];
-  [friendsIssues.layer setBorderWidth:1];
-  [settings.layer setBorderWidth:1];
-  [about.layer setBorderWidth:1];
+  // logo shit
+  [logo.layer setCornerRadius:20];
+  [logo.layer setBorderWidth:1];
+  [logo.layer setBorderColor:[UIColor blackColor].CGColor];
 
-  [myIssues.layer setBorderColor:[UIColor colorWithRed:192 green:192 blue:192 alpha:1].CGColor];
-  [friendsIssues.layer setBorderColor:[UIColor colorWithRed:192 green:192 blue:192 alpha:1].CGColor];
-  [settings.layer setBorderColor:[UIColor colorWithRed:192 green:192 blue:192 alpha:1].CGColor];
-  [about.layer setBorderColor:[UIColor colorWithRed:192 green:192 blue:192 alpha:1].CGColor];
-  
-  [logo setBackgroundColor:[UIColor blackColor]];
 }
 
 - (void)didReceiveMemoryWarning

@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainMenuViewController : UIViewController
+@interface MainMenuViewController : UIViewController{
+  IBOutlet UIButton *myIssues;
+  IBOutlet UIButton *friendsIssues;
+  IBOutlet UIButton *about;
+  IBOutlet UIButton *settings;
+}
 
 
 @property (nonatomic, strong) IBOutlet UIButton *myIssues;

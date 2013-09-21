@@ -9,6 +9,8 @@
                 <outlet property="descriptionTextField" destination="Kbb-RK-RkH" id="sfL-OC-vhB"/>
                 <outlet property="textField" destination="Hr5-h6-Xuc" id="6wI-lM-1Zj"/>
                 <outlet property="titleTextField" destination="Hr5-h6-Xuc" id="e1M-aj-jao"/>
+                <outlet property="descriptionTextField" destination="Kbb-RK-RkH" id="0Hk-CM-qeT"/>
+                <outlet property="titleTextField" destination="Hr5-h6-Xuc" id="pD4-cu-qVn"/>
                 <outlet property="view" destination="1" id="C7w-hB-rje"/>
             </connections>
         </placeholder>
@@ -25,6 +27,7 @@
                     <connections>
                         <action selector="textFieldEdited:" destination="-1" eventType="valueChanged" id="C04-3R-xKP"/>
                         <outlet property="delegate" destination="-1" id="U1v-A1-qeM"/>
+                        <outlet property="delegate" destination="-1" id="Ift-yO-iH5"/>
                     </connections>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bV-TC-vMD">
@@ -48,7 +51,7 @@
                     </connections>
                 </button>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Description" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kbb-RK-RkH">
-                    <rect key="frame" x="62" y="212" width="195" height="30"/>
+                    <rect key="frame" x="63" y="210" width="195" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>

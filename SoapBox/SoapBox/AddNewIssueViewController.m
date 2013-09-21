@@ -92,15 +92,20 @@
     [titleTextView setReturnKeyType:UIReturnKeyDone];
     titleTextView.delegate = self;
     titleTextView.tag = 1;
-    descriptionTextView = [[UITextView alloc] initWithFrame:CGRectMake(70, 90+offset, 230, 150)];
+    titleTextView.textColor = [UIColor lightGrayColor];
+    titleTextView.text = @"Title...";
     
+    descriptionTextView = [[UITextView alloc] initWithFrame:CGRectMake(70, 90+offset, 230, 150)];
     [descriptionTextView setReturnKeyType:UIReturnKeyDone];
     descriptionTextView.delegate = self;
     descriptionTextView.tag = 2;
+    descriptionTextView.textColor = [UIColor lightGrayColor];
+    descriptionTextView.text = @"Description...";
+    
     titleCounter = [[UILabel alloc] initWithFrame:CGRectMake(20, 20+offset, 30, 60)];
-    titleCounter.text = @"30 left";
+    titleCounter.text = @"30";
     descriptionCounter = [[UILabel alloc] initWithFrame:CGRectMake(20, 90+offset, 30, 60)];
-    descriptionCounter.text = @"130 left";
+    descriptionCounter.text = @"130";
     
     UIView *divider = [[UIView alloc] initWithFrame:CGRectMake(60, 20+offset, 4, DEVICEHEIGHT-300)];
     divider.backgroundColor = [UIColor blackColor];
@@ -114,7 +119,7 @@
     
     NSLog(@"screen height %f", DEVICEHEIGHT);
     
-    UIColor *secondaryColor = [UIColor grayColor];
+    UIColor *secondaryColor = [UIColor lightGrayColor];
     UIView *buttonBackground = [[UIView alloc] initWithFrame:CGRectMake(0, DEVICEHEIGHT-260+offset, DEVICEWIDTH, 244)];
     buttonBackground.backgroundColor = secondaryColor;
     [self.view addSubview:buttonBackground];
@@ -124,7 +129,7 @@
     addPhotoBtn = [[UIButton alloc] initWithFrame:CGRectMake(25, DEVICEHEIGHT-229+offset, 150, 150)];
     addPhotoBtn.backgroundColor = secondaryColor;
     [addPhotoBtn addTarget:self action:@selector(takePhoto) forControlEvents:UIControlEventTouchUpInside];
-    UIImage *photoImage = [self changeColorTo:[UIColor grayColor] fromImage:[UIImage imageNamed:@"camera-white.png"]];
+    UIImage *photoImage = [self changeColorTo:[UIColor darkGrayColor] fromImage:[UIImage imageNamed:@"camera-white.png"]];
     [addPhotoBtn setBackgroundImage:[UIImage imageNamed:@"camera-white.png"] forState:UIControlStateHighlighted];
     [addPhotoBtn setBackgroundImage:photoImage forState:UIControlStateNormal];
     
@@ -132,14 +137,14 @@
     addLocBtn = [[UIButton alloc] initWithFrame:CGRectMake(200, DEVICEHEIGHT-244+offset, 120, 100)];
     addLocBtn.backgroundColor = secondaryColor;
     [addLocBtn addTarget:self action:@selector(changeLocation) forControlEvents:UIControlEventTouchUpInside];
-    UIImage *locImage = [self changeColorTo:[UIColor grayColor]  fromImage:[UIImage imageNamed:@"pin-black.png.png"]];
+    UIImage *locImage = [self changeColorTo:[UIColor darkGrayColor]  fromImage:[UIImage imageNamed:@"pin-black.png.png"]];
     [addLocBtn setBackgroundImage:[UIImage imageNamed:@"pin-black.png"] forState:UIControlStateHighlighted];
     [addLocBtn setBackgroundImage:locImage forState:UIControlStateNormal];
     
     addTagBtn = [[UIButton alloc] initWithFrame:CGRectMake(200, DEVICEHEIGHT-144+offset, 120, 100)];
     addTagBtn.backgroundColor = secondaryColor;
     [addTagBtn addTarget:self action:@selector(displayTags:) forControlEvents:UIControlEventTouchUpInside];
-    UIImage *tagPhoto = [self changeColorTo:[UIColor grayColor] fromImage:[UIImage imageNamed:@"tag-flat.png"]];
+    UIImage *tagPhoto = [self changeColorTo:[UIColor darkGrayColor] fromImage:[UIImage imageNamed:@"tag-flat.png"]];
     [addTagBtn setBackgroundImage:[UIImage imageNamed:@"tag-flat.png"] forState:UIControlStateHighlighted];
     [addTagBtn setBackgroundImage:tagPhoto forState:UIControlStateNormal];
     
@@ -354,7 +359,19 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+- (void)textViewDidBeginEditing:(UITextView *)textView{
+    if (textView.tag == 1) {
+        if([textView.text isEqualToString:@"Title..."]){
+            textView.text = @"";
+            textView.textColor = [UIColor blackColor];
+        }
+    } else {
+        if([textView.text isEqualToString:@"Description..."]){
+            textView.text = @"";
+            textView.textColor = [UIColor blackColor];
+        }
+    }
+}
 
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
@@ -366,7 +383,7 @@
     
     if (textView.tag == 1) {
         if (textView.text.length < 30) {
-            titleCounter.text = [NSString stringWithFormat:@"%i left", 30 - textView.text.length];
+            titleCounter.text = [NSString stringWithFormat:@"%i", 30 - textView.text.length];
             
             return true;
         } else {
@@ -374,7 +391,7 @@
         }
     } else {
         if (textView.text.length < 130) {
-            descriptionCounter.text = [NSString stringWithFormat:@"%i left", 130 - textView.text.length];
+            descriptionCounter.text = [NSString stringWithFormat:@"%i", 130 - textView.text.length];
             return true;
         } else {
             return false;
