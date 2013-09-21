@@ -765,7 +765,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/gregoryhurray/Desktop/repo-main/SoapBox/SoapBox",
-					/Users/charleyhutchison/SoapBox/SoapBox,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SoapBox/SoapBox-Prefix.pch";
@@ -793,7 +792,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/gregoryhurray/Desktop/repo-main/SoapBox/SoapBox",
-					/Users/charleyhutchison/SoapBox/SoapBox,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SoapBox/SoapBox-Prefix.pch";

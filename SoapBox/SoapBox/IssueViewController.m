@@ -27,7 +27,7 @@
     [self dismissViewControllerAnimated:YES completion:nil];
     NSArray *addresses = [email componentsSeparatedByString:@","];
     
-    [PFCloud callFunctionInBackground:@"email" withParameters:@{@"address": [NSJSONSerialization dataWithJSONObject:addresses options: error:nil], @"subject": @"Hello World", @"text": body} block:^(id object, NSError *error) {
+    [PFCloud callFunctionInBackground:@"email" withParameters:@{@"address": [NSJSONSerialization dataWithJSONObject:addresses options:nil error:nil], @"subject": @"Hello World", @"text": body} block:^(id object, NSError *error) {
         NSLog(@"Object %@, Error, %@", object, error);
     }];
 
