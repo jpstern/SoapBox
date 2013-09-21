@@ -205,13 +205,6 @@
 - (void)createItem
 {
     NSLog(@"\n\n\n titelview.text = |%i| \n\n\n", titleTextView.text == nil);
-    if (!addPhotoBtn.imageView.image) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                        message:@"You need a picture."
-                                                       delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-        [alert show];
-        return;
-    }
     //hacky fix lets find a better way
     if(titleTextView.text.length < 2 || [titleTextView.text isEqualToString:@"Title..."]){
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
