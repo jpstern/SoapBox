@@ -14,5 +14,6 @@
 @property (nonatomic, strong) IBOutlet MKMapView *mapView2;
 //@property (nonatomic, strong) MKPointAnnotation *point;
 @property (nonatomic) CLLocationCoordinate2D coord;
+@property (nonatomic, strong) UIImage *mapImage;
 
 @end

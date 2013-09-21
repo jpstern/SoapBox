@@ -16,6 +16,7 @@
 
 @synthesize mapView2 = _mapView2;
 @synthesize coord = _coord;
+@synthesize mapImage;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -24,7 +25,7 @@
     if (self) {
         // Custom initialization
         NSLog(@"inintilizing" );
-        
+        mapImage = NULL;
     }
     return self;
 }
@@ -141,11 +142,19 @@ didChangeDragState:(MKAnnotationViewDragState)newState
 }
 
 - (void)success{
+    
+    MKMapSnapshotOptions *options = [[MKMapSnapshotOptions alloc] init];
+    options.region = MKCoordinateRegionMake(self.coord, MKCoordinateSpanMake(0.01, 0.01));
+    MKMapSnapshotter *snapshotter = [[MKMapSnapshotter alloc] initWithOptions:options];
+    [snapshotter startWithCompletionHandler:^(MKMapSnapshot *snapshot, NSError *error) {
+        NSLog(@"Snapshot finished");
+        self.mapImage = snapshot.image;
+    }];
+    
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Are you sure"
                                                     message:@"you want to change the location of this item?"
                                                    delegate:self cancelButtonTitle:@"YES" otherButtonTitles:@"NO", nil];
     [alert show];
-    
     
 }
 

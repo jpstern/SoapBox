@@ -43,7 +43,7 @@
   MapViewController *map = [[MapViewController alloc] init];
 //    DummyMapViewController *dummyMap = [[DummyMapViewController alloc] init];
     UINavigationController *dummyMapNav = [[UINavigationController alloc] initWithRootViewController:map];
-    dummyMapNav.navigationBar.translucent = YES;
+    dummyMapNav.navigationBar.translucent = NO;
 
     master.childController = dummyMapNav;
     
