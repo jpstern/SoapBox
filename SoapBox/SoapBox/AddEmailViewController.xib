@@ -28,7 +28,7 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <items>
                         <navigationItem id="vKX-EF-eLr">
-                            <barButtonItem key="leftBarButtonItem" title="Cancel" style="plain" id="ozU-fl-JS6">
+                            <barButtonItem key="leftBarButtonItem" title="Cancel" id="ozU-fl-JS6">
                                 <connections>
                                     <action selector="canceled:" destination="-1" id="d6s-tO-zvl"/>
                                 </connections>

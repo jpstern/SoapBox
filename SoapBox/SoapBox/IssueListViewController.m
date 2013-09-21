@@ -66,7 +66,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     Issue *issue = [self.issues objectAtIndex:indexPath.row];
-    cell.textLabel.text = issue.title;
+    //cell.textLabel.text = issue.title;
     
     // Configure the cell...
     
@@ -111,6 +111,30 @@
     return YES;
 }
 */
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    if ([self.title isEqualToString:@"My Issues"]) {
+    PFQuery *query = [[PFQuery alloc] initWithClassName:@"Issue"];
+    [query whereKey:@"User" equalTo:[PFUser currentUser]];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        NSLog(@"Objects: %@, Error: %@", objects, error);
+        NSMutableArray *array = [NSMutableArray array];
+        for (PFObject *object in objects) {
+            Issue *newIssue = [[Issue alloc] init];
+            PFGeoPoint *geoPoint = [object valueForKey:@"Location"];
+            newIssue.location = CLLocationCoordinate2DMake(geoPoint.latitude, geoPoint.longitude);
+            newIssue.title = [object valueForKey:@"Title"];
+            newIssue.description = [object valueForKey:@"Description"];
+            newIssue.image = [object valueForKey:@"Image"];
+            NSLog(@"Issue: %@", newIssue);
+            [array addObject:newIssue];
+        }
+        self.issues = array;
+        [self.tableView reloadData];
+    }];
+    }
+}
 
 
 #pragma mark - Table view delegate

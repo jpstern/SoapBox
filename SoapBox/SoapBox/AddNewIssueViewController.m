@@ -204,11 +204,8 @@
 
 - (void)createItem
 {
-<<<<<<< HEAD
 
-=======
     NSLog(@"\n\n\n titelview.text = |%i| \n\n\n", titleTextView.text == nil);
->>>>>>> e6f04b8fba4441239849a5307ea18fda184c577d
     //hacky fix lets find a better way
     if(titleTextView.text.length < 2 || [titleTextView.text isEqualToString:@"Title..."]){
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
