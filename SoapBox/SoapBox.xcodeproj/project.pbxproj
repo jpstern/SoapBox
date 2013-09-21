@@ -19,7 +19,6 @@
 		382C655917EDAA7F006BBCE2 /* AddNewIssueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 382C655717EDAA7E006BBCE2 /* AddNewIssueViewController.xib */; };
 		382C655D17EDAD0C006BBCE2 /* LocChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 382C655B17EDAD0C006BBCE2 /* LocChooseViewController.m */; };
 		382C655E17EDAD0C006BBCE2 /* LocChooseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 382C655C17EDAD0C006BBCE2 /* LocChooseViewController.xib */; };
-		383FDA8317EDBAB800F80046 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FBF79A17ED5A2B004695DA /* FacebookSDK.framework */; };
 		383FDA8517EDC15100F80046 /* camera-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 383FDA8417EDC15100F80046 /* camera-white.png */; };
 		383FDA8B17EDC16A00F80046 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 383FDA8617EDC16A00F80046 /* arrow.png */; };
 		383FDA8C17EDC16A00F80046 /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 383FDA8717EDC16A00F80046 /* arrow@2x.png */; };
@@ -59,6 +58,7 @@
 		38FBF7B217ED67A9004695DA /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FBF7B117ED67A9004695DA /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		38FBF7B417ED67B7004695DA /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FBF7B317ED67B7004695DA /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		38FBF7B617ED68B9004695DA /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FBF7B517ED68B9004695DA /* libsqlite3.dylib */; };
+		38FD03DB17EDEB7E0038379D /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FBF79A17ED5A2B004695DA /* FacebookSDK.framework */; };
 		5E79FB6C17EDD6CD00430435 /* IssueListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79FB6A17EDD6CD00430435 /* IssueListViewController.m */; };
 		5E79FB6D17EDD6CD00430435 /* IssueListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E79FB6B17EDD6CD00430435 /* IssueListViewController.xib */; };
 		5E79FB6E17EDD72A00430435 /* Issue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB0A1AB17ED7CB6003E6935 /* Issue.m */; };
@@ -218,8 +218,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38FD03DB17EDEB7E0038379D /* FacebookSDK.framework in Frameworks */,
 				38FBF79917ED56BD004695DA /* Parse.framework in Frameworks */,
-				383FDA8317EDBAB800F80046 /* FacebookSDK.framework in Frameworks */,
 				383FDAAB17EDD09700F80046 /* libz.dylib in Frameworks */,
 				38FBF7A617ED6480004695DA /* MobileCoreServices.framework in Frameworks */,
 				383FDAA917EDCF0D00F80046 /* MapKit.framework in Frameworks */,
@@ -751,6 +751,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/charleyhutchison/SoapBox/SoapBox,
+					"/Users/gregoryhurray/Desktop/repo-main/SoapBox/SoapBox",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SoapBox/SoapBox-Prefix.pch";
@@ -778,6 +779,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/charleyhutchison/SoapBox/SoapBox,
+					"/Users/gregoryhurray/Desktop/repo-main/SoapBox/SoapBox",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SoapBox/SoapBox-Prefix.pch";

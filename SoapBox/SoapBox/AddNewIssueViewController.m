@@ -36,16 +36,9 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    /* [[NSNotificationCenter defaultCenter] addObserver:self
-     selector:@selector(keyboardWillShow)
-     name:UIKeyboardWillShowNotification
-     object:nil];
-     
-     [[NSNotificationCenter defaultCenter] addObserver:self
-     selector:@selector(keyboardWillHide)
-     name:UIKeyboardWillHideNotification
-     object:nil];
-     */
+    if(self.lcVC.mapImage){
+        [self.addLocBtn setBackgroundImage:lcVC.mapImage forState:UIControlStateNormal];
+    }
 }
 
 -(BOOL)textViewShouldEndEditing:(UITextView *)textView{
@@ -95,6 +88,7 @@
     titleTextView.tag = 1;
     titleTextView.textColor = [UIColor lightGrayColor];
     titleTextView.text = @"Title...";
+    [titleTextView setFont:[UIFont boldSystemFontOfSize:22.0]];
     
     descriptionTextView = [[UITextView alloc] initWithFrame:CGRectMake(70, 90+offset, 230, 150)];
     [descriptionTextView setReturnKeyType:UIReturnKeyDone];
@@ -102,6 +96,7 @@
     descriptionTextView.tag = 2;
     descriptionTextView.textColor = [UIColor lightGrayColor];
     descriptionTextView.text = @"Description...";
+    [descriptionTextView setFont:[UIFont systemFontOfSize:20.0]];
     
     titleCounter = [[UILabel alloc] initWithFrame:CGRectMake(20, 20+offset, 30, 60)];
     titleCounter.text = @"30";
@@ -218,7 +213,7 @@
         return;
     }
     //hacky fix lets find a better way
-    if(titleTextView.text.length < 2){
+    if(titleTextView.text.length < 2 || [titleTextView.text isEqualToString:@"Title..."]){
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
                                                         message:@"You need a title with more than 2 characters"
                                                        delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
@@ -368,6 +363,20 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) textViewDidEndEditing:(UITextView *)textView{
+    if (textView.tag == 1) {
+        if([textView.text isEqualToString:@""]){
+            textView.text = @"Title...";
+            textView.textColor = [UIColor blackColor];
+        }
+    } else {
+        if([textView.text isEqualToString:@""]){
+            textView.text = @"Description...";
+            textView.textColor = [UIColor blackColor];
+        }
+    }
+}
+
 - (void)textViewDidBeginEditing:(UITextView *)textView{
     if (textView.tag == 1) {
         if([textView.text isEqualToString:@"Title..."]){
@@ -392,15 +401,14 @@
     
     if (textView.tag == 1) {
         if (textView.text.length < 30) {
-            titleCounter.text = [NSString stringWithFormat:@"%lu", 30 - textView.text.length];
-            
+            titleCounter.text = [NSString stringWithFormat:@"%i", 30 - textView.text.length];
             return true;
         } else {
             return false;
         }
     } else {
         if (textView.text.length < 130) {
-            descriptionCounter.text = [NSString stringWithFormat:@"%lu", 130 - textView.text.length];
+            descriptionCounter.text = [NSString stringWithFormat:@"%i", 130 - textView.text.length];
             return true;
         } else {
             return false;
