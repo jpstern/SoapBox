@@ -13,9 +13,9 @@
 		046C387217ED8FEE00460C13 /* DummyMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046C386A17ED8FEE00460C13 /* DummyMapViewController.xib */; };
 		046C387417ED8FEE00460C13 /* DummyTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046C386D17ED8FEE00460C13 /* DummyTableViewController.xib */; };
 		046C387617ED8FEE00460C13 /* DummyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046C387017ED8FEE00460C13 /* DummyViewController.xib */; };
-		382C651917ED9CBC006BBCE2 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 804DA6A017ED65BF00F86495 /* MasterViewController.m */; };
 		046C387F17ED977900460C13 /* IssuesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046C387D17ED977900460C13 /* IssuesListViewController.m */; };
 		046C388017ED977900460C13 /* IssuesListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046C387E17ED977900460C13 /* IssuesListViewController.xib */; };
+		382C651917ED9CBC006BBCE2 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 804DA6A017ED65BF00F86495 /* MasterViewController.m */; };
 		38A7941A17ED6D1E0078F048 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A7941817ED6D1E0078F048 /* MapViewController.m */; };
 		38A7941B17ED6D1E0078F048 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A7941917ED6D1E0078F048 /* MapViewController.xib */; };
 		38A7941D17ED70410078F048 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A7941C17ED70410078F048 /* ViewController.xib */; };
@@ -640,7 +640,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/gregoryhurray/Desktop/repo-main/SoapBox/SoapBox",
+					/Users/charleyhutchison/SoapBox/SoapBox,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SoapBox/SoapBox-Prefix.pch";
@@ -667,7 +667,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/gregoryhurray/Desktop/repo-main/SoapBox/SoapBox",
+					/Users/charleyhutchison/SoapBox/SoapBox,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SoapBox/SoapBox-Prefix.pch";
