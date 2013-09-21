@@ -20,12 +20,13 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     // Do any additional setup after loading the view, typically from a nib.
+    [self.navigationController setNavigationBarHidden:YES];
+    
     if ([PFUser currentUser] && // Check if a user is cached
         [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) // Check if user is linked to Facebook
     {
-        
-        // do nothing?????
-        
+        NSLog(@"DOUBLE CHECKS");
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
 
@@ -60,16 +61,14 @@
             NSLog(@"User with facebook signed up and logged in!");
            
             //push it real good
-            MapViewController *mVC = [[MapViewController alloc] initWithNibName:@"MapViewController" bundle:nil ];
-            [self.navigationController pushViewController:mVC animated:YES];
+            [self dismissViewControllerAnimated:YES  completion:nil];
             
         } else {
             NSLog(@"User with facebook logged in!");
             
             
             //puch it real good
-            MapViewController *mVC = [[MapViewController alloc] initWithNibName:@"MapViewController" bundle:nil ];
-            [self.navigationController pushViewController:mVC animated:YES];
+            [self dismissViewControllerAnimated:YES  completion:nil];
             
             NSLog(@"made it here");
         }
