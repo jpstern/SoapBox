@@ -14,4 +14,6 @@
 @property (nonatomic, strong) IBOutlet MKMapView *mapView;
 @property double currentDist;
 
+-(void) removeAllAnnotations;
+
 @end
