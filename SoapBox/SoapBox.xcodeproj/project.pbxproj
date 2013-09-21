@@ -137,6 +137,7 @@
 		804DA6B417ED811B00F86495 /* DummyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DummyViewController.h; sourceTree = "<group>"; };
 		804DA6B517ED811B00F86495 /* DummyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DummyViewController.m; sourceTree = "<group>"; };
 		804DA6B617ED811B00F86495 /* DummyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DummyViewController.xib; sourceTree = "<group>"; };
+		804DA6B917ED886900F86495 /* FacebookSDK */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = FacebookSDK; path = FacebookSDK.framework/Versions/A/FacebookSDK; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38FBF79B17ED5A2B004695DA /* FacebookSDK.framework in Frameworks */,
 				38FBF7B217ED67A9004695DA /* Social.framework in Frameworks */,
 				38FBF7B617ED68B9004695DA /* libsqlite3.dylib in Frameworks */,
 				38FBF7B417ED67B7004695DA /* Accounts.framework in Frameworks */,
@@ -158,7 +160,6 @@
 				804DA66B17ED54A800F86495 /* CoreGraphics.framework in Frameworks */,
 				38FBF7A017ED644E004695DA /* CFNetwork.framework in Frameworks */,
 				38FBF79E17ED6446004695DA /* AudioToolbox.framework in Frameworks */,
-				38FBF79B17ED5A2B004695DA /* FacebookSDK.framework in Frameworks */,
 				804DA66D17ED54A800F86495 /* UIKit.framework in Frameworks */,
 				38FBF79917ED56BD004695DA /* Parse.framework in Frameworks */,
 				804DA66917ED54A800F86495 /* Foundation.framework in Frameworks */,
@@ -190,8 +191,6 @@
 		38A7942417ED745F0078F048 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				046C385317ED5F6600460C13 /* Table.h */,
-				046C385417ED5F6600460C13 /* Table.m */,
 				804DA67D17ED54A800F86495 /* ViewController.h */,
 				804DA67E17ED54A800F86495 /* ViewController.m */,
 				38A7941717ED6D1E0078F048 /* MapViewController.h */,
@@ -215,12 +214,11 @@
 			isa = PBXGroup;
 			children = (
 				5EB0A1A717ED7C4C003E6935 /* IssueViewController.xib */,
-				046C385617ED5F8000460C13 /* Table.xib */,
+				046C385617ED5F8000460C13 /* MainMenuViewController.xib */,
 				804DA6A117ED65BF00F86495 /* MasterViewController.xib */,
 				38A7941C17ED70410078F048 /* ViewController.xib */,
 				38A7941917ED6D1E0078F048 /* MapViewController.xib */,
 				5EB0A1A217ED70A2003E6935 /* AddIssueViewController.xib */,
-				804DA69D17ED556B00F86495 /* ViewController.xib */,
 			);
 			name = XIBS;
 			sourceTree = "<group>";
@@ -248,6 +246,7 @@
 		804DA66717ED54A800F86495 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				804DA6B917ED886900F86495 /* FacebookSDK */,
 				38FBF7B517ED68B9004695DA /* libsqlite3.dylib */,
 				38FBF7B317ED67B7004695DA /* Accounts.framework */,
 				38FBF7B117ED67A9004695DA /* Social.framework */,
@@ -300,7 +299,6 @@
 				804DA67817ED54A800F86495 /* AppDelegate.m */,
 				804DA67D17ED54A800F86495 /* ViewController.h */,
 				804DA67E17ED54A800F86495 /* ViewController.m */,
-				804DA69D17ED556B00F86495 /* ViewController.xib */,
 				046C385D17ED802200460C13 /* MainMenuViewController.h */,
 				046C385E17ED802200460C13 /* MainMenuViewController.m */,
 				046C385617ED5F8000460C13 /* MainMenuViewController.xib */,
@@ -426,10 +424,8 @@
 				804DA6A317ED65BF00F86495 /* MasterViewController.xib in Resources */,
 				804DA68117ED54A800F86495 /* Images.xcassets in Resources */,
 				804DA6B817ED811B00F86495 /* DummyViewController.xib in Resources */,
-				804DA69E17ED556B00F86495 /* ViewController.xib in Resources */,
-				046C385717ED5F8000460C13 /* Table.xib in Resources */,
+				046C385717ED5F8000460C13 /* MainMenuViewController.xib in Resources */,
 				804DA6AD17ED6B6100F86495 /* DummyMapViewController.xib in Resources */,
-				804DA69E17ED556B00F86495 /* ViewController.xib in Resources */,
 				046C385717ED5F8000460C13 /* MainMenuViewController.xib in Resources */,
 				804DA67317ED54A800F86495 /* InfoPlist.strings in Resources */,
 				38A7942317ED721F0078F048 /* pin_blue_small.png in Resources */,
@@ -585,6 +581,7 @@
 		804DA69817ED54A800F86495 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -592,11 +589,20 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/Jack/Documents/Projects/SoapBox/**",
+					/Users/JoshStern/MHacks2013/SoapBox/SoapBox,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SoapBox/SoapBox-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Applications/Xcode\\ 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
+				);
 				INFOPLIST_FILE = "SoapBox/SoapBox-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/JoshStern/MHacks2013/SoapBox/SoapBox/FacebookSDK.framework/Versions/A,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -606,6 +612,7 @@
 		804DA69917ED54A800F86495 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -613,11 +620,20 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/Jack/Documents/Projects/SoapBox/**",
+					/Users/JoshStern/MHacks2013/SoapBox/SoapBox,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SoapBox/SoapBox-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Applications/Xcode\\ 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
+				);
 				INFOPLIST_FILE = "SoapBox/SoapBox-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/JoshStern/MHacks2013/SoapBox/SoapBox/FacebookSDK.framework/Versions/A,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
