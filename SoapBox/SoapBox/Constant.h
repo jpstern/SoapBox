@@ -16,4 +16,6 @@
 #define DEVICEHEIGHT [UIScreen mainScreen].bounds.size.height
 #define DEVICEWIDTH [UIScreen mainScreen].bounds.size.width
 
+#define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
+
 #endif

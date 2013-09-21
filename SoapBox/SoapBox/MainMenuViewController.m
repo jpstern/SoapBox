@@ -81,11 +81,6 @@
 
 - (IBAction)myIssues:(id)sender {
     IssueListViewController *issueController = [[IssueListViewController alloc] initWithNibName:@"IssueListViewController" bundle:[NSBundle mainBundle]];
-    Issue *issue = [[Issue alloc] init];
-    issue.title = @"Test Issue";
-    issue.description = @"This is a test description for the issue. I think it is long enough beginning.. right.. now!!";
-    issue.location = CLLocationCoordinate2DMake(32, -90);
-    issueController.issues = @[issue];
     issueController.title = @"My Issues";
     [self.navigationController pushViewController:issueController animated:YES];
 }

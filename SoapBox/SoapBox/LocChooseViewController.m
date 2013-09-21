@@ -46,14 +46,14 @@
     [checkBtn setImage:check forState:UIControlStateNormal];
     [checkBtn addTarget:self action:@selector(success) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *checkBarButton = [[UIBarButtonItem alloc] initWithCustomView:checkBtn];
-    self.navigationItem.leftBarButtonItem = checkBarButton;
+    self.navigationItem.rightBarButtonItem = checkBarButton;
     
     UIButton *crossBtn = [[UIButton alloc] initWithFrame:BARBUTTONFRAME];
     UIImage *cross = [UIImage imageNamed:@"cross@2x.png"];
     [crossBtn setImage:cross forState:UIControlStateNormal];
     [crossBtn addTarget:self action:@selector(cancelMove) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *crossBarBtn = [[UIBarButtonItem alloc]initWithCustomView:crossBtn];
-    self.navigationItem.rightBarButtonItem = crossBarBtn;
+    self.navigationItem.leftBarButtonItem = crossBarBtn;
 }
 
 
@@ -153,7 +153,7 @@ didChangeDragState:(MKAnnotationViewDragState)newState
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Are you sure"
                                                     message:@"you want to change the location of this item?"
-                                                   delegate:self cancelButtonTitle:@"YES" otherButtonTitles:@"NO", nil];
+                                                   delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"YES", nil];
     [alert show];
     
 }

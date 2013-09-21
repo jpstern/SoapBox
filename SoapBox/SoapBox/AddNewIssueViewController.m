@@ -79,24 +79,39 @@
     lcVC = [[LocChooseViewController alloc] initWithNibName:@"LocChooseViewController" bundle:nil];
     tileArray = [[NSMutableArray alloc] init];
     
-    self.navigationItem.title = @"What's Your Issue?";
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
+    label.backgroundColor = [UIColor clearColor];
+    label.font = [UIFont boldSystemFontOfSize:20.0];
+    label.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.5];
+    label.textAlignment = NSTextAlignmentCenter;
+    // ^-Use UITextAlignmentCenter for older SDKs.
+    label.textColor = [UIColor yellowColor]; // change this color
+    self.navigationItem.titleView = label;
+    label.text = @"What's Your Issue?";
+    [label sizeToFit];
     
     CGFloat offset = 55;
+    CGFloat versionOffset = 0;
+    CGFloat fontOffset = 0;
+    if(IS_IPHONE_5){
+        versionOffset += 30;
+        fontOffset += 5;
+    }
     titleTextView = [[UITextView alloc] initWithFrame:CGRectMake(70, 20+offset, 230, 60)];
     [titleTextView setReturnKeyType:UIReturnKeyDone];
     titleTextView.delegate = self;
     titleTextView.tag = 1;
     titleTextView.textColor = [UIColor lightGrayColor];
     titleTextView.text = @"Title...";
-    [titleTextView setFont:[UIFont boldSystemFontOfSize:22.0]];
+    [titleTextView setFont:[UIFont boldSystemFontOfSize:17.0+fontOffset]];
     
-    descriptionTextView = [[UITextView alloc] initWithFrame:CGRectMake(70, 90+offset, 230, 150)];
+    descriptionTextView = [[UITextView alloc] initWithFrame:CGRectMake(70, 90+offset, 230, 120+versionOffset)];
     [descriptionTextView setReturnKeyType:UIReturnKeyDone];
     descriptionTextView.delegate = self;
     descriptionTextView.tag = 2;
     descriptionTextView.textColor = [UIColor lightGrayColor];
     descriptionTextView.text = @"Description...";
-    [descriptionTextView setFont:[UIFont systemFontOfSize:20.0]];
+    [descriptionTextView setFont:[UIFont systemFontOfSize:15.0+fontOffset]];
     
     titleCounter = [[UILabel alloc] initWithFrame:CGRectMake(20, 20+offset, 30, 60)];
     titleCounter.text = @"30";
@@ -122,37 +137,30 @@
     
     
     
-    addPhotoBtn = [[UIButton alloc] initWithFrame:CGRectMake(25, DEVICEHEIGHT-229+offset, 150, 150)];
+    addPhotoBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, DEVICEHEIGHT-260+offset, 180, 210)];
     addPhotoBtn.backgroundColor = secondaryColor;
     [addPhotoBtn addTarget:self action:@selector(takePhoto) forControlEvents:UIControlEventTouchUpInside];
-    UIImage *photoImage = [self changeColorTo:[UIColor darkGrayColor] fromImage:[UIImage imageNamed:@"camera-white.png"]];
-    [addPhotoBtn setBackgroundImage:[UIImage imageNamed:@"camera-white.png"] forState:UIControlStateHighlighted];
-    [addPhotoBtn setBackgroundImage:photoImage forState:UIControlStateNormal];
+    [addPhotoBtn setTitle:@"Take a photo" forState:UIControlStateNormal];
+    [addPhotoBtn setBackgroundColor:[UIColor lightGrayColor]];
+    [addPhotoBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+
     
     
-    addLocBtn = [[UIButton alloc] initWithFrame:CGRectMake(200, DEVICEHEIGHT-244+offset, 120, 100)];
+    addLocBtn = [[UIButton alloc] initWithFrame:CGRectMake(180, DEVICEHEIGHT-260+offset, 140, 110)];
     addLocBtn.backgroundColor = secondaryColor;
     [addLocBtn addTarget:self action:@selector(changeLocation) forControlEvents:UIControlEventTouchUpInside];
-    UIImage *locImage = [self changeColorTo:[UIColor darkGrayColor]  fromImage:[UIImage imageNamed:@"pin-black.png.png"]];
-    [addLocBtn setBackgroundImage:[UIImage imageNamed:@"pin-black.png"] forState:UIControlStateHighlighted];
-    [addLocBtn setBackgroundImage:locImage forState:UIControlStateNormal];
+    [addLocBtn setTitle:@"Set the pin" forState:UIControlStateNormal];
+    [addLocBtn setBackgroundColor:[UIColor grayColor]];
+    [addLocBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
-    addTagBtn = [[UIButton alloc] initWithFrame:CGRectMake(200, DEVICEHEIGHT-144+offset, 120, 100)];
+    addTagBtn = [[UIButton alloc] initWithFrame:CGRectMake(180, DEVICEHEIGHT-154+offset, 140, 100)];
     addTagBtn.backgroundColor = secondaryColor;
     [addTagBtn addTarget:self action:@selector(displayTags:) forControlEvents:UIControlEventTouchUpInside];
-    UIImage *tagPhoto = [self changeColorTo:[UIColor darkGrayColor] fromImage:[UIImage imageNamed:@"tag-flat.png"]];
-    [addTagBtn setBackgroundImage:[UIImage imageNamed:@"tag-flat.png"] forState:UIControlStateHighlighted];
-    [addTagBtn setBackgroundImage:tagPhoto forState:UIControlStateNormal];
-    
-    //[addTagBtn setTitle:@"Add\ntag" forState:UIControlStateNormal];
-    //[addLocBtn setTitle:@"Current\nLocation" forState:UIControlStateNormal];
-    //[addPhotoBtn setTitle:@"Take a pic" forState:UIControlStateNormal];
+    [addTagBtn setTitle:@"Add tags" forState:UIControlStateNormal];
+    [addTagBtn setBackgroundColor:[UIColor blackColor]];
+    [addTagBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     
     //ADD ALL THE IMAGES
-    
-    
-    
-    
     
     [self.view addSubview:tagScrollView];
     [self.view addSubview:titleTextView];
@@ -179,10 +187,10 @@
     [deny setImage:cross forState:UIControlStateNormal];
     [deny addTarget:self action:@selector(cancelAdd) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *barCross = [[UIBarButtonItem alloc] initWithCustomView:deny];
-    self.navigationItem.rightBarButtonItem = barCross;
+    self.navigationItem.leftBarButtonItem = barCross;
     
     UIBarButtonItem *accept = [[UIBarButtonItem alloc] initWithCustomView:addItem];
-    self.navigationItem.leftBarButtonItem = accept;
+    self.navigationItem.rightBarButtonItem = accept;
     
     [self generateTiles];
     

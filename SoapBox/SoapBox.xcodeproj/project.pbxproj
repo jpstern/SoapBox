@@ -63,7 +63,7 @@
 		38FBF7B217ED67A9004695DA /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FBF7B117ED67A9004695DA /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		38FBF7B417ED67B7004695DA /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FBF7B317ED67B7004695DA /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		38FBF7B617ED68B9004695DA /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FBF7B517ED68B9004695DA /* libsqlite3.dylib */; };
-		38FD03DB17EDEB7E0038379D /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FBF79A17ED5A2B004695DA /* FacebookSDK.framework */; };
+		38FCC07517EE5715007F1179 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FBF79A17ED5A2B004695DA /* FacebookSDK.framework */; };
 		5E79FB6C17EDD6CD00430435 /* IssueListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79FB6A17EDD6CD00430435 /* IssueListViewController.m */; };
 		5E79FB6D17EDD6CD00430435 /* IssueListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E79FB6B17EDD6CD00430435 /* IssueListViewController.xib */; };
 		5E79FB6E17EDD72A00430435 /* Issue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB0A1AB17ED7CB6003E6935 /* Issue.m */; };
@@ -233,7 +233,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38FD03DB17EDEB7E0038379D /* FacebookSDK.framework in Frameworks */,
+				38FCC07517EE5715007F1179 /* FacebookSDK.framework in Frameworks */,
 				38FBF79917ED56BD004695DA /* Parse.framework in Frameworks */,
 				383FDAAB17EDD09700F80046 /* libz.dylib in Frameworks */,
 				38FBF7A617ED6480004695DA /* MobileCoreServices.framework in Frameworks */,
@@ -780,8 +780,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/charleyhutchison/SoapBox/SoapBox,
-					"/Users/Jack/Documents/Projects/SoapBox/**",
+					"/Users/gregoryhurray/Desktop/repo-main/SoapBox/SoapBox",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SoapBox/SoapBox-Prefix.pch";
@@ -808,8 +807,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/charleyhutchison/SoapBox/SoapBox,
-					"/Users/Jack/Documents/Projects/SoapBox/**",
+					"/Users/gregoryhurray/Desktop/repo-main/SoapBox/SoapBox",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SoapBox/SoapBox-Prefix.pch";

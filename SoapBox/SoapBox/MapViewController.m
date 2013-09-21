@@ -9,6 +9,7 @@
 #import "MapViewController.h"
 #import "AddNewIssueViewController.h"
 #import "ViewController.h"
+#import "IssueViewController.h"
 
 @interface MapViewController ()
 
@@ -48,8 +49,9 @@
         [self presentViewController:loginNav animated:YES completion:^{
             
         }];
-      
-    }
+        
+        [self refresh];
+      }
   
   [self setTitle:@"SoapBox"];
   [[[self navigationController] navigationItem] setTitle:@"SoapBox"];
@@ -65,6 +67,37 @@
      */
 }
 
+-(void)refresh{
+    NSLog(@"\n\nrefrehing\n\n");
+    
+    [self removeAllAnnotations];
+    
+    //throw in an animation
+    
+    CGFloat kilometers = currentDist/1000;
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Issue"];
+    [query setLimit:100];
+    [query whereKey:@"Location"
+       nearGeoPoint:[PFGeoPoint geoPointWithLatitude:[[LocationGetter sharedInstance] getLatitude]
+                                           longitude:[[LocationGetter sharedInstance]getLongitude]]
+   withinKilometers:kilometers];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            NSLog(@"OBJECTS SIZE IS %i", [objects count]);
+            for (PFObject *object in objects) {
+                
+                PFGeoPoint *tmp = [object objectForKey:@"Location"];
+                //NSLog(@"object %@ is now at %f , %f\n\n", [object objectForKey:@"title"], tmp.latitude, tmp.longitude);
+                MKPointAnnotation *tmpAnnotation = [[MKPointAnnotation alloc]init];
+                tmpAnnotation.coordinate = CLLocationCoordinate2DMake(tmp.latitude, tmp.longitude);
+                tmpAnnotation.title = [object objectForKey:@"Title"];
+                tmpAnnotation.subtitle = [object objectForKey:@"Description"];
+                [self.mapView addAnnotation:tmpAnnotation];
+            }
+        }
+    }];
+}
 
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
     MKMapRect mRect = _mapView.visibleMapRect;
@@ -90,7 +123,7 @@
     [_mapView setRegion:viewRegion animated:YES];
     
     //refresh
-    //[self refresh];
+    [self refresh];
 }
 
 
@@ -128,6 +161,9 @@
     NSLog(@"calloutAccessoryControlTapped");
     
     if([view.annotation isMemberOfClass:[MKUserLocation class]])return;
+    
+    IssueViewController *iVC = [[IssueViewController alloc]initWithNibName:@"IssueViewController" bundle:nil];
+    [self.navigationController pushViewController:iVC animated:YES];
     
 }
 
