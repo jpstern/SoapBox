@@ -33,7 +33,6 @@
     [self.window setRootViewController:master];
     
     MainMenuViewController *menu = [[MainMenuViewController alloc] init];
-//    DummyTableViewController *dummyTable = [[DummyTableViewController alloc] init];
     UINavigationController *dummyTableNav = [[UINavigationController alloc] initWithRootViewController:menu];
     dummyTableNav.navigationBar.translucent = NO;
     
@@ -45,10 +44,10 @@
     mapNav.navigationBar.translucent = NO;
 
     master.childController = mapNav;
-    
-    
+  
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:19.0/255 green:19.0/255 blue:19.0/255 alpha:1.0]];
-    
+
+  
     [self.window makeKeyAndVisible];
     
     // Override point for customization after application launch.

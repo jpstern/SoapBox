@@ -56,6 +56,7 @@
 	// Do any additional setup after loading the view.
   
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Drop" style:UIBarButtonItemStylePlain target:self action:@selector(openContainer)];
+  [self.navigationItem setTitle:@"SoapBox"];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showIssueController)];
   
   // Sets up the frames of the 4 buttons and the logo.

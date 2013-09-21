@@ -104,7 +104,7 @@
     
     [self.parentController setNavigationBarHidden:YES animated:YES];
     
-    [UIView animateWithDuration:0.25 animations:^{
+    [UIView animateWithDuration:0.20 animations:^{
     
         CGRect rect = self.childView.frame;
         
@@ -130,7 +130,7 @@
     
     [self.parentController setNavigationBarHidden:NO animated:YES];
     
-    [UIView animateWithDuration:0.25 animations:^{
+    [UIView animateWithDuration:0.20 animations:^{
         
         CGRect rect = self.childView.frame;
         
