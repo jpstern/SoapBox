@@ -1,5 +1,5 @@
 //
-//  Table.h
+//  MainMenuViewController.h
 //  SoapBox
 //
 //  Created by Jackson on 9/21/13.
@@ -7,15 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Cell.h"
 
-@interface Table : UIViewController {
+@interface MainMenuViewController : UIViewController{
   IBOutlet UIButton *myIssues;
   IBOutlet UIButton *friendsIssues;
   IBOutlet UIButton *about;
   IBOutlet UIButton *settings;
   IBOutlet UIImageView *logo;
-
+  
 }
+
+- (IBAction)myIssues:(id)sender;
+- (IBAction)friendsIssues:(id)sender;
+- (IBAction)about:(id)sender;
+- (IBAction)settings:(id)sender;
+
 
 @end

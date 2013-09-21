@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		046C385517ED5F6600460C13 /* Table.m in Sources */ = {isa = PBXBuildFile; fileRef = 046C385417ED5F6600460C13 /* Table.m */; };
-		046C385717ED5F8000460C13 /* Table.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046C385617ED5F8000460C13 /* Table.xib */; };
+		046C385717ED5F8000460C13 /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046C385617ED5F8000460C13 /* MainMenuViewController.xib */; };
+		046C385F17ED802200460C13 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046C385E17ED802200460C13 /* MainMenuViewController.m */; };
 		38A7941A17ED6D1E0078F048 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A7941817ED6D1E0078F048 /* MapViewController.m */; };
 		38A7941B17ED6D1E0078F048 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A7941917ED6D1E0078F048 /* MapViewController.xib */; };
 		38A7941D17ED70410078F048 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A7941C17ED70410078F048 /* ViewController.xib */; };
@@ -67,9 +67,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		046C385317ED5F6600460C13 /* Table.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Table.h; sourceTree = "<group>"; };
-		046C385417ED5F6600460C13 /* Table.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Table.m; sourceTree = "<group>"; };
-		046C385617ED5F8000460C13 /* Table.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Table.xib; sourceTree = "<group>"; };
+		046C385617ED5F8000460C13 /* MainMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenuViewController.xib; sourceTree = "<group>"; };
+		046C385D17ED802200460C13 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
+		046C385E17ED802200460C13 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		38A7941717ED6D1E0078F048 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		38A7941817ED6D1E0078F048 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		38A7941917ED6D1E0078F048 /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
@@ -136,9 +136,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38FBF7B217ED67A9004695DA /* Social.framework in Frameworks */,
 				38FBF7B617ED68B9004695DA /* libsqlite3.dylib in Frameworks */,
 				38FBF7B417ED67B7004695DA /* Accounts.framework in Frameworks */,
-				38FBF7B217ED67A9004695DA /* Social.framework in Frameworks */,
 				38FBF7B017ED67A2004695DA /* AdSupport.framework in Frameworks */,
 				38FBF7AE17ED64A9004695DA /* SystemConfiguration.framework in Frameworks */,
 				38FBF7AC17ED649B004695DA /* StoreKit.framework in Frameworks */,
@@ -285,6 +285,12 @@
 				804DA6B617ED811B00F86495 /* DummyViewController.xib */,
 				804DA67717ED54A800F86495 /* AppDelegate.h */,
 				804DA67817ED54A800F86495 /* AppDelegate.m */,
+				804DA67D17ED54A800F86495 /* ViewController.h */,
+				804DA67E17ED54A800F86495 /* ViewController.m */,
+				804DA69D17ED556B00F86495 /* ViewController.xib */,
+				046C385D17ED802200460C13 /* MainMenuViewController.h */,
+				046C385E17ED802200460C13 /* MainMenuViewController.m */,
+				046C385617ED5F8000460C13 /* MainMenuViewController.xib */,
 				804DA68017ED54A800F86495 /* Images.xcassets */,
 				38A7942517ED74CC0078F048 /* Objects */,
 				38A7942417ED745F0078F048 /* View Controllers */,
@@ -409,6 +415,8 @@
 				804DA69E17ED556B00F86495 /* ViewController.xib in Resources */,
 				046C385717ED5F8000460C13 /* Table.xib in Resources */,
 				804DA6AD17ED6B6100F86495 /* DummyMapViewController.xib in Resources */,
+				804DA69E17ED556B00F86495 /* ViewController.xib in Resources */,
+				046C385717ED5F8000460C13 /* MainMenuViewController.xib in Resources */,
 				804DA67317ED54A800F86495 /* InfoPlist.strings in Resources */,
 				38A7942317ED721F0078F048 /* pin_blue_small.png in Resources */,
 				38A7941D17ED70410078F048 /* ViewController.xib in Resources */,
@@ -442,7 +450,7 @@
 				38A7942117ED70EB0078F048 /* LocationGetter.m in Sources */,
 				804DA67917ED54A800F86495 /* AppDelegate.m in Sources */,
 				5EB0A1A317ED70A2003E6935 /* AddIssueViewController.m in Sources */,
-				046C385517ED5F6600460C13 /* Table.m in Sources */,
+				046C385F17ED802200460C13 /* MainMenuViewController.m in Sources */,
 				804DA67517ED54A800F86495 /* main.m in Sources */,
 				38A7941A17ED6D1E0078F048 /* MapViewController.m in Sources */,
 			);
