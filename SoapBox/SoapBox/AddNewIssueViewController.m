@@ -228,7 +228,7 @@
     
     PFGeoPoint *location = [PFGeoPoint geoPointWithLatitude:lcVC.coord.latitude longitude:lcVC.coord.longitude];
     [issue setObject:location forKey:@"Location"];
-    
+    [issue setObject:[PFUser currentUser] forKey:@"User"];
     [issue setObject:titleTextView.text forKey:@"Title"];
     [issue setObject:descriptionTextView.text forKey:@"Description"];
     [issue saveInBackgroundWithBlock:^(BOOL success, NSError *error) {
@@ -391,15 +391,14 @@
     }
     
     if (textView.tag == 1) {
-        if (textView.text.length <= 30) {
+        if (textView.text.length < 30) {
             titleCounter.text = [NSString stringWithFormat:@"%i", 30 - textView.text.length];
-            
             return true;
         } else {
             return false;
         }
     } else {
-        if (textView.text.length <= 130) {
+        if (textView.text.length < 130) {
             descriptionCounter.text = [NSString stringWithFormat:@"%i", 130 - textView.text.length];
             return true;
         } else {

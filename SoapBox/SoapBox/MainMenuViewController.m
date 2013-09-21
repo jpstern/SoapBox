@@ -21,6 +21,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        returnFromPush = NO;
     }
     return self;
 }
@@ -79,16 +80,49 @@
 }
 
 - (IBAction)myIssues:(id)sender {
-  
+    IssueListViewController *issueController = [[IssueListViewController alloc] initWithNibName:@"IssueListViewController" bundle:[NSBundle mainBundle]];
+    Issue *issue = [[Issue alloc] init];
+    issue.title = @"Test";
+    issueController.issues = @[issue];
+    issueController.title = @"My Issues";
+    [self.navigationController pushViewController:issueController animated:YES];
+    [self closeContainer];
+    returnFromPush = YES;
 }
 - (IBAction)friendsIssues:(id)sender {
-  
+    IssueListViewController *issueController = [[IssueListViewController alloc] initWithNibName:@"IssueListViewController" bundle:[NSBundle mainBundle]];
+    Issue *issue = [[Issue alloc] init];
+    issue.title = @"Test";
+    issueController.issues = @[issue];
+    issueController.title = @"Friend's Issues";
+    [self.navigationController pushViewController:issueController animated:YES];
+//    [self closeContainer];
+    returnFromPush = YES;
 }
 - (IBAction)about:(id)sender {
   
 }
 - (IBAction)settings:(id)sender {
   
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if (returnFromPush) {
+       // [self openContainer];
+        returnFromPush = NO;
+    }
+    
+    if (self.masterContainer.containerIsOpen) {
+        [self.navigationController setNavigationBarHidden:YES animated:YES];
+    }
+    else {
+        [self.navigationController setNavigationBarHidden:NO animated:YES];
+    }
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
 }
 
 
