@@ -115,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38FBF79B17ED5A2B004695DA /* FacebookSDK.framework in Frameworks */,
 				38FBF7B617ED68B9004695DA /* libsqlite3.dylib in Frameworks */,
 				38FBF7B417ED67B7004695DA /* Accounts.framework in Frameworks */,
 				38FBF7B217ED67A9004695DA /* Social.framework in Frameworks */,
@@ -129,7 +130,6 @@
 				804DA66B17ED54A800F86495 /* CoreGraphics.framework in Frameworks */,
 				38FBF7A017ED644E004695DA /* CFNetwork.framework in Frameworks */,
 				38FBF79E17ED6446004695DA /* AudioToolbox.framework in Frameworks */,
-				38FBF79B17ED5A2B004695DA /* FacebookSDK.framework in Frameworks */,
 				804DA66D17ED54A800F86495 /* UIKit.framework in Frameworks */,
 				38FBF79917ED56BD004695DA /* Parse.framework in Frameworks */,
 				804DA66917ED54A800F86495 /* Foundation.framework in Frameworks */,
@@ -190,7 +190,6 @@
 				38A7941C17ED70410078F048 /* ViewController.xib */,
 				38A7941917ED6D1E0078F048 /* MapViewController.xib */,
 				5EB0A1A217ED70A2003E6935 /* AddIssueViewController.xib */,
-				804DA69D17ED556B00F86495 /* ViewController.xib */,
 			);
 			name = XIBS;
 			sourceTree = "<group>";
@@ -337,7 +336,7 @@
 				ORGANIZATIONNAME = Josh;
 				TargetAttributes = {
 					804DA66417ED54A800F86495 = {
-						DevelopmentTeam = UV5VPY8PJJ;
+						DevelopmentTeam = 43LEM8BQ2H;
 					};
 					804DA68517ED54A800F86495 = {
 						TestTargetID = 804DA66417ED54A800F86495;
@@ -518,6 +517,7 @@
 		804DA69817ED54A800F86495 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -525,10 +525,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/Jack/Documents/Projects/SoapBox/**",
+					"/Users/gregoryhurray/Desktop/repo-main/SoapBox/SoapBox",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SoapBox/SoapBox-Prefix.pch";
 				INFOPLIST_FILE = "SoapBox/SoapBox-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -538,6 +540,7 @@
 		804DA69917ED54A800F86495 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -545,10 +548,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/Jack/Documents/Projects/SoapBox/**",
+					"/Users/gregoryhurray/Desktop/repo-main/SoapBox/SoapBox",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SoapBox/SoapBox-Prefix.pch";
 				INFOPLIST_FILE = "SoapBox/SoapBox-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;

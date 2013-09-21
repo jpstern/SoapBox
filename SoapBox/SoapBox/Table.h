@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Cell.h"
 
 @interface Table : UIViewController {
   IBOutlet UIButton *myIssues;

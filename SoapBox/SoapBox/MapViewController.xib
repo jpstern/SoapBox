@@ -7,7 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MapViewController">
             <connections>
                 <outlet property="mapView" destination="jG2-RE-nyu" id="qy1-aY-tEP"/>
-                <outlet property="view" destination="jG2-RE-nyu" id="LzS-C4-bis"/>
+                <outlet property="view" destination="jG2-RE-nyu" id="nWJ-Ge-xuP"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

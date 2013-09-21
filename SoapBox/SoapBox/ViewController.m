@@ -24,7 +24,7 @@
         [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) // Check if user is linked to Facebook
     {
         // Push the next view controller without animation
-        MapViewController *mVC = [[MapViewController alloc] init];
+        MapViewController *mVC = [[MapViewController alloc] initWithNibName:@"MapViewController" bundle:nil ];
         [self.navigationController pushViewController:mVC animated:YES];
     }
 }
@@ -60,7 +60,7 @@
             NSLog(@"User with facebook signed up and logged in!");
            
             //push it real good
-            MapViewController *mVC = [[MapViewController alloc] init];
+            MapViewController *mVC = [[MapViewController alloc] initWithNibName:@"MapViewController.xib" bundle:nil ];
             [self.navigationController pushViewController:mVC animated:YES];
             
         } else {
@@ -68,7 +68,7 @@
             
             
             //puch it real good
-            MapViewController *mVC = [[MapViewController alloc] init];
+            MapViewController *mVC = [[MapViewController alloc] initWithNibName:@"MapViewController.xib" bundle:nil ];
             [self.navigationController pushViewController:mVC animated:YES];
             
             NSLog(@"made it here");

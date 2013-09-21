@@ -7,6 +7,7 @@
 //
 
 #import "MapViewController.h"
+#import "AddIssueViewController.h"
 
 #define METERS_PER_MILE 1609.344
 
@@ -38,6 +39,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(loadAddScreen:)];
+    self.navigationItem.rightBarButtonItem = addButton;
     
     /* once we need it
      
@@ -47,6 +50,12 @@
      self.navigationItem.leftBarButtonItem = addButton;
      
      */
+}
+
+-(IBAction)loadAddScreen:(id)sender{
+    AddIssueViewController *aiVC = [[AddIssueViewController alloc] initWithNibName:@"AddIssueViewController" bundle:nil];
+    UINavigationController *tmpNC = [[UINavigationController alloc] initWithRootViewController:aiVC];
+    [self presentViewController:tmpNC animated:YES completion:nil];
 }
 
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
