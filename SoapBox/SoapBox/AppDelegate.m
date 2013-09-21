@@ -47,7 +47,7 @@
     master.childController = mapNav;
     
     
-    [[UINavigationBar appearance] setBarTintColor:[UIColor darkGrayColor]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:19.0/255 green:19.0/255 blue:19.0/255 alpha:1.0]];
     
     [self.window makeKeyAndVisible];
     

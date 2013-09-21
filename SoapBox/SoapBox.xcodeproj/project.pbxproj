@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0403EFEB17EDBF9E00696605 /* soapbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 0403EFEA17EDBF9E00696605 /* soapbox.png */; };
+		0403EFF817EE13B300696605 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0403EFF717EE13B300696605 /* CustomCell.m */; };
+		0403EFFA17EE13D300696605 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0403EFF917EE13D300696605 /* CustomCell.xib */; };
+		0403EFFC17EE299700696605 /* backgroundPattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 0403EFFB17EE299700696605 /* backgroundPattern.png */; };
 		046C385F17ED802200460C13 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046C385E17ED802200460C13 /* MainMenuViewController.m */; };
 		046C386717ED8ADF00460C13 /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046C386617ED8ADF00460C13 /* MainMenuViewController.xib */; };
 		046C387117ED8FEE00460C13 /* DummyMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046C386917ED8FEE00460C13 /* DummyMapViewController.m */; };
@@ -105,6 +108,10 @@
 
 /* Begin PBXFileReference section */
 		0403EFEA17EDBF9E00696605 /* soapbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soapbox.png; sourceTree = "<group>"; };
+		0403EFF617EE13B300696605 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomCell.h; path = ../../../CustomCell.h; sourceTree = "<group>"; };
+		0403EFF717EE13B300696605 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomCell.m; path = ../../../CustomCell.m; sourceTree = "<group>"; };
+		0403EFF917EE13D300696605 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
+		0403EFFB17EE299700696605 /* backgroundPattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundPattern.png; sourceTree = "<group>"; };
 		046C385D17ED802200460C13 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		046C385E17ED802200460C13 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		046C386617ED8ADF00460C13 /* MainMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenuViewController.xib; sourceTree = "<group>"; };
@@ -117,7 +124,6 @@
 		046C386E17ED8FEE00460C13 /* DummyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DummyViewController.h; sourceTree = "<group>"; };
 		046C386F17ED8FEE00460C13 /* DummyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DummyViewController.m; sourceTree = "<group>"; };
 		046C387017ED8FEE00460C13 /* DummyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DummyViewController.xib; sourceTree = "<group>"; };
-		046C387E17ED977900460C13 /* IssuesListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IssuesListViewController.xib; sourceTree = "<group>"; };
 		382C655517EDAA7E006BBCE2 /* AddNewIssueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNewIssueViewController.h; sourceTree = "<group>"; };
 		382C655617EDAA7E006BBCE2 /* AddNewIssueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNewIssueViewController.m; sourceTree = "<group>"; };
 		382C655717EDAA7E006BBCE2 /* AddNewIssueViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddNewIssueViewController.xib; sourceTree = "<group>"; };
@@ -267,6 +273,7 @@
 				383FDAA617EDC1AC00F80046 /* tag-flat.png */,
 				383FDA9617EDC1A400F80046 /* menu.png */,
 				383FDA9717EDC1A400F80046 /* menu@2x.png */,
+				0403EFFB17EE299700696605 /* backgroundPattern.png */,
 				383FDA9817EDC1A400F80046 /* pin_blue_small.png */,
 				383FDA9917EDC1A400F80046 /* pin-black.png */,
 				383FDA9A17EDC1A400F80046 /* search.png */,
@@ -314,7 +321,6 @@
 		38FBF79C17ED6285004695DA /* XIBS */ = {
 			isa = PBXGroup;
 			children = (
-				046C387E17ED977900460C13 /* IssuesListViewController.xib */,
 				046C386617ED8ADF00460C13 /* MainMenuViewController.xib */,
 				804DA6A117ED65BF00F86495 /* MasterViewController.xib */,
 				804DA6A117ED65BF00F86495 /* MasterViewController.xib */,
@@ -424,6 +430,9 @@
 				5E79FB6917EDD6CD00430435 /* IssueListViewController.h */,
 				5E79FB6A17EDD6CD00430435 /* IssueListViewController.m */,
 				5E79FB6B17EDD6CD00430435 /* IssueListViewController.xib */,
+				0403EFF617EE13B300696605 /* CustomCell.h */,
+				0403EFF717EE13B300696605 /* CustomCell.m */,
+				0403EFF917EE13D300696605 /* CustomCell.xib */,
 				804DA67717ED54A800F86495 /* AppDelegate.h */,
 				804DA67817ED54A800F86495 /* AppDelegate.m */,
 				804DA67D17ED54A800F86495 /* ViewController.h */,
@@ -524,7 +533,8 @@
 				ORGANIZATIONNAME = Josh;
 				TargetAttributes = {
 					804DA66417ED54A800F86495 = {
-						DevelopmentTeam = 43LEM8BQ2H;
+						DevelopmentTeam = 5G84J3W3H2;
+            83e1cb8c224f3da85e996aa3ef4b7b4e03e0b0ad
 					};
 					804DA68517ED54A800F86495 = {
 						TestTargetID = 804DA66417ED54A800F86495;
@@ -581,6 +591,7 @@
 				38A7942317ED721F0078F048 /* pin_blue_small.png in Resources */,
 				383FDA8E17EDC16A00F80046 /* check.png in Resources */,
 				046C386717ED8ADF00460C13 /* MainMenuViewController.xib in Resources */,
+				0403EFFA17EE13D300696605 /* CustomCell.xib in Resources */,
 				38A7941D17ED70410078F048 /* ViewController.xib in Resources */,
 				382C655917EDAA7F006BBCE2 /* AddNewIssueViewController.xib in Resources */,
 				383FDA8517EDC15100F80046 /* camera-white.png in Resources */,
@@ -592,6 +603,7 @@
 				383FDA8C17EDC16A00F80046 /* arrow@2x.png in Resources */,
 				5EECC1E617ED8F5600BDDF4E /* DummyMapViewController.xib in Resources */,
 				383FDAA717EDC1AC00F80046 /* tag-flat.png in Resources */,
+				0403EFFC17EE299700696605 /* backgroundPattern.png in Resources */,
 				383FDA9F17EDC1A400F80046 /* menu@2x.png in Resources */,
 				046C387217ED8FEE00460C13 /* DummyMapViewController.xib in Resources */,
 				5E79FB7417EE048100430435 /* AddEmailViewController.xib in Resources */,
@@ -624,6 +636,7 @@
 				5EECC1EF17ED8F5600BDDF4E /* UIViewController+MasterContainer.m in Sources */,
 				5EECC1E917ED8F5600BDDF4E /* DummyViewController.m in Sources */,
 				382C655D17EDAD0C006BBCE2 /* LocChooseViewController.m in Sources */,
+				0403EFF817EE13B300696605 /* CustomCell.m in Sources */,
 				38A7942117ED70EB0078F048 /* LocationGetter.m in Sources */,
 				804DA67917ED54A800F86495 /* AppDelegate.m in Sources */,
 				5E79FB6C17EDD6CD00430435 /* IssueListViewController.m in Sources */,
@@ -765,6 +778,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/gregoryhurray/Desktop/repo-main/SoapBox/SoapBox",
+					/Users/charleyhutchison/SoapBox/SoapBox,
+					"/Users/Jack/Documents/Projects/SoapBox/**",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SoapBox/SoapBox-Prefix.pch";
@@ -792,6 +807,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/gregoryhurray/Desktop/repo-main/SoapBox/SoapBox",
+					/Users/charleyhutchison/SoapBox/SoapBox,
+					"/Users/Jack/Documents/Projects/SoapBox/**",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SoapBox/SoapBox-Prefix.pch";
