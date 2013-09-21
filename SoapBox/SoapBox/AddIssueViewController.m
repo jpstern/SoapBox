@@ -37,8 +37,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.textField.delegate = self;
-    self.textView.delegate = self;
+    self.descriptionTextField.delegate = self;
+    self.titleTextField.delegate = self;
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStylePlain target:self action:@selector(closeIssue)];
 }
 

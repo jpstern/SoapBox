@@ -2,7 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-<<<<<<< HEAD
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleURLTypes</key>
@@ -18,21 +17,16 @@
 	<string>SoapBox</string>
 	<key>FacebookAppID</key>
 	<string>662712950414191</string>
-=======
->>>>>>> 90317fe8487c8d40671c3e92a165059adbe46ceb
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
 	<string>${PRODUCT_NAME}</string>
-<<<<<<< HEAD
-=======
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIcons</key>
 	<dict/>
 	<key>CFBundleIcons~ipad</key>
 	<dict/>
->>>>>>> 90317fe8487c8d40671c3e92a165059adbe46ceb
 	<key>CFBundleIdentifier</key>
 	<string>com.mhacks.SoapBox.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
