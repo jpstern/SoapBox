@@ -96,7 +96,7 @@
     issueController.issues = @[issue];
     issueController.title = @"Friend's Issues";
     [self.navigationController pushViewController:issueController animated:YES];
-    [self closeContainer];
+//    [self closeContainer];
     returnFromPush = YES;
 }
 - (IBAction)about:(id)sender {
@@ -109,8 +109,15 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     if (returnFromPush) {
-        [self openContainer];
+       // [self openContainer];
         returnFromPush = NO;
+    }
+    
+    if (self.masterContainer.containerIsOpen) {
+        [self.navigationController setNavigationBarHidden:YES animated:YES];
+    }
+    else {
+        [self.navigationController setNavigationBarHidden:NO animated:YES];
     }
 }
 

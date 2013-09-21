@@ -233,7 +233,7 @@
     
     PFGeoPoint *location = [PFGeoPoint geoPointWithLatitude:lcVC.coord.latitude longitude:lcVC.coord.longitude];
     [issue setObject:location forKey:@"Location"];
-    
+    [issue setObject:[PFUser currentUser] forKey:@"User"];
     [issue setObject:titleTextView.text forKey:@"Title"];
     [issue setObject:descriptionTextView.text forKey:@"Description"];
     [issue saveInBackgroundWithBlock:^(BOOL success, NSError *error) {
