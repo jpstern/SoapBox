@@ -52,6 +52,10 @@
 }
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    if ([[NSCharacterSet whitespaceAndNewlineCharacterSet] characterIsMember:[text characterAtIndex:0]]) {
+        NSLog(@"Newline");
+        [textView resignFirstResponder];
+    }
     NSLog(@"range");
     if ([textView.text length] > 140) {
         textView.text = [textView.text substringToIndex:139];
@@ -62,6 +66,11 @@
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     NSLog(@"range");
+    NSLog(@"String: %@", string);
+    if ([[NSCharacterSet whitespaceAndNewlineCharacterSet] characterIsMember:[string characterAtIndex:0]]) {
+        NSLog(@"Newline");
+        [textField resignFirstResponder];
+    }
     if ([textField.text length] > 30) {
         textField.text = [textField.text substringToIndex:29];
         return NO;

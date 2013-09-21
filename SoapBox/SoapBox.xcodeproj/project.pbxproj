@@ -32,8 +32,17 @@
 		5EB0A1A317ED70A2003E6935 /* AddIssueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB0A1A117ED70A2003E6935 /* AddIssueViewController.m */; };
 		5EB0A1A417ED70A2003E6935 /* AddIssueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EB0A1A217ED70A2003E6935 /* AddIssueViewController.xib */; };
 		5EB0A1A817ED7C4C003E6935 /* IssueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB0A1A617ED7C4C003E6935 /* IssueViewController.m */; };
-		5EB0A1A917ED7C4C003E6935 /* IssueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EB0A1A717ED7C4C003E6935 /* IssueViewController.xib */; };
 		5EB0A1AC17ED7CB6003E6935 /* Issue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB0A1AB17ED7CB6003E6935 /* Issue.m */; };
+		5EECC1E517ED8F5600BDDF4E /* DummyMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EECC1D417ED8F5600BDDF4E /* DummyMapViewController.m */; };
+		5EECC1E617ED8F5600BDDF4E /* DummyMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EECC1D517ED8F5600BDDF4E /* DummyMapViewController.xib */; };
+		5EECC1E717ED8F5600BDDF4E /* DummyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EECC1D717ED8F5600BDDF4E /* DummyTableViewController.m */; };
+		5EECC1E817ED8F5600BDDF4E /* DummyTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EECC1D817ED8F5600BDDF4E /* DummyTableViewController.xib */; };
+		5EECC1E917ED8F5600BDDF4E /* DummyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EECC1DA17ED8F5600BDDF4E /* DummyViewController.m */; };
+		5EECC1EA17ED8F5600BDDF4E /* DummyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EECC1DB17ED8F5600BDDF4E /* DummyViewController.xib */; };
+		5EECC1EB17ED8F5600BDDF4E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5EECC1DD17ED8F5600BDDF4E /* InfoPlist.strings */; };
+		5EECC1ED17ED8F5600BDDF4E /* IssueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EECC1E017ED8F5600BDDF4E /* IssueViewController.xib */; };
+		5EECC1EE17ED8F5600BDDF4E /* UIViewController+Container.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EECC1E217ED8F5600BDDF4E /* UIViewController+Container.m */; };
+		5EECC1EF17ED8F5600BDDF4E /* UIViewController+MasterContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EECC1E417ED8F5600BDDF4E /* UIViewController+MasterContainer.m */; };
 		804DA66917ED54A800F86495 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 804DA66817ED54A800F86495 /* Foundation.framework */; };
 		804DA66B17ED54A800F86495 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 804DA66A17ED54A800F86495 /* CoreGraphics.framework */; };
 		804DA66D17ED54A800F86495 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 804DA66C17ED54A800F86495 /* UIKit.framework */; };
@@ -49,14 +58,6 @@
 		804DA69417ED54A800F86495 /* SoapBoxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 804DA69317ED54A800F86495 /* SoapBoxTests.m */; };
 		804DA6A217ED65BF00F86495 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 804DA6A017ED65BF00F86495 /* MasterViewController.m */; };
 		804DA6A317ED65BF00F86495 /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 804DA6A117ED65BF00F86495 /* MasterViewController.xib */; };
-		804DA6A717ED6B0300F86495 /* DummyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 804DA6A517ED6B0300F86495 /* DummyTableViewController.m */; };
-		804DA6A817ED6B0300F86495 /* DummyTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 804DA6A617ED6B0300F86495 /* DummyTableViewController.xib */; };
-		804DA6AC17ED6B6100F86495 /* DummyMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 804DA6AA17ED6B6100F86495 /* DummyMapViewController.m */; };
-		804DA6AD17ED6B6100F86495 /* DummyMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 804DA6AB17ED6B6100F86495 /* DummyMapViewController.xib */; };
-		804DA6B017ED7A9800F86495 /* UIViewController+Container.m in Sources */ = {isa = PBXBuildFile; fileRef = 804DA6AF17ED7A9800F86495 /* UIViewController+Container.m */; };
-		804DA6B317ED7EFC00F86495 /* UIViewController+MasterContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 804DA6B217ED7EFC00F86495 /* UIViewController+MasterContainer.m */; };
-		804DA6B717ED811B00F86495 /* DummyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 804DA6B517ED811B00F86495 /* DummyViewController.m */; };
-		804DA6B817ED811B00F86495 /* DummyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 804DA6B617ED811B00F86495 /* DummyViewController.xib */; };
 		804DA6BC17ED8AA100F86495 /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 804DA6BB17ED8AA100F86495 /* MainMenuViewController.xib */; };
 /* End PBXBuildFile section */
 
@@ -71,7 +72,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		046C385617ED5F8000460C13 /* MainMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainMenuViewController.xib; path = /Users/JoshStern/MHacks2013/SoapBox/SoapBox/SoapBox/MainMenuViewController.xib; sourceTree = "<absolute>"; };
 		046C385617ED5F8000460C13 /* MainMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainMenuViewController.xib; path = /Users/Jack/Documents/Projects/SoapBox/SoapBox/SoapBox/MainMenuViewController.xib; sourceTree = "<absolute>"; };
 		046C385D17ED802200460C13 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		046C385E17ED802200460C13 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
@@ -103,9 +103,23 @@
 		5EB0A1A217ED70A2003E6935 /* AddIssueViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddIssueViewController.xib; sourceTree = "<group>"; };
 		5EB0A1A517ED7C4C003E6935 /* IssueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssueViewController.h; sourceTree = "<group>"; };
 		5EB0A1A617ED7C4C003E6935 /* IssueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssueViewController.m; sourceTree = "<group>"; };
-		5EB0A1A717ED7C4C003E6935 /* IssueViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IssueViewController.xib; sourceTree = "<group>"; };
 		5EB0A1AA17ED7CB6003E6935 /* Issue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Issue.h; sourceTree = "<group>"; };
 		5EB0A1AB17ED7CB6003E6935 /* Issue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Issue.m; sourceTree = "<group>"; };
+		5EECC1D317ED8F5600BDDF4E /* DummyMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DummyMapViewController.h; sourceTree = "<group>"; };
+		5EECC1D417ED8F5600BDDF4E /* DummyMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DummyMapViewController.m; sourceTree = "<group>"; };
+		5EECC1D517ED8F5600BDDF4E /* DummyMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DummyMapViewController.xib; sourceTree = "<group>"; };
+		5EECC1D617ED8F5600BDDF4E /* DummyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DummyTableViewController.h; sourceTree = "<group>"; };
+		5EECC1D717ED8F5600BDDF4E /* DummyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DummyTableViewController.m; sourceTree = "<group>"; };
+		5EECC1D817ED8F5600BDDF4E /* DummyTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DummyTableViewController.xib; sourceTree = "<group>"; };
+		5EECC1D917ED8F5600BDDF4E /* DummyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DummyViewController.h; sourceTree = "<group>"; };
+		5EECC1DA17ED8F5600BDDF4E /* DummyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DummyViewController.m; sourceTree = "<group>"; };
+		5EECC1DB17ED8F5600BDDF4E /* DummyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DummyViewController.xib; sourceTree = "<group>"; };
+		5EECC1DE17ED8F5600BDDF4E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
+		5EECC1E017ED8F5600BDDF4E /* IssueViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IssueViewController.xib; sourceTree = "<group>"; };
+		5EECC1E117ED8F5600BDDF4E /* UIViewController+Container.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Container.h"; sourceTree = "<group>"; };
+		5EECC1E217ED8F5600BDDF4E /* UIViewController+Container.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Container.m"; sourceTree = "<group>"; };
+		5EECC1E317ED8F5600BDDF4E /* UIViewController+MasterContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MasterContainer.h"; sourceTree = "<group>"; };
+		5EECC1E417ED8F5600BDDF4E /* UIViewController+MasterContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MasterContainer.m"; sourceTree = "<group>"; };
 		804DA66517ED54A800F86495 /* SoapBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoapBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		804DA66817ED54A800F86495 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		804DA66A17ED54A800F86495 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -127,19 +141,6 @@
 		804DA69F17ED65BF00F86495 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		804DA6A017ED65BF00F86495 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		804DA6A117ED65BF00F86495 /* MasterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MasterViewController.xib; sourceTree = "<group>"; };
-		804DA6A417ED6B0300F86495 /* DummyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DummyTableViewController.h; sourceTree = "<group>"; };
-		804DA6A517ED6B0300F86495 /* DummyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DummyTableViewController.m; sourceTree = "<group>"; };
-		804DA6A617ED6B0300F86495 /* DummyTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DummyTableViewController.xib; sourceTree = "<group>"; };
-		804DA6A917ED6B6100F86495 /* DummyMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DummyMapViewController.h; sourceTree = "<group>"; };
-		804DA6AA17ED6B6100F86495 /* DummyMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DummyMapViewController.m; sourceTree = "<group>"; };
-		804DA6AB17ED6B6100F86495 /* DummyMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DummyMapViewController.xib; sourceTree = "<group>"; };
-		804DA6AE17ED7A9700F86495 /* UIViewController+Container.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Container.h"; sourceTree = "<group>"; };
-		804DA6AF17ED7A9800F86495 /* UIViewController+Container.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Container.m"; sourceTree = "<group>"; };
-		804DA6B117ED7EFC00F86495 /* UIViewController+MasterContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MasterContainer.h"; sourceTree = "<group>"; };
-		804DA6B217ED7EFC00F86495 /* UIViewController+MasterContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MasterContainer.m"; sourceTree = "<group>"; };
-		804DA6B417ED811B00F86495 /* DummyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DummyViewController.h; sourceTree = "<group>"; };
-		804DA6B517ED811B00F86495 /* DummyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DummyViewController.m; sourceTree = "<group>"; };
-		804DA6B617ED811B00F86495 /* DummyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DummyViewController.xib; sourceTree = "<group>"; };
 		804DA6B917ED886900F86495 /* FacebookSDK */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = FacebookSDK; path = FacebookSDK.framework/Versions/A/FacebookSDK; sourceTree = "<group>"; };
 		804DA6BB17ED8AA100F86495 /* MainMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenuViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -228,9 +229,19 @@
 			name = XIBS;
 			sourceTree = "<group>";
 		};
+		5EECC1DC17ED8F5600BDDF4E /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				5EECC1DD17ED8F5600BDDF4E /* InfoPlist.strings */,
+			);
+			name = en.lproj;
+			path = SoapBox/en.lproj;
+			sourceTree = "<group>";
+		};
 		804DA65C17ED54A800F86495 = {
 			isa = PBXGroup;
 			children = (
+				5EECC1DC17ED8F5600BDDF4E /* en.lproj */,
 				804DA66E17ED54A800F86495 /* SoapBox */,
 				38A7941E17ED70930078F048 /* icons */,
 				804DA68D17ED54A800F86495 /* SoapBoxTests */,
@@ -278,6 +289,20 @@
 		804DA66E17ED54A800F86495 /* SoapBox */ = {
 			isa = PBXGroup;
 			children = (
+				5EECC1E017ED8F5600BDDF4E /* IssueViewController.xib */,
+				5EECC1E117ED8F5600BDDF4E /* UIViewController+Container.h */,
+				5EECC1D417ED8F5600BDDF4E /* DummyMapViewController.m */,
+				5EECC1E217ED8F5600BDDF4E /* UIViewController+Container.m */,
+				5EECC1E317ED8F5600BDDF4E /* UIViewController+MasterContainer.h */,
+				5EECC1E417ED8F5600BDDF4E /* UIViewController+MasterContainer.m */,
+				5EECC1D317ED8F5600BDDF4E /* DummyMapViewController.h */,
+				5EECC1D517ED8F5600BDDF4E /* DummyMapViewController.xib */,
+				5EECC1D617ED8F5600BDDF4E /* DummyTableViewController.h */,
+				5EECC1D717ED8F5600BDDF4E /* DummyTableViewController.m */,
+				5EECC1D817ED8F5600BDDF4E /* DummyTableViewController.xib */,
+				5EECC1D917ED8F5600BDDF4E /* DummyViewController.h */,
+				5EECC1DA17ED8F5600BDDF4E /* DummyViewController.m */,
+				5EECC1DB17ED8F5600BDDF4E /* DummyViewController.xib */,
 				5EB0A1A517ED7C4C003E6935 /* IssueViewController.h */,
 				5EB0A1A617ED7C4C003E6935 /* IssueViewController.m */,
 				5EB0A1A017ED70A2003E6935 /* AddIssueViewController.h */,
@@ -410,18 +435,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				804DA6A817ED6B0300F86495 /* DummyTableViewController.xib in Resources */,
-				5EB0A1A917ED7C4C003E6935 /* IssueViewController.xib in Resources */,
+				5EECC1ED17ED8F5600BDDF4E /* IssueViewController.xib in Resources */,
 				804DA6A317ED65BF00F86495 /* MasterViewController.xib in Resources */,
+				5EECC1EA17ED8F5600BDDF4E /* DummyViewController.xib in Resources */,
+				5EECC1E817ED8F5600BDDF4E /* DummyTableViewController.xib in Resources */,
+				5EECC1EB17ED8F5600BDDF4E /* InfoPlist.strings in Resources */,
 				804DA68117ED54A800F86495 /* Images.xcassets in Resources */,
-				804DA6B817ED811B00F86495 /* DummyViewController.xib in Resources */,
-				804DA6AD17ED6B6100F86495 /* DummyMapViewController.xib in Resources */,
 				804DA67317ED54A800F86495 /* InfoPlist.strings in Resources */,
 				38A7942317ED721F0078F048 /* pin_blue_small.png in Resources */,
 				046C386717ED8ADF00460C13 /* MainMenuViewController.xib in Resources */,
 				38A7941D17ED70410078F048 /* ViewController.xib in Resources */,
 				5EB0A1A417ED70A2003E6935 /* AddIssueViewController.xib in Resources */,
 				38A7941B17ED6D1E0078F048 /* MapViewController.xib in Resources */,
+				5EECC1E617ED8F5600BDDF4E /* DummyMapViewController.xib in Resources */,
 				804DA6BC17ED8AA100F86495 /* MainMenuViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -441,15 +467,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				804DA6AC17ED6B6100F86495 /* DummyMapViewController.m in Sources */,
-				804DA6B017ED7A9800F86495 /* UIViewController+Container.m in Sources */,
+				5EECC1E517ED8F5600BDDF4E /* DummyMapViewController.m in Sources */,
 				5EB0A1AC17ED7CB6003E6935 /* Issue.m in Sources */,
 				5EB0A1A817ED7C4C003E6935 /* IssueViewController.m in Sources */,
+				5EECC1E717ED8F5600BDDF4E /* DummyTableViewController.m in Sources */,
 				804DA6A217ED65BF00F86495 /* MasterViewController.m in Sources */,
 				804DA67F17ED54A800F86495 /* ViewController.m in Sources */,
-				804DA6B317ED7EFC00F86495 /* UIViewController+MasterContainer.m in Sources */,
-				804DA6B717ED811B00F86495 /* DummyViewController.m in Sources */,
-				804DA6A717ED6B0300F86495 /* DummyTableViewController.m in Sources */,
+				5EECC1EE17ED8F5600BDDF4E /* UIViewController+Container.m in Sources */,
+				5EECC1EF17ED8F5600BDDF4E /* UIViewController+MasterContainer.m in Sources */,
+				5EECC1E917ED8F5600BDDF4E /* DummyViewController.m in Sources */,
 				38A7942117ED70EB0078F048 /* LocationGetter.m in Sources */,
 				804DA67917ED54A800F86495 /* AppDelegate.m in Sources */,
 				5EB0A1A317ED70A2003E6935 /* AddIssueViewController.m in Sources */,
@@ -478,6 +504,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		5EECC1DD17ED8F5600BDDF4E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5EECC1DE17ED8F5600BDDF4E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		804DA67117ED54A800F86495 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -579,8 +613,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/Jack/Documents/Projects/SoapBox/**",
-					/Users/JoshStern/MHacks2013/SoapBox/SoapBox,
+					"/Users/charleyhutchison/SoapBox/SoapBox/**",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SoapBox/SoapBox-Prefix.pch";
@@ -590,10 +623,6 @@
 				);
 				INFOPLIST_FILE = "SoapBox/SoapBox-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/JoshStern/MHacks2013/SoapBox/SoapBox/FacebookSDK.framework/Versions/A,
-				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -610,8 +639,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/Jack/Documents/Projects/SoapBox/**",
-					/Users/JoshStern/MHacks2013/SoapBox/SoapBox,
+					"/Users/charleyhutchison/SoapBox/SoapBox/**",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SoapBox/SoapBox-Prefix.pch";
@@ -621,10 +649,6 @@
 				);
 				INFOPLIST_FILE = "SoapBox/SoapBox-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/JoshStern/MHacks2013/SoapBox/SoapBox/FacebookSDK.framework/Versions/A,
-				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
