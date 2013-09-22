@@ -55,6 +55,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
   
+  self.title = @"HELLO";
+  
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Menu" style:UIBarButtonItemStylePlain target:self action:@selector(openContainer)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showIssueController)];
   
@@ -67,8 +69,6 @@
   title.text = @"SoapBox";
   [title setFont:[UIFont fontWithName:@"SecretCode" size:13]];
   [self.navigationItem setTitleView:title];
-  self.title = @"SOAPBOX BLAH BLAH";
-  [[[self navigationController] navigationItem] setTitle:@"soapbox lower"];
   
   // Sets up the frames of the 4 buttons and the logo.
   // borders of buttons

@@ -122,7 +122,6 @@
 }
 
 -(void)closeContainer {
-    
     [self.parentView removeGestureRecognizer:self.parentTapGesture];
     [self.childView removeGestureRecognizer:self.parentTapGesture];
     
