@@ -21,6 +21,7 @@
 		04B555AC17EE81EA00642932 /* twitpic.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B555AB17EE81EA00642932 /* twitpic.png */; };
 		04B555AE17EE87D200642932 /* fbbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B555AD17EE87D200642932 /* fbbutton.png */; };
 		04B555B017EE8BE300642932 /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B555AF17EE8BE300642932 /* email.png */; };
+		04B555B217EE9E1200642932 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B555B117EE9E1200642932 /* MessageUI.framework */; };
 		382C651917ED9CBC006BBCE2 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 804DA6A017ED65BF00F86495 /* MasterViewController.m */; };
 		382C655817EDAA7F006BBCE2 /* AddNewIssueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 382C655617EDAA7E006BBCE2 /* AddNewIssueViewController.m */; };
 		382C655917EDAA7F006BBCE2 /* AddNewIssueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 382C655717EDAA7E006BBCE2 /* AddNewIssueViewController.xib */; };
@@ -79,6 +80,8 @@
 		5E79FB7417EE048100430435 /* AddEmailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E79FB7217EE048100430435 /* AddEmailViewController.xib */; };
 		5EB0A1A317ED70A2003E6935 /* AddIssueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB0A1A117ED70A2003E6935 /* AddIssueViewController.m */; };
 		5EB0A1A417ED70A2003E6935 /* AddIssueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EB0A1A217ED70A2003E6935 /* AddIssueViewController.xib */; };
+		5EB9F04117EEE1310009B706 /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EB9F04017EEE1310009B706 /* circle.png */; };
+		5EB9F04417EEE5250009B706 /* MapOverlayVIewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB9F04317EEE5250009B706 /* MapOverlayVIewController.m */; };
 		5EECC1E617ED8F5600BDDF4E /* DummyMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EECC1D517ED8F5600BDDF4E /* DummyMapViewController.xib */; };
 		5EECC1E717ED8F5600BDDF4E /* DummyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EECC1D717ED8F5600BDDF4E /* DummyTableViewController.m */; };
 		5EECC1E817ED8F5600BDDF4E /* DummyTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EECC1D817ED8F5600BDDF4E /* DummyTableViewController.xib */; };
@@ -136,6 +139,7 @@
 		04B555AB17EE81EA00642932 /* twitpic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitpic.png; sourceTree = "<group>"; };
 		04B555AD17EE87D200642932 /* fbbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fbbutton.png; sourceTree = "<group>"; };
 		04B555AF17EE8BE300642932 /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email.png; sourceTree = "<group>"; };
+		04B555B117EE9E1200642932 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		382C655517EDAA7E006BBCE2 /* AddNewIssueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNewIssueViewController.h; sourceTree = "<group>"; };
 		382C655617EDAA7E006BBCE2 /* AddNewIssueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNewIssueViewController.m; sourceTree = "<group>"; };
 		382C655717EDAA7E006BBCE2 /* AddNewIssueViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddNewIssueViewController.xib; sourceTree = "<group>"; };
@@ -204,6 +208,9 @@
 		5EB0A1A617ED7C4C003E6935 /* IssueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssueViewController.m; sourceTree = "<group>"; };
 		5EB0A1AA17ED7CB6003E6935 /* Issue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Issue.h; sourceTree = "<group>"; };
 		5EB0A1AB17ED7CB6003E6935 /* Issue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Issue.m; sourceTree = "<group>"; };
+		5EB9F04017EEE1310009B706 /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
+		5EB9F04217EEE5250009B706 /* MapOverlayVIewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapOverlayVIewController.h; sourceTree = "<group>"; };
+		5EB9F04317EEE5250009B706 /* MapOverlayVIewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapOverlayVIewController.m; sourceTree = "<group>"; };
 		5EECC1D317ED8F5600BDDF4E /* DummyMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DummyMapViewController.h; sourceTree = "<group>"; };
 		5EECC1D417ED8F5600BDDF4E /* DummyMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DummyMapViewController.m; sourceTree = "<group>"; };
 		5EECC1D517ED8F5600BDDF4E /* DummyMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DummyMapViewController.xib; sourceTree = "<group>"; };
@@ -249,6 +256,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04B555B217EE9E1200642932 /* MessageUI.framework in Frameworks */,
 				38FBF7B217ED67A9004695DA /* Social.framework in Frameworks */,
 				38F01EBE17EE7EA300FE87BA /* Parse.framework in Frameworks */,
 				38FCC07517EE5715007F1179 /* FacebookSDK.framework in Frameworks */,
@@ -288,6 +296,7 @@
 		38A7941E17ED70930078F048 /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				5EB9F04017EEE1310009B706 /* circle.png */,
 				045AA88017EE583D006499F5 /* SECRCODE.TTF */,
 				04B555AB17EE81EA00642932 /* twitpic.png */,
 				04B555AD17EE87D200642932 /* fbbutton.png */,
@@ -325,6 +334,8 @@
 				804DA67E17ED54A800F86495 /* ViewController.m */,
 				38A7941717ED6D1E0078F048 /* MapViewController.h */,
 				38A7941817ED6D1E0078F048 /* MapViewController.m */,
+				5EB9F04217EEE5250009B706 /* MapOverlayVIewController.h */,
+				5EB9F04317EEE5250009B706 /* MapOverlayVIewController.m */,
 				804DA69F17ED65BF00F86495 /* MasterViewController.h */,
 				804DA6A017ED65BF00F86495 /* MasterViewController.m */,
 			);
@@ -389,6 +400,7 @@
 		804DA66717ED54A800F86495 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				04B555B117EE9E1200642932 /* MessageUI.framework */,
 				383FDAAA17EDD09700F80046 /* libz.dylib */,
 				383FDAA817EDCF0D00F80046 /* MapKit.framework */,
 				804DA6B917ED886900F86495 /* FacebookSDK */,
@@ -619,6 +631,7 @@
 				045AA88117EE583D006499F5 /* SECRCODE.TTF in Resources */,
 				0403EFEB17EDBF9E00696605 /* soapbox.png in Resources */,
 				38A7942317ED721F0078F048 /* pin_blue_small.png in Resources */,
+				5EB9F04117EEE1310009B706 /* circle.png in Resources */,
 				383FDA8E17EDC16A00F80046 /* check.png in Resources */,
 				046C386717ED8ADF00460C13 /* MainMenuViewController.xib in Resources */,
 				38A7941D17ED70410078F048 /* ViewController.xib in Resources */,
@@ -672,6 +685,7 @@
 				382C655D17EDAD0C006BBCE2 /* LocChooseViewController.m in Sources */,
 				38A7942117ED70EB0078F048 /* LocationGetter.m in Sources */,
 				804DA67917ED54A800F86495 /* AppDelegate.m in Sources */,
+				5EB9F04417EEE5250009B706 /* MapOverlayVIewController.m in Sources */,
 				5E79FB6C17EDD6CD00430435 /* IssueListViewController.m in Sources */,
 				5EB0A1A317ED70A2003E6935 /* AddIssueViewController.m in Sources */,
 				045AA87E17EE4CD8006499F5 /* CustomCell.m in Sources */,
