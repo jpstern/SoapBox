@@ -44,7 +44,7 @@
     
     //init the views
     filters = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 0)];
-    filters.backgroundColor = GRAY2;
+    filters.backgroundColor = GRAY1;
     filters.tag = 1;
     filterMeTimbers = [UIButton buttonWithType:UIButtonTypeCustom];
     [filterMeTimbers setFrame:CGRectMake(60, 0, 200, 50)];
@@ -66,13 +66,63 @@
     [friendsButton addTarget:self action:@selector(refreshFriend) forControlEvents:UIControlEventTouchUpInside];
     [closeButton addTarget:self action:@selector(refreshClose) forControlEvents:UIControlEventTouchUpInside];
     //set frames
-    [nowButton setFrame:CGRectMake(0, 0, 80, 0)];
-    [hotButton setFrame:CGRectMake(80, 0, 80, 0)];
-    [friendsButton setFrame:CGRectMake(160, 0, 80, 0)];
-    [closeButton setFrame:CGRectMake(240, 0, 80, 0)];
-    
+    [nowButton setFrame:CGRectMake(0, 0, 80, 80)];
+    [hotButton setFrame:CGRectMake(240, 0, 80, 80)];
+    [friendsButton setFrame:CGRectMake(80, 0, 80, 80)];
+    [closeButton setFrame:CGRectMake(160, 0, 80, 80)];
+    [nowButton setTitle:@"Now" forState:UIControlStateNormal];
+    [closeButton setTitle:@"Close" forState:UIControlStateNormal];
+    [friendsButton setTitle:@"Friends" forState:UIControlStateNormal];
+    [hotButton setTitle:@"Hot" forState:UIControlStateNormal];
+    [nowButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [closeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [friendsButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [hotButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [nowButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
     [self.navigationController setNavigationBarHidden:YES];
+    
+    
+    
+    FBRequest *request = [FBRequest requestForMe];
+    [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+        if (!error) {
+            // handle successful response
+            // result is a dictionary with the user's Facebook data
+            NSDictionary *userData = (NSDictionary *)result;
+            
+            NSString *facebookID = userData[@"id"];
+            
+            //update curent user... hope this works
+            PFUser *tmp = [PFUser currentUser];
+            NSNumberFormatter *formatter = [[NSNumberFormatter alloc]init];
+            [formatter setNumberStyle:NSNumberFormatterNoStyle];
+            NSNumber *fbIdNumber = [formatter numberFromString:facebookID];
+            [tmp setObject:facebookID forKey:@"fbIdString"];
+            [tmp setObject:fbIdNumber forKey:@"facebookID"];
+            [tmp saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if(succeeded){
+                    NSLog(@"successful save!!");
+                }
+                else{
+                    NSLog(@"%@", [error localizedDescription]);
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                                    message:@"Something went wrong"
+                                                                   delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                    [alert show];
+                }
+            }];
+            
+            
+        } else if ([error.userInfo[FBErrorParsedJSONResponseKey][@"body"][@"error"][@"type"] isEqualToString:@"OAuthException"]) { // Since the request failed, we can check if it was due to an invalid session
+            NSLog(@"The facebook session was invalidated");
+            [PFUser logOut];
+        } else {
+            NSLog(@"Some other error: %@", error);
+        }
+    }];
+    
+    
     if (!([PFUser currentUser] && // Check if a user is cached
         [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]])) // Check if user is linked to Facebook
     {
@@ -84,20 +134,15 @@
         }];
         
         [self refresh];
-      }
+    }
 
   [self setTitle:@"SoapBox"];
   [[[self navigationController] navigationItem] setTitle:@"SoapBox"];
   NSLog(@"%@",[[[self navigationController] navigationBar] titleTextAttributes]);
   
-    /* once we need it
-     
-     UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh)];
-     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(loadAddScreen:)];
-     self.navigationItem.rightBarButtonItem = refreshButton;
-     self.navigationItem.leftBarButtonItem = addButton;
-     
-     */
+
+    
+    
 }
 
 
@@ -105,23 +150,33 @@
     NSLog(@"\n\n\nFILTER ME TIMBERS!!!\n\n\n");
     if(filters.tag == 0){
         filters.tag = 1;
+        [nowButton removeFromSuperview];
+        [hotButton removeFromSuperview];
+        [closeButton removeFromSuperview];
+        [friendsButton removeFromSuperview];
         [UIView animateWithDuration:0.2f
                               delay:0.0f
                             options: UIViewAutoresizingFlexibleBottomMargin
                          animations:^{
-                             //[ setFrame:CGRectMake(0.0f, 00.0f, 320.0f, 00.0f)];
+                             [filters setFrame:CGRectMake(0.0f, 00.0f, 320.0f, 00.0f)];
+
                          }
                          completion:nil];
+        
     }
     else if(filters.tag == 1) {
         filters.tag = 0;
-        [UIView animateWithDuration:0.3f
+        [UIView animateWithDuration:0.25f
                               delay:0.0f
                             options: UIViewAutoresizingFlexibleBottomMargin
                          animations:^{
                              [filters setFrame:CGRectMake(0.0f, 0.0f, 320.0f, 80.0f)];
                          }
                          completion:nil];
+        [filters addSubview:nowButton];
+        [filters addSubview:hotButton];
+        [filters addSubview:closeButton];
+        [filters addSubview:friendsButton];
     }
 
 }
@@ -156,6 +211,73 @@
             }
         }
     }];
+}
+
+-(void)refreshNow{
+    
+    [self removeAllAnnotations];
+    
+    //throw in an animation
+    
+    CGFloat kilometers = currentDist/250;
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Issue"];
+    [query setLimit:20];
+    [query whereKey:@"Location"
+       nearGeoPoint:[PFGeoPoint geoPointWithLatitude:[[LocationGetter sharedInstance] getLatitude]
+                                           longitude:[[LocationGetter sharedInstance]getLongitude]]
+   withinKilometers:kilometers];
+    //[query where]
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            NSLog(@"OBJECTS SIZE IS %i", [objects count]);
+            for (PFObject *object in objects) {
+                
+                PFGeoPoint *tmp = [object objectForKey:@"Location"];
+                //NSLog(@"object %@ is now at %f , %f\n\n", [object objectForKey:@"title"], tmp.latitude, tmp.longitude);
+                MKPointAnnotation *tmpAnnotation = [[MKPointAnnotation alloc]init];
+                tmpAnnotation.coordinate = CLLocationCoordinate2DMake(tmp.latitude, tmp.longitude);
+                tmpAnnotation.title = [object objectForKey:@"Title"];
+                tmpAnnotation.subtitle = [object objectForKey:@"Description"];
+                [self.mapView addAnnotation:tmpAnnotation];
+            }
+        }
+    }];
+
+    
+}
+
+-(void)refreshHot{
+        NSLog(@"\n\nrefrehing\n\n");
+    
+        [self removeAllAnnotations];
+        
+        //throw in an animation
+        
+        CGFloat kilometers = currentDist/250;
+        
+        PFQuery *query = [PFQuery queryWithClassName:@"Issue"];
+        [query setLimit:20];
+        [query whereKey:@"Location"
+           nearGeoPoint:[PFGeoPoint geoPointWithLatitude:[[LocationGetter sharedInstance] getLatitude]
+                                               longitude:[[LocationGetter sharedInstance]getLongitude]]
+       withinKilometers:kilometers];
+    [query whereKey:@"Alchemy" greaterThanOrEqualTo:@8];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                NSLog(@"OBJECTS SIZE IS %i", [objects count]);
+                for (PFObject *object in objects) {
+                    
+                    PFGeoPoint *tmp = [object objectForKey:@"Location"];
+                    //NSLog(@"object %@ is now at %f , %f\n\n", [object objectForKey:@"title"], tmp.latitude, tmp.longitude);
+                    MKPointAnnotation *tmpAnnotation = [[MKPointAnnotation alloc]init];
+                    tmpAnnotation.coordinate = CLLocationCoordinate2DMake(tmp.latitude, tmp.longitude);
+                    tmpAnnotation.title = [object objectForKey:@"Title"];
+                    tmpAnnotation.subtitle = [object objectForKey:@"Description"];
+                    [self.mapView addAnnotation:tmpAnnotation];
+                }
+            }
+        }];
 }
 
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {

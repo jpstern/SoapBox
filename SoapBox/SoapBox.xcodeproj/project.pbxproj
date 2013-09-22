@@ -561,7 +561,7 @@
 				ORGANIZATIONNAME = Josh;
 				TargetAttributes = {
 					804DA66417ED54A800F86495 = {
-						DevelopmentTeam = UV5VPY8PJJ;
+						DevelopmentTeam = 43LEM8BQ2H;
 					};
 					804DA68517ED54A800F86495 = {
 						TestTargetID = 804DA66417ED54A800F86495;
