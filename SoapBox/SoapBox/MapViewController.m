@@ -19,6 +19,8 @@
 
 @synthesize mapView = _mapView;
 @synthesize currentDist;
+@synthesize filterLabel, filters, filterMeTimbers;
+@synthesize nowButton,closeButton,hotButton,friendsButton;
 
 -(void) removeAllAnnotations{
     for (id<MKAnnotation> n in _mapView.annotations) {
@@ -39,6 +41,37 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    //init the views
+    filters = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 0)];
+    filters.backgroundColor = GRAY2;
+    filters.tag = 1;
+    filterMeTimbers = [UIButton buttonWithType:UIButtonTypeCustom];
+    [filterMeTimbers setFrame:CGRectMake(60, 0, 200, 50)];
+    [filterMeTimbers addTarget:self action:@selector(bringEmOut) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:filters];
+    [self.view addSubview:filterLabel];
+    
+    [self.masterContainer.parentController.navigationBar addSubview:filterMeTimbers];
+    
+    //make filter buttons
+    nowButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    hotButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    friendsButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    //set targets
+    [nowButton addTarget:self action:@selector(refreshNow) forControlEvents:UIControlEventTouchUpInside];
+    [hotButton addTarget:self action:@selector(refreshHot) forControlEvents:UIControlEventTouchUpInside];
+    [friendsButton addTarget:self action:@selector(refreshFriend) forControlEvents:UIControlEventTouchUpInside];
+    [closeButton addTarget:self action:@selector(refreshClose) forControlEvents:UIControlEventTouchUpInside];
+    //set frames
+    [nowButton setFrame:CGRectMake(0, 0, 80, 0)];
+    [hotButton setFrame:CGRectMake(80, 0, 80, 0)];
+    [friendsButton setFrame:CGRectMake(160, 0, 80, 0)];
+    [closeButton setFrame:CGRectMake(240, 0, 80, 0)];
+    
+    
     [self.navigationController setNavigationBarHidden:YES];
     if (!([PFUser currentUser] && // Check if a user is cached
         [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]])) // Check if user is linked to Facebook
@@ -52,6 +85,7 @@
         
         [self refresh];
       }
+
   [self setTitle:@"SoapBox"];
   [[[self navigationController] navigationItem] setTitle:@"SoapBox"];
   NSLog(@"%@",[[[self navigationController] navigationBar] titleTextAttributes]);
@@ -64,6 +98,32 @@
      self.navigationItem.leftBarButtonItem = addButton;
      
      */
+}
+
+
+-(void)bringEmOut{
+    NSLog(@"\n\n\nFILTER ME TIMBERS!!!\n\n\n");
+    if(filters.tag == 0){
+        filters.tag = 1;
+        [UIView animateWithDuration:0.2f
+                              delay:0.0f
+                            options: UIViewAutoresizingFlexibleBottomMargin
+                         animations:^{
+                             //[ setFrame:CGRectMake(0.0f, 00.0f, 320.0f, 00.0f)];
+                         }
+                         completion:nil];
+    }
+    else if(filters.tag == 1) {
+        filters.tag = 0;
+        [UIView animateWithDuration:0.3f
+                              delay:0.0f
+                            options: UIViewAutoresizingFlexibleBottomMargin
+                         animations:^{
+                             [filters setFrame:CGRectMake(0.0f, 0.0f, 320.0f, 80.0f)];
+                         }
+                         completion:nil];
+    }
+
 }
 
 -(void)refresh{
@@ -162,7 +222,7 @@
     if([view.annotation isMemberOfClass:[MKUserLocation class]])return;
     
     IssueViewController *iVC = [[IssueViewController alloc]initWithNibName:@"IssueViewController" bundle:nil];
-    [self.navigationController pushViewController:iVC animated:YES];
+    [self.masterContainer.parentController pushViewController:iVC animated:YES];
     
 }
 

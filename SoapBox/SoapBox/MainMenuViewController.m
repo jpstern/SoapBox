@@ -8,6 +8,8 @@
 
 #import "MainMenuViewController.h"
 #import "AddNewIssueViewController.h"
+#import "SettingsViewController.h"
+#import "AboutSoapViewController.h"
 
 @interface MainMenuViewController ()
 
@@ -55,6 +57,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
   
+  self.title = @"HELLO";
+  
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Menu" style:UIBarButtonItemStylePlain target:self action:@selector(openContainer)];
   [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor],
                                                                     NSFontAttributeName: [UIFont fontWithName:@"AvenirNextCondensed-Regular" size:30.0f]}];
   
@@ -62,6 +67,16 @@
   [self.navigationItem.leftBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:@"AvenirNextCondensed-Regular" size:20.0], NSFontAttributeName, nil] forState:UIControlStateNormal];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showIssueController)];
   [self.navigationItem.rightBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:@"AvenirNextCondensed-Regular" size:30.0], NSFontAttributeName, nil] forState:UIControlStateNormal];
+  
+  // building title for the nav bar
+  UILabel *title = [[UILabel alloc] initWithFrame:CGRectZero];
+  title.backgroundColor = [UIColor clearColor];
+  title.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.5];
+  title.textAlignment = NSTextAlignmentCenter;
+  title.textColor = [UIColor whiteColor];
+  title.text = @"SoapBox";
+  [title setFont:[UIFont fontWithName:@"SecretCode" size:13]];
+  [self.navigationItem setTitleView:title];
   
   // Sets up the frames of the 4 buttons and the logo.
   // borders of buttons
@@ -90,6 +105,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+
 - (IBAction)myIssues:(id)sender {
     IssueListViewController *issueController = [[IssueListViewController alloc] initWithNibName:@"IssueListViewController" bundle:[NSBundle mainBundle]];
     issueController.title = @"My Issues";
@@ -97,19 +114,18 @@
 }
 - (IBAction)friendsIssues:(id)sender {
     IssueListViewController *issueController = [[IssueListViewController alloc] initWithNibName:@"IssueListViewController" bundle:[NSBundle mainBundle]];
-    Issue *issue = [[Issue alloc] init];
-    issue.title = @"Test Issue";
-    issue.description = @"This is a test description for the issue. I think it is long enough beginning.. right.. now!!";
-    issueController.issues = @[issue];
     issueController.title = @"Friend's Issues";
     [self.navigationController pushViewController:issueController animated:YES];
 
 }
 - (IBAction)about:(id)sender {
-  
+    NSLog(@"\n\n\nWHYYYY\n\n");
+    AboutSoapViewController *aVC = [[AboutSoapViewController alloc] init];
+    [self.navigationController pushViewController:aVC animated:YES];
 }
 - (IBAction)settings:(id)sender {
-  
+    SettingsViewController *sVC = [[SettingsViewController alloc] init];
+    [self.navigationController pushViewController:sVC animated:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

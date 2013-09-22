@@ -114,9 +114,9 @@
     [descriptionTextView setFont:[UIFont systemFontOfSize:15.0+fontOffset]];
     
     titleCounter = [[UILabel alloc] initWithFrame:CGRectMake(20, 20+offset, 30, 60)];
-    titleCounter.text = @"30";
+    titleCounter.text = @"25";
     descriptionCounter = [[UILabel alloc] initWithFrame:CGRectMake(20, 90+offset, 30, 60)];
-    descriptionCounter.text = @"130";
+    descriptionCounter.text = @"100";
     
     UIView *divider = [[UIView alloc] initWithFrame:CGRectMake(60, 20+offset, 4, DEVICEHEIGHT-300)];
     divider.backgroundColor = [UIColor blackColor];
@@ -137,7 +137,7 @@
     
     
     
-    addPhotoBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, DEVICEHEIGHT-260+offset, 180, 210)];
+    addPhotoBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, DEVICEHEIGHT-260+offset, 160, 210)];
     addPhotoBtn.backgroundColor = secondaryColor;
     [addPhotoBtn addTarget:self action:@selector(takePhoto) forControlEvents:UIControlEventTouchUpInside];
     [addPhotoBtn setTitle:@"Take a photo" forState:UIControlStateNormal];
@@ -146,19 +146,13 @@
 
     
     
-    addLocBtn = [[UIButton alloc] initWithFrame:CGRectMake(180, DEVICEHEIGHT-260+offset, 140, 110)];
+    addLocBtn = [[UIButton alloc] initWithFrame:CGRectMake(160, DEVICEHEIGHT-260+offset, 160, 210)];
     addLocBtn.backgroundColor = secondaryColor;
     [addLocBtn addTarget:self action:@selector(changeLocation) forControlEvents:UIControlEventTouchUpInside];
     [addLocBtn setTitle:@"Set the pin" forState:UIControlStateNormal];
     [addLocBtn setBackgroundColor:[UIColor grayColor]];
     [addLocBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
-    addTagBtn = [[UIButton alloc] initWithFrame:CGRectMake(180, DEVICEHEIGHT-154+offset, 140, 100)];
-    addTagBtn.backgroundColor = secondaryColor;
-    [addTagBtn addTarget:self action:@selector(displayTags:) forControlEvents:UIControlEventTouchUpInside];
-    [addTagBtn setTitle:@"Add tags" forState:UIControlStateNormal];
-    [addTagBtn setBackgroundColor:[UIColor blackColor]];
-    [addTagBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     
     //ADD ALL THE IMAGES
     
@@ -283,16 +277,16 @@
     /*
     int i = 0;
     int j = 0;
-    for (NSString *key in [Category categories]) {
-        
+    while( i*4+j < 12){
         UIButton *tile = [[UIButton alloc] initWithFrame:CGRectMake(j*80, i*77 + 9, 80, 77)];
         [tile addTarget:self action:@selector(chooseTag:) forControlEvents:UIControlEventTouchUpInside];
         tile.alpha = 0;
-        Category *value = [[Category categories] objectForKey:key];
-        tile.backgroundColor = value.color;
-        [tile setTitle:value.name forState:UIControlStateNormal];
-        [tile setTitleColor:[self inverseColor:value.color] forState:UIControlStateNormal];
+        tile.backgroundColor = [UIColor whiteColor];
+        NSLog(@"num is %i\n\n", i*4+j);
+        [tile setTitle:[labels objectAtIndex:i*4 +j] forState:UIControlStateNormal];
+        [tile setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [tile.titleLabel setFont:[UIFont systemFontOfSize:12]];
+        [tile.titleLabel setTextAlignment:NSTextAlignmentCenter];
         [tagScrollView addSubview:tile];
         [tileArray addObject:tile];
         j++;
@@ -307,14 +301,18 @@
 
 - (IBAction)chooseTag:(UIButton*)sender
 {
-    //addTagBtn.backgroundColor = sender.backgroundColor;
-    UIImage *img = [self changeColorTo:sender.backgroundColor fromImage:[UIImage imageNamed:@"tag-flat.png"]];
-    [addTagBtn setBackgroundImage:img forState:UIControlStateNormal];
-    [self displayTags:nil];
+    if(sender.backgroundColor == [UIColor whiteColor]){
+        [sender setBackgroundColor:[UIColor greenColor]];
+    }
+    else{
+        [sender setBackgroundColor:[UIColor whiteColor]];
+    }
+    
 }
 
 - (void)showOrHideTiles:(BOOL)show
 {
+    /*
     srand(time(NULL));
     int i = 0;
     NSMutableArray *tmpArray = [NSMutableArray arrayWithArray:tileArray];
@@ -328,10 +326,12 @@
         }completion:nil];
         
     }
+     */
 }
 
 - (IBAction)displayTags:(id)sender
 {
+    /*
     NSLog(@"dsfsd");
     if (tagsVisible) {
         [UIView animateWithDuration:0.005 delay:1.5 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
@@ -346,6 +346,7 @@
         tagsVisible = true;
         [self showOrHideTiles:true];
     }
+     */
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
@@ -406,14 +407,14 @@
     }
     
     if (textView.tag == 1) {
-        if (textView.text.length <= 30) {
+        if (textView.text.length <= 25) {
             titleCounter.text = [NSString stringWithFormat:@"%i", 30 - textView.text.length];
             return true;
         } else {
             return false;
         }
     } else {
-        if (textView.text.length <= 130) {
+        if (textView.text.length <= 100) {
             descriptionCounter.text = [NSString stringWithFormat:@"%i", 130 - textView.text.length];
             return true;
         } else {

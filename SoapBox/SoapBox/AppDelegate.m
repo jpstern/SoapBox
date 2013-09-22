@@ -22,6 +22,7 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     //parse stuff
     [Parse setApplicationId:@"O2JrkM3f26Qa3otfbrtDHTnYlPDLptOvN76HAgEn"
                   clientKey:@"1G7S10E6ZAHg9lqDN2fjXum0rwnCEjpDZ34Hs69o"];
@@ -34,6 +35,7 @@
   
   // main menu view controller
     MainMenuViewController *menu = [[MainMenuViewController alloc] init];
+
     UINavigationController *dummyTableNav = [[UINavigationController alloc] initWithRootViewController:menu];
     dummyTableNav.navigationBar.translucent = NO;
     master.parentController = dummyTableNav;
@@ -44,6 +46,7 @@
     mapNav.navigationBar.translucent = NO;
     master.childController = mapNav;
   
+//    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:19.0/255 green:19.0/255 blue:19.0/255 alpha:1.0]];
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:19.0/255 green:19.0/255 blue:19.0/255 alpha:1.0]];
 
   
