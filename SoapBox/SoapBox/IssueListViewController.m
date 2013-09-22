@@ -69,7 +69,38 @@
     }];
   }
   else if ([self.title isEqualToString:@"Friend's Issues"]) {
-      
+      NSString *query = @"SELECT uid, name, pic_square, mutual_friend_count, is_app_user FROM user WHERE uid IN "
+      @"(SELECT uid2 FROM friend WHERE uid1 = me()) ORDER BY mutual_friend_count";
+      NSDictionary *queryParam = @{ @"q": query };
+      [FBRequestConnection startWithGraphPath:@"/fql" parameters:queryParam HTTPMethod:@"GET" completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+          NSLog(@"Results: %@, %@", result, [result class]);
+          NSArray *array = (NSArray *)result[@"data"];
+          NSLog(@"%@", [[array objectAtIndex:0] class]);
+          NSMutableArray *uidArray = [NSMutableArray array];
+          for (FBGraphObject *object in array) {
+              [uidArray addObject:object[@"uid"]];
+          }
+          PFQuery *dbQuery = [[PFQuery alloc] initWithClassName:@"Issue"];
+          [dbQuery whereKey:@"authData" containedIn:uidArray];
+          [dbQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+              NSLog(@"Objects: %@", objects);
+              NSMutableArray *newArray = [NSMutableArray array];
+              for (PFObject *object in objects) {
+                  Issue *newIssue = [[Issue alloc] init];
+                  PFGeoPoint *geoPoint = [object valueForKey:@"Location"];
+                  newIssue.location = CLLocationCoordinate2DMake(geoPoint.latitude, geoPoint.longitude);
+                  newIssue.title = [object valueForKey:@"Title"];
+                  newIssue.description = [object valueForKey:@"Description"];
+                  PFFile *file = [object valueForKey:@"Image"];
+                  newIssue.image = [UIImage imageWithData:file.getData];
+                  NSLog(@"Issue: %@", newIssue);
+                  [newArray addObject:newIssue];
+              }
+              self.issues = newArray;
+              [self.tableView reloadData];
+
+          }];
+      }];
   }
 }
 
