@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainMenuViewController">
             <connections>
-                <outlet property="about" destination="roe-6c-Mty" id="X8C-pL-fjE"/>
+                <outlet property="about" destination="roe-6c-Mty" id="Bls-Ye-INl"/>
                 <outlet property="friendsIssues" destination="Y3c-PH-51P" id="kD5-gA-Le7"/>
                 <outlet property="logo" destination="pbF-eW-aN0" id="GeO-zs-xA9"/>
                 <outlet property="myIssues" destination="6Ya-kZ-ftr" id="gWc-za-Qdc"/>
@@ -68,7 +68,7 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="about:" destination="-1" eventType="touchDragInside" id="q9D-Nh-k7e"/>
+                        <action selector="about:" destination="-1" eventType="touchUpInside" id="eKs-Lt-SHo"/>
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="soapbox.png" translatesAutoresizingMaskIntoConstraints="NO" id="pbF-eW-aN0">

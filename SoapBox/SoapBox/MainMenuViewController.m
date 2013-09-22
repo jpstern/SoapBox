@@ -8,6 +8,8 @@
 
 #import "MainMenuViewController.h"
 #import "AddNewIssueViewController.h"
+#import "SettingsViewController.h"
+#import "AboutSoapViewController.h"
 
 @interface MainMenuViewController ()
 
@@ -78,6 +80,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+
 - (IBAction)myIssues:(id)sender {
     IssueListViewController *issueController = [[IssueListViewController alloc] initWithNibName:@"IssueListViewController" bundle:[NSBundle mainBundle]];
     issueController.title = @"My Issues";
@@ -94,10 +98,13 @@
 
 }
 - (IBAction)about:(id)sender {
-  
+    NSLog(@"\n\n\nWHYYYY\n\n");
+    AboutSoapViewController *aVC = [[AboutSoapViewController alloc] init];
+    [self.navigationController pushViewController:aVC animated:YES];
 }
 - (IBAction)settings:(id)sender {
-  
+    SettingsViewController *sVC = [[SettingsViewController alloc] init];
+    [self.navigationController pushViewController:sVC animated:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

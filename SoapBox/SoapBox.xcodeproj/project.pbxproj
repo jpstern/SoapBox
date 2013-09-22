@@ -22,6 +22,8 @@
 		382C655917EDAA7F006BBCE2 /* AddNewIssueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 382C655717EDAA7E006BBCE2 /* AddNewIssueViewController.xib */; };
 		382C655D17EDAD0C006BBCE2 /* LocChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 382C655B17EDAD0C006BBCE2 /* LocChooseViewController.m */; };
 		382C655E17EDAD0C006BBCE2 /* LocChooseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 382C655C17EDAD0C006BBCE2 /* LocChooseViewController.xib */; };
+		3835C9D217EE5EEA007CBDDE /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3835C9D017EE5EEA007CBDDE /* SettingsViewController.m */; };
+		3835C9D317EE5EEA007CBDDE /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3835C9D117EE5EEA007CBDDE /* SettingsViewController.xib */; };
 		383FDA8517EDC15100F80046 /* camera-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 383FDA8417EDC15100F80046 /* camera-white.png */; };
 		383FDA8B17EDC16A00F80046 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 383FDA8617EDC16A00F80046 /* arrow.png */; };
 		383FDA8C17EDC16A00F80046 /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 383FDA8717EDC16A00F80046 /* arrow@2x.png */; };
@@ -48,6 +50,8 @@
 		38A7942117ED70EB0078F048 /* LocationGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A7942017ED70EB0078F048 /* LocationGetter.m */; };
 		38A7942317ED721F0078F048 /* pin_blue_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 38A7942217ED721F0078F048 /* pin_blue_small.png */; };
 		38D51E9B17EDFEF300B7563C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 804DA67E17ED54A800F86495 /* ViewController.m */; };
+		38F01EBC17EE693C00FE87BA /* AboutSoapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38F01EBA17EE693C00FE87BA /* AboutSoapViewController.m */; };
+		38F01EBD17EE693C00FE87BA /* AboutSoapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38F01EBB17EE693C00FE87BA /* AboutSoapViewController.xib */; };
 		38FBF79917ED56BD004695DA /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FBF79817ED56BD004695DA /* Parse.framework */; };
 		38FBF79E17ED6446004695DA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FBF79D17ED6446004695DA /* AudioToolbox.framework */; };
 		38FBF7A017ED644E004695DA /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FBF79F17ED644E004695DA /* CFNetwork.framework */; };
@@ -131,6 +135,9 @@
 		382C655B17EDAD0C006BBCE2 /* LocChooseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocChooseViewController.m; sourceTree = "<group>"; };
 		382C655C17EDAD0C006BBCE2 /* LocChooseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocChooseViewController.xib; sourceTree = "<group>"; };
 		382C655F17EDAE11006BBCE2 /* Constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
+		3835C9CF17EE5EEA007CBDDE /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		3835C9D017EE5EEA007CBDDE /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		3835C9D117EE5EEA007CBDDE /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		383FDA8417EDC15100F80046 /* camera-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-white.png"; sourceTree = "<group>"; };
 		383FDA8617EDC16A00F80046 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
 		383FDA8717EDC16A00F80046 /* arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@2x.png"; sourceTree = "<group>"; };
@@ -158,6 +165,9 @@
 		38A7941F17ED70EB0078F048 /* LocationGetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationGetter.h; sourceTree = "<group>"; };
 		38A7942017ED70EB0078F048 /* LocationGetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationGetter.m; sourceTree = "<group>"; };
 		38A7942217ED721F0078F048 /* pin_blue_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin_blue_small.png; sourceTree = "<group>"; };
+		38F01EB917EE693B00FE87BA /* AboutSoapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutSoapViewController.h; sourceTree = "<group>"; };
+		38F01EBA17EE693C00FE87BA /* AboutSoapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutSoapViewController.m; sourceTree = "<group>"; };
+		38F01EBB17EE693C00FE87BA /* AboutSoapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutSoapViewController.xib; sourceTree = "<group>"; };
 		38FBF79817ED56BD004695DA /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		38FBF79A17ED5A2B004695DA /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		38FBF79D17ED6446004695DA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -451,6 +461,12 @@
 				382C655A17EDAD0C006BBCE2 /* LocChooseViewController.h */,
 				382C655B17EDAD0C006BBCE2 /* LocChooseViewController.m */,
 				382C655C17EDAD0C006BBCE2 /* LocChooseViewController.xib */,
+				3835C9CF17EE5EEA007CBDDE /* SettingsViewController.h */,
+				3835C9D017EE5EEA007CBDDE /* SettingsViewController.m */,
+				3835C9D117EE5EEA007CBDDE /* SettingsViewController.xib */,
+				38F01EB917EE693B00FE87BA /* AboutSoapViewController.h */,
+				38F01EBA17EE693C00FE87BA /* AboutSoapViewController.m */,
+				38F01EBB17EE693C00FE87BA /* AboutSoapViewController.xib */,
 			);
 			path = SoapBox;
 			sourceTree = "<group>";
@@ -533,7 +549,7 @@
 				ORGANIZATIONNAME = Josh;
 				TargetAttributes = {
 					804DA66417ED54A800F86495 = {
-						DevelopmentTeam = 5G84J3W3H2;
+						DevelopmentTeam = 43LEM8BQ2H;
 					};
 					804DA68517ED54A800F86495 = {
 						TestTargetID = 804DA66417ED54A800F86495;
@@ -599,11 +615,13 @@
 				383FDA9E17EDC1A400F80046 /* menu.png in Resources */,
 				5EB0A1A417ED70A2003E6935 /* AddIssueViewController.xib in Resources */,
 				38A7941B17ED6D1E0078F048 /* MapViewController.xib in Resources */,
+				3835C9D317EE5EEA007CBDDE /* SettingsViewController.xib in Resources */,
 				383FDA8C17EDC16A00F80046 /* arrow@2x.png in Resources */,
 				5EECC1E617ED8F5600BDDF4E /* DummyMapViewController.xib in Resources */,
 				383FDAA717EDC1AC00F80046 /* tag-flat.png in Resources */,
 				0403EFFC17EE299700696605 /* backgroundPattern.png in Resources */,
 				383FDA9F17EDC1A400F80046 /* menu@2x.png in Resources */,
+				38F01EBD17EE693C00FE87BA /* AboutSoapViewController.xib in Resources */,
 				046C387217ED8FEE00460C13 /* DummyMapViewController.xib in Resources */,
 				5E79FB7417EE048100430435 /* AddEmailViewController.xib in Resources */,
 				804DA6BC17ED8AA100F86495 /* MainMenuViewController.xib in Resources */,
@@ -631,6 +649,7 @@
 				5E79FB6E17EDD72A00430435 /* Issue.m in Sources */,
 				382C651917ED9CBC006BBCE2 /* MasterViewController.m in Sources */,
 				5EECC1E717ED8F5600BDDF4E /* DummyTableViewController.m in Sources */,
+				3835C9D217EE5EEA007CBDDE /* SettingsViewController.m in Sources */,
 				5EECC1EE17ED8F5600BDDF4E /* UIViewController+Container.m in Sources */,
 				5EECC1EF17ED8F5600BDDF4E /* UIViewController+MasterContainer.m in Sources */,
 				5EECC1E917ED8F5600BDDF4E /* DummyViewController.m in Sources */,
@@ -643,6 +662,7 @@
 				046C387117ED8FEE00460C13 /* DummyMapViewController.m in Sources */,
 				046C385F17ED802200460C13 /* MainMenuViewController.m in Sources */,
 				804DA67517ED54A800F86495 /* main.m in Sources */,
+				38F01EBC17EE693C00FE87BA /* AboutSoapViewController.m in Sources */,
 				38A7941A17ED6D1E0078F048 /* MapViewController.m in Sources */,
 				382C655817EDAA7F006BBCE2 /* AddNewIssueViewController.m in Sources */,
 			);
