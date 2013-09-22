@@ -52,7 +52,6 @@
         
         [self refresh];
       }
-  
   [self setTitle:@"SoapBox"];
   [[[self navigationController] navigationItem] setTitle:@"SoapBox"];
   NSLog(@"%@",[[[self navigationController] navigationBar] titleTextAttributes]);
