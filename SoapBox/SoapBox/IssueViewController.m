@@ -29,7 +29,8 @@
     [super viewWillAppear:animated];
     }
 
-- (void)finishedWithEmail:(NSString *)email body:(NSString *)body{
+- (void)finishedWithEmail:(NSString *)email body:(NSString *)body {
+    
     /*
     [self dismissViewControllerAnimated:YES completion:nil];
     NSArray *addresses = [email componentsSeparatedByString:@","];
