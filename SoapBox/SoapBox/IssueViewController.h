@@ -10,6 +10,7 @@
 #import "Issue.h"
 #import <MapKit/MapKit.h>
 #import "AddEmailViewController.h"
+#import <Social/Social.h>
 
 @interface IssueViewController : UIViewController <AddEmailDelegate>
 
@@ -18,5 +19,12 @@
 @property (weak, nonatomic) IBOutlet UIImageView *image;
 @property (weak, nonatomic) IBOutlet UITextView *description;
 @property (weak, nonatomic) IBOutlet UIImageView *mapImage;
+@property (weak, nonatomic) IBOutlet UIButton *tweeter;
+@property (weak, nonatomic) IBOutlet UIButton *facebooker;
+@property (weak, nonatomic) IBOutlet UIButton *email;
+
+- (IBAction)tweet:(UIButton *)sender;
+- (IBAction)fbook:(UIButton *)sender;
+- (IBAction)addEmail:(UIButton *)sender;
 
 @end

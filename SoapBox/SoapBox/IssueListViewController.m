@@ -31,6 +31,7 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+  
 }
 
 - (void)didReceiveMemoryWarning
@@ -42,6 +43,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [self.navigationItem.leftBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:@"AvenirNextCondensed-Regular" size:20.0], NSFontAttributeName,nil] forState:UIControlStateNormal];
   [[self tableView] setBackgroundColor:[UIColor colorWithRed:31.0/255 green:31.0/255 blue:31.0/255 alpha:1.0]];
   [[self tableView] setSeparatorColor:[UIColor blackColor]];
   
@@ -67,7 +69,6 @@
     }];
   }
   else if ([self.title isEqualToString:@"Friend's Issues"]) {
-      NSString *query = @"";
       
   }
 }
