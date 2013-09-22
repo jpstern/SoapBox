@@ -14,5 +14,6 @@
 @property (strong, nonatomic) NSString *description;
 @property (strong, nonatomic) UIImage *image;
 @property (nonatomic) CLLocationCoordinate2D location;
+@property (nonatomic) CGFloat *metric;
 
 @end

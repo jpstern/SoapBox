@@ -15,6 +15,10 @@
 @property double currentDist;
 @property (nonatomic, strong)  UIView *filters;
 @property (nonatomic, strong)  UILabel *filterLabel;
+@property (nonatomic, strong) UIView *hotView;
+@property (nonatomic, strong) UIView *closeView;
+@property (nonatomic, strong) UIView *friendsView;
+@property (nonatomic, strong) UIView *nowView;
 @property (nonatomic, strong) IBOutlet UIButton *filterMeTimbers;
 @property (nonatomic,strong) IBOutlet UIButton *hotButton;
 @property (nonatomic,strong) IBOutlet UIButton *closeButton;

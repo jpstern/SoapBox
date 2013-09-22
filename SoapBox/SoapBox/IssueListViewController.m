@@ -58,6 +58,8 @@
         PFGeoPoint *geoPoint = [object valueForKey:@"Location"];
         newIssue.location = CLLocationCoordinate2DMake(geoPoint.latitude, geoPoint.longitude);
         newIssue.title = [object valueForKey:@"Title"];
+          NSNumber *number = [object valueForKey:@"Alchemy"];
+          newIssue.metric =  [number intValue];
         newIssue.description = [object valueForKey:@"Description"];
         PFFile *file = [object valueForKey:@"Image"];
           newIssue.image = [UIImage imageWithData:file.getData];
@@ -90,6 +92,7 @@
                   PFGeoPoint *geoPoint = [object valueForKey:@"Location"];
                   newIssue.location = CLLocationCoordinate2DMake(geoPoint.latitude, geoPoint.longitude);
                   newIssue.title = [object valueForKey:@"Title"];
+                  newIssue.metric = [(NSNumber *)[object valueForKey:@"Alchemy"] intValue];
                   newIssue.description = [object valueForKey:@"Description"];
                   PFFile *file = [object valueForKey:@"Image"];
                   newIssue.image = [UIImage imageWithData:file.getData];
@@ -136,6 +139,23 @@
   // title of the issue.
   [cell.title setText: issue.title];
   [cell.title setTextColor:[UIColor yellowColor]];
+    
+   //set color trend
+    if(issue.metric >= RED){
+        [cell.trend setBackgroundColor:[UIColor redColor]];
+    }
+    else if(issue.metric >= ORANGE){
+        [cell.trend setBackgroundColor:[UIColor orangeColor]];
+    }
+    else if(issue.metric >=YELLOW){
+        [cell.trend setBackgroundColor:[UIColor yellowColor]];
+    }
+    else if(issue.metric >= GREEN){
+        [cell.trend setBackgroundColor:[UIColor greenColor]];
+    }
+    else{
+        [cell.trend setBackgroundColor:[UIColor blueColor]];
+    }
 
   // description of the issue.
   [cell.description setTextColor:[UIColor yellowColor]];
