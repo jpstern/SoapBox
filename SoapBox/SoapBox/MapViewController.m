@@ -10,6 +10,7 @@
 #import "AddNewIssueViewController.h"
 #import "ViewController.h"
 #import "IssueViewController.h"
+#import "MapOverlayViewController.h"
 
 @interface MapViewController ()
 
@@ -100,6 +101,22 @@
      */
 }
 
+- (void)refreshFriend {
+    NSString *query = @"SELECT uid, name, pic_square, mutual_friend_count, is_app_user FROM users WHERE mutual_friend_count > 150 AND uid IN (SELECT uid2 FROM friend WHERE uid1 = me()) AND is_app_user ORDER BY mutual_friend_count";
+    NSDictionary *queryParam = @{ @"q": query };
+    [FBRequestConnection startWithGraphPath:@"/fql" parameters:queryParam HTTPMethod:@"GET" completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+        NSArray *array = (NSArray *)result[@"data"];
+        NSLog(@"%@, %@", result, array);
+        NSMutableArray *mArray = [NSMutableArray array];
+        for (FBGraphObject *object in array) {
+            [mArray addObject:object[@"uid"]];
+        }
+    }];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+}
 
 -(void)bringEmOut{
     NSLog(@"\n\n\nFILTER ME TIMBERS!!!\n\n\n");
@@ -124,6 +141,27 @@
                          completion:nil];
     }
 
+}
+
+- (void)refreshClose {
+    PFQuery *closeQuery = [[PFQuery alloc] initWithClassName:@"Issue"];
+    [PFGeoPoint geoPointForCurrentLocationInBackground:^(PFGeoPoint *geoPoint, NSError *error) {
+        [closeQuery setLimit:20];
+        [closeQuery whereKey:@"Location" nearGeoPoint:geoPoint withinMiles:currentDist/1500];
+        [closeQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            for (PFObject *object in objects) {
+                
+                PFGeoPoint *tmp = [object objectForKey:@"Location"];
+                //NSLog(@"object %@ is now at %f , %f\n\n", [object objectForKey:@"title"], tmp.latitude, tmp.longitude);
+                MKPointAnnotation *tmpAnnotation = [[MKPointAnnotation alloc]init];
+                tmpAnnotation.coordinate = CLLocationCoordinate2DMake(tmp.latitude, tmp.longitude);
+                tmpAnnotation.title = [object objectForKey:@"Title"];
+                tmpAnnotation.subtitle = [object objectForKey:@"Description"];
+                [self.mapView addAnnotation:tmpAnnotation];
+            }
+
+        }];
+    }];
 }
 
 -(void)refresh{

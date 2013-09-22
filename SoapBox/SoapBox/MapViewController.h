@@ -22,6 +22,8 @@
 @property (nonatomic,strong) IBOutlet UIButton *nowButton;
 
 -(void) removeAllAnnotations;
+- (void)refreshClose;
+- (void) refreshFriend;
 
 
 @end

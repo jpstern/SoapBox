@@ -12,4 +12,6 @@
 
 - (void)drawMapRect:(MKMapRect)mapRect zoomScale:(MKZoomScale)zoomScale inContext:(CGContextRef)context;
 
+@property (strong, nonatomic) UIColor* fillColor;
+
 @end

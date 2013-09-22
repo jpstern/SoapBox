@@ -12,6 +12,7 @@
 
 - (void)drawMapRect:(MKMapRect)mapRect zoomScale:(MKZoomScale)zoomScale inContext:(CGContextRef)context {
     CGContextBeginPath(context);
+    CGContextSetFillColorWithColor(context, self.fillColor.CGColor);
     CGContextSetLineWidth(context,5);
     CGContextStrokeEllipseInRect(context, CGRectMake(mapRect.origin.x, mapRect.origin.y, mapRect.size.height, mapRect.size.width));
 
