@@ -57,13 +57,18 @@
         newIssue.location = CLLocationCoordinate2DMake(geoPoint.latitude, geoPoint.longitude);
         newIssue.title = [object valueForKey:@"Title"];
         newIssue.description = [object valueForKey:@"Description"];
-        newIssue.image = [object valueForKey:@"Image"];
+        PFFile *file = [object valueForKey:@"Image"];
+          newIssue.image = [UIImage imageWithData:file.getData];
         NSLog(@"Issue: %@", newIssue);
         [array addObject:newIssue];
       }
       self.issues = array;
       [self.tableView reloadData];
     }];
+  }
+  else if ([self.title isEqualToString:@"Friend's Issues"]) {
+      NSString *query = @"";
+      
   }
 }
 

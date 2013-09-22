@@ -11,6 +11,7 @@
 		0403EFFC17EE299700696605 /* backgroundPattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 0403EFFB17EE299700696605 /* backgroundPattern.png */; };
 		045AA87E17EE4CD8006499F5 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 045AA87C17EE4CD8006499F5 /* CustomCell.m */; };
 		045AA87F17EE4CD8006499F5 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045AA87D17EE4CD8006499F5 /* CustomCell.xib */; };
+		045AA88117EE583D006499F5 /* SECRCODE.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 045AA88017EE583D006499F5 /* SECRCODE.TTF */; };
 		046C385F17ED802200460C13 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046C385E17ED802200460C13 /* MainMenuViewController.m */; };
 		046C386717ED8ADF00460C13 /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046C386617ED8ADF00460C13 /* MainMenuViewController.xib */; };
 		046C387117ED8FEE00460C13 /* DummyMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046C386917ED8FEE00460C13 /* DummyMapViewController.m */; };
@@ -116,6 +117,7 @@
 		045AA87B17EE4CD8006499F5 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
 		045AA87C17EE4CD8006499F5 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		045AA87D17EE4CD8006499F5 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
+		045AA88017EE583D006499F5 /* SECRCODE.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = SECRCODE.TTF; path = ../SECRCODE.TTF; sourceTree = "<group>"; };
 		046C385D17ED802200460C13 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		046C385E17ED802200460C13 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		046C386617ED8ADF00460C13 /* MainMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenuViewController.xib; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 		38A7941E17ED70930078F048 /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				045AA88017EE583D006499F5 /* SECRCODE.TTF */,
 				383FDAA617EDC1AC00F80046 /* tag-flat.png */,
 				383FDA9617EDC1A400F80046 /* menu.png */,
 				383FDA9717EDC1A400F80046 /* menu@2x.png */,
@@ -334,8 +337,12 @@
 				046C386617ED8ADF00460C13 /* MainMenuViewController.xib */,
 				804DA6A117ED65BF00F86495 /* MasterViewController.xib */,
 				804DA6A117ED65BF00F86495 /* MasterViewController.xib */,
+				5EB0A1A217ED70A2003E6935 /* AddIssueViewController.xib */,
+				5E79FB6B17EDD6CD00430435 /* IssueListViewController.xib */,
 				38A7941C17ED70410078F048 /* ViewController.xib */,
 				38A7941917ED6D1E0078F048 /* MapViewController.xib */,
+				804DA6BB17ED8AA100F86495 /* MainMenuViewController.xib */,
+				045AA87D17EE4CD8006499F5 /* CustomCell.xib */,
 			);
 			name = XIBS;
 			sourceTree = "<group>";
@@ -432,17 +439,14 @@
 				5EB0A1A617ED7C4C003E6935 /* IssueViewController.m */,
 				5EB0A1A017ED70A2003E6935 /* AddIssueViewController.h */,
 				5EB0A1A117ED70A2003E6935 /* AddIssueViewController.m */,
-				5EB0A1A217ED70A2003E6935 /* AddIssueViewController.xib */,
 				5EB0A1AA17ED7CB6003E6935 /* Issue.h */,
 				5EB0A1AB17ED7CB6003E6935 /* Issue.m */,
 				804DA69F17ED65BF00F86495 /* MasterViewController.h */,
 				804DA6A017ED65BF00F86495 /* MasterViewController.m */,
 				5E79FB6917EDD6CD00430435 /* IssueListViewController.h */,
 				5E79FB6A17EDD6CD00430435 /* IssueListViewController.m */,
-				5E79FB6B17EDD6CD00430435 /* IssueListViewController.xib */,
 				045AA87B17EE4CD8006499F5 /* CustomCell.h */,
 				045AA87C17EE4CD8006499F5 /* CustomCell.m */,
-				045AA87D17EE4CD8006499F5 /* CustomCell.xib */,
 				804DA67717ED54A800F86495 /* AppDelegate.h */,
 				804DA67817ED54A800F86495 /* AppDelegate.m */,
 				804DA67D17ED54A800F86495 /* ViewController.h */,
@@ -450,7 +454,6 @@
 				046C385D17ED802200460C13 /* MainMenuViewController.h */,
 				046C385E17ED802200460C13 /* MainMenuViewController.m */,
 				804DA68017ED54A800F86495 /* Images.xcassets */,
-				804DA6BB17ED8AA100F86495 /* MainMenuViewController.xib */,
 				38A7942517ED74CC0078F048 /* Objects */,
 				38A7942417ED745F0078F048 /* View Controllers */,
 				38FBF79C17ED6285004695DA /* XIBS */,
@@ -603,6 +606,7 @@
 				804DA68117ED54A800F86495 /* Images.xcassets in Resources */,
 				5E79FB6D17EDD6CD00430435 /* IssueListViewController.xib in Resources */,
 				804DA67317ED54A800F86495 /* InfoPlist.strings in Resources */,
+				045AA88117EE583D006499F5 /* SECRCODE.TTF in Resources */,
 				0403EFEB17EDBF9E00696605 /* soapbox.png in Resources */,
 				38A7942317ED721F0078F048 /* pin_blue_small.png in Resources */,
 				383FDA8E17EDC16A00F80046 /* check.png in Resources */,
@@ -796,7 +800,8 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/gregoryhurray/Desktop/repo-main/SoapBox/SoapBox",
+					"/Users/charleyhutchison/SoapBox/SoapBox/**",
+					"/Users/Jack/Documents/Projects/SoapBox/**",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SoapBox/SoapBox-Prefix.pch";
@@ -823,7 +828,8 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/gregoryhurray/Desktop/repo-main/SoapBox/SoapBox",
+					"/Users/charleyhutchison/SoapBox/SoapBox/**",
+					"/Users/Jack/Documents/Projects/SoapBox/**",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SoapBox/SoapBox-Prefix.pch";

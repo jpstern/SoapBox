@@ -51,10 +51,12 @@
         }];
         
         [self refresh];
-        
-    }
-    
-    
+      }
+  
+  [self setTitle:@"SoapBox"];
+  [[[self navigationController] navigationItem] setTitle:@"SoapBox"];
+  NSLog(@"%@",[[[self navigationController] navigationBar] titleTextAttributes]);
+  
     /* once we need it
      
      UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh)];

@@ -102,7 +102,7 @@
     
     [self.parentController setNavigationBarHidden:YES animated:YES];
     
-    [UIView animateWithDuration:0.25 animations:^{
+    [UIView animateWithDuration:0.20 animations:^{
     
         CGRect rect = self.childView.frame;
         
@@ -122,13 +122,12 @@
 }
 
 -(void)closeContainer {
-    
     [self.parentView removeGestureRecognizer:self.parentTapGesture];
     [self.childView removeGestureRecognizer:self.parentTapGesture];
     
     [self.parentController setNavigationBarHidden:NO animated:YES];
     
-    [UIView animateWithDuration:0.25 animations:^{
+    [UIView animateWithDuration:0.20 animations:^{
         
         CGRect rect = self.childView.frame;
         
