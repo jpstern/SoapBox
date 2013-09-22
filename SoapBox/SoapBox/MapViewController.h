@@ -13,7 +13,11 @@
 
 @property (nonatomic, strong) IBOutlet MKMapView *mapView;
 @property double currentDist;
+@property (nonatomic, strong)  UIView *filters;
+@property (nonatomic, strong)  UILabel *filterLabel;
+@property (nonatomic, strong) IBOutlet UIButton *filterMeTimbers;
 
 -(void) removeAllAnnotations;
+
 
 @end

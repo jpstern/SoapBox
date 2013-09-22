@@ -19,6 +19,7 @@
 
 @synthesize mapView = _mapView;
 @synthesize currentDist;
+@synthesize filterLabel, filters, filterMeTimbers;
 
 -(void) removeAllAnnotations{
     for (id<MKAnnotation> n in _mapView.annotations) {
@@ -39,6 +40,22 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    //init the views
+    filters = [[UIView alloc] initWithFrame:CGRectMake(-320, 0, 320, 80)];
+    filters.backgroundColor = [UIColor yellowColor];
+    filterLabel = [[UILabel alloc] initWithFrame:CGRectMake(320, 88, 320, 20)];
+    filterLabel.backgroundColor = [UIColor yellowColor];
+    filterMeTimbers = [UIButton buttonWithType:UIButtonTypeCustom];
+    [filterMeTimbers setFrame:CGRectMake(50, 0, 220, 50)];
+    [filterMeTimbers setBackgroundColor:[UIColor yellowColor]];
+    [filterMeTimbers addTarget:self action:@selector(bringEmOut) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:filters];
+    [self.view addSubview:filterLabel];
+    
+    [self.masterContainer.parentController.navigationBar addSubview:filterMeTimbers];// setTitleView:filters];
+    
     [self.navigationController setNavigationBarHidden:YES];
     if (!([PFUser currentUser] && // Check if a user is cached
         [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]])) // Check if user is linked to Facebook
@@ -52,7 +69,7 @@
         
         [self refresh];
       }
-  
+
   [self setTitle:@"SoapBox"];
   [[[self navigationController] navigationItem] setTitle:@"SoapBox"];
   NSLog(@"%@",[[[self navigationController] navigationBar] titleTextAttributes]);
@@ -65,6 +82,12 @@
      self.navigationItem.leftBarButtonItem = addButton;
      
      */
+}
+
+
+-(void)bringEmOut{
+    NSLog(@"\n\n\nFILTER ME TIMBERS!!!\n\n\n");
+    
 }
 
 -(void)refresh{
@@ -163,7 +186,7 @@
     if([view.annotation isMemberOfClass:[MKUserLocation class]])return;
     
     IssueViewController *iVC = [[IssueViewController alloc]initWithNibName:@"IssueViewController" bundle:nil];
-    [self.navigationController pushViewController:iVC animated:YES];
+    [self.masterContainer.parentController pushViewController:iVC animated:YES];
     
 }
 

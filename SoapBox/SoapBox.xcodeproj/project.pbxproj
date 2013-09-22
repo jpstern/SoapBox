@@ -53,7 +53,7 @@
 		38D51E9B17EDFEF300B7563C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 804DA67E17ED54A800F86495 /* ViewController.m */; };
 		38F01EBC17EE693C00FE87BA /* AboutSoapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38F01EBA17EE693C00FE87BA /* AboutSoapViewController.m */; };
 		38F01EBD17EE693C00FE87BA /* AboutSoapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38F01EBB17EE693C00FE87BA /* AboutSoapViewController.xib */; };
-		38FBF79917ED56BD004695DA /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FBF79817ED56BD004695DA /* Parse.framework */; };
+		38F01EBE17EE7EA300FE87BA /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FBF79817ED56BD004695DA /* Parse.framework */; };
 		38FBF79E17ED6446004695DA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FBF79D17ED6446004695DA /* AudioToolbox.framework */; };
 		38FBF7A017ED644E004695DA /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FBF79F17ED644E004695DA /* CFNetwork.framework */; };
 		38FBF7A217ED6468004695DA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FBF7A117ED6468004695DA /* CoreLocation.framework */; };
@@ -243,12 +243,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38FBF7B217ED67A9004695DA /* Social.framework in Frameworks */,
+				38F01EBE17EE7EA300FE87BA /* Parse.framework in Frameworks */,
 				38FCC07517EE5715007F1179 /* FacebookSDK.framework in Frameworks */,
-				38FBF79917ED56BD004695DA /* Parse.framework in Frameworks */,
 				383FDAAB17EDD09700F80046 /* libz.dylib in Frameworks */,
 				38FBF7A617ED6480004695DA /* MobileCoreServices.framework in Frameworks */,
 				383FDAA917EDCF0D00F80046 /* MapKit.framework in Frameworks */,
-				38FBF7B217ED67A9004695DA /* Social.framework in Frameworks */,
 				38FBF7B617ED68B9004695DA /* libsqlite3.dylib in Frameworks */,
 				38FBF7B417ED67B7004695DA /* Accounts.framework in Frameworks */,
 				38FBF7B017ED67A2004695DA /* AdSupport.framework in Frameworks */,
@@ -802,6 +802,7 @@
 					"$(inherited)",
 					"/Users/charleyhutchison/SoapBox/SoapBox/**",
 					"/Users/Jack/Documents/Projects/SoapBox/**",
+					"/Users/gregoryhurray/Desktop/repo-main/SoapBox/SoapBox",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SoapBox/SoapBox-Prefix.pch";
@@ -830,6 +831,7 @@
 					"$(inherited)",
 					"/Users/charleyhutchison/SoapBox/SoapBox/**",
 					"/Users/Jack/Documents/Projects/SoapBox/**",
+					"/Users/gregoryhurray/Desktop/repo-main/SoapBox/SoapBox",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SoapBox/SoapBox-Prefix.pch";
