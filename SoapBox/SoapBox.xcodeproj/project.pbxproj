@@ -80,6 +80,7 @@
 		5EB0A1A317ED70A2003E6935 /* AddIssueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB0A1A117ED70A2003E6935 /* AddIssueViewController.m */; };
 		5EB0A1A417ED70A2003E6935 /* AddIssueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EB0A1A217ED70A2003E6935 /* AddIssueViewController.xib */; };
 		5EB9F04117EEE1310009B706 /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EB9F04017EEE1310009B706 /* circle.png */; };
+		5EB9F04417EEE5250009B706 /* MapOverlayVIewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB9F04317EEE5250009B706 /* MapOverlayVIewController.m */; };
 		5EECC1E617ED8F5600BDDF4E /* DummyMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EECC1D517ED8F5600BDDF4E /* DummyMapViewController.xib */; };
 		5EECC1E717ED8F5600BDDF4E /* DummyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EECC1D717ED8F5600BDDF4E /* DummyTableViewController.m */; };
 		5EECC1E817ED8F5600BDDF4E /* DummyTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EECC1D817ED8F5600BDDF4E /* DummyTableViewController.xib */; };
@@ -206,6 +207,8 @@
 		5EB0A1AA17ED7CB6003E6935 /* Issue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Issue.h; sourceTree = "<group>"; };
 		5EB0A1AB17ED7CB6003E6935 /* Issue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Issue.m; sourceTree = "<group>"; };
 		5EB9F04017EEE1310009B706 /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
+		5EB9F04217EEE5250009B706 /* MapOverlayVIewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapOverlayVIewController.h; sourceTree = "<group>"; };
+		5EB9F04317EEE5250009B706 /* MapOverlayVIewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapOverlayVIewController.m; sourceTree = "<group>"; };
 		5EECC1D317ED8F5600BDDF4E /* DummyMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DummyMapViewController.h; sourceTree = "<group>"; };
 		5EECC1D417ED8F5600BDDF4E /* DummyMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DummyMapViewController.m; sourceTree = "<group>"; };
 		5EECC1D517ED8F5600BDDF4E /* DummyMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DummyMapViewController.xib; sourceTree = "<group>"; };
@@ -328,6 +331,8 @@
 				804DA67E17ED54A800F86495 /* ViewController.m */,
 				38A7941717ED6D1E0078F048 /* MapViewController.h */,
 				38A7941817ED6D1E0078F048 /* MapViewController.m */,
+				5EB9F04217EEE5250009B706 /* MapOverlayVIewController.h */,
+				5EB9F04317EEE5250009B706 /* MapOverlayVIewController.m */,
 				804DA69F17ED65BF00F86495 /* MasterViewController.h */,
 				804DA6A017ED65BF00F86495 /* MasterViewController.m */,
 			);
@@ -676,6 +681,7 @@
 				382C655D17EDAD0C006BBCE2 /* LocChooseViewController.m in Sources */,
 				38A7942117ED70EB0078F048 /* LocationGetter.m in Sources */,
 				804DA67917ED54A800F86495 /* AppDelegate.m in Sources */,
+				5EB9F04417EEE5250009B706 /* MapOverlayVIewController.m in Sources */,
 				5E79FB6C17EDD6CD00430435 /* IssueListViewController.m in Sources */,
 				5EB0A1A317ED70A2003E6935 /* AddIssueViewController.m in Sources */,
 				045AA87E17EE4CD8006499F5 /* CustomCell.m in Sources */,

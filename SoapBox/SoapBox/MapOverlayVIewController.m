@@ -10,4 +10,11 @@
 
 @implementation MapOverlayVIewController
 
+- (void)drawMapRect:(MKMapRect)mapRect zoomScale:(MKZoomScale)zoomScale inContext:(CGContextRef)context {
+    CGContextBeginPath(context);
+    CGContextSetLineWidth(context,5);
+    CGContextStrokeEllipseInRect(context, CGRectMake(mapRect.origin.x, mapRect.origin.y, mapRect.size.height, mapRect.size.width));
+
+}
+
 @end

@@ -10,4 +10,6 @@
 
 @interface MapOverlayVIewController : MKOverlayRenderer
 
+- (void)drawMapRect:(MKMapRect)mapRect zoomScale:(MKZoomScale)zoomScale inContext:(CGContextRef)context;
+
 @end
