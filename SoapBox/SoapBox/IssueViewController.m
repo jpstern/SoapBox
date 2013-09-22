@@ -56,17 +56,21 @@
 }
 
 - (IBAction)tweet:(UIButton *)sender{
+  NSLog(@"So you want to tweet...");
   if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
   {
+    NSLog(@"Well now you can start!");
     SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
     NSString *tweet = [NSString stringWithFormat:@"%@ - %@... #SoapBox", self.issueTitle.text, self.description.text];
     [tweetSheet setInitialText:tweet];
-    [self presentViewController:tweetSheet animated:YES completion:nil];
+    [self presentViewController:tweetSheet animated:YES completion:^{
+      NSLog(@"GOGOGO!");
+    }];
   }
   else {
     UIAlertView *alertView = [[UIAlertView alloc]
                               initWithTitle:@"Sorry"
-                              message:@"You can't send a tweet right now, make sure your device has an internet connection and you have at least one Twitter account setup."
+                              message:@"Log into Twitter via Settings->Twitter to post."
                               delegate:self
                               cancelButtonTitle:@"OK"
                               otherButtonTitles:nil];
@@ -75,25 +79,21 @@
 }
 
 - (IBAction)fbook:(UIButton *)sender{
-  if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
-//    var parameters = new NSDictionary ();
-//    var request = SLRequest.Create (SLServiceKind.Facebook, SLRequestMethod.Get, new NSUrl ("https://graph.facebook.com/283148898401104"), parameters);
-//    request.PerformRequest ((data, response, error) => {
-//      if (response.StatusCode == 200) {
-//        InvokeOnMainThread (() => {
-//          resultsTextView.Text = data.ToString ();
-//        });
-//      } else {
-//        InvokeOnMainThread (() => {
-//          resultsTextView.Text = "Error: " + response.StatusCode.ToString ();
-//        });
-//      }
-//    });
+  NSLog(@"So you want to post...");
+  if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
+  {
+    NSLog(@"Well now you can start!");
+    SLComposeViewController *shareSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+    NSString *post = [NSString stringWithFormat:@"%@ - %@... #SoapBox", self.issueTitle.text, self.description.text];
+    [shareSheet setInitialText: post];
+    [self presentViewController:shareSheet animated:YES completion:^{
+      NSLog(@"GOGOGO!");
+    }];
   }
   else {
     UIAlertView *alertView = [[UIAlertView alloc]
                               initWithTitle:@"Sorry"
-                              message:@"You can't post to Facebook right now, make sure your device has an internet connection and you have at least one Facebook account setup."
+                              message:@"Log into Facebook via Settings->Facebook to post."
                               delegate:self
                               cancelButtonTitle:@"OK"
                               otherButtonTitles:nil];

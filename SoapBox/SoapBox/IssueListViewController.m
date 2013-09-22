@@ -95,6 +95,10 @@
     if (cell == nil) {
       NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CustomCell" owner:self options:nil];
       cell = [nib objectAtIndex:0];
+      [cell.image.layer setBorderWidth:2];
+      [cell.image.layer setCornerRadius:5];
+      [cell.image.layer setBorderColor:[UIColor whiteColor].CGColor];
+      [cell.image.layer setMasksToBounds:YES];
     }
     Issue *issue = [self.issues objectAtIndex:indexPath.row];
   
@@ -110,6 +114,9 @@
     [cell.description setText: [[cell.description text] substringWithRange:range]];
     [cell.description setText: [[cell.description text] stringByAppendingString:@" …"]];
   }
+  
+  // image from the issue
+  [[cell image] setImage:issue.image];
   
   // friend who supports the issue (if "friends issues" was selected)
   [cell.fromFriend setTextColor:[UIColor yellowColor]];

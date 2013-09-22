@@ -136,6 +136,8 @@
     } completion:^(BOOL finished) {
         
         self.containerIsOpen = NO;
+      
+      [self.parentController popToRootViewControllerAnimated:NO];
     }];
     
 }
