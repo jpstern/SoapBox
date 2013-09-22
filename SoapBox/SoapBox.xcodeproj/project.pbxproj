@@ -18,6 +18,9 @@
 		046C387217ED8FEE00460C13 /* DummyMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046C386A17ED8FEE00460C13 /* DummyMapViewController.xib */; };
 		046C387417ED8FEE00460C13 /* DummyTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046C386D17ED8FEE00460C13 /* DummyTableViewController.xib */; };
 		046C387617ED8FEE00460C13 /* DummyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046C387017ED8FEE00460C13 /* DummyViewController.xib */; };
+		04B555AC17EE81EA00642932 /* twitpic.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B555AB17EE81EA00642932 /* twitpic.png */; };
+		04B555AE17EE87D200642932 /* fbbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B555AD17EE87D200642932 /* fbbutton.png */; };
+		04B555B017EE8BE300642932 /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B555AF17EE8BE300642932 /* email.png */; };
 		382C651917ED9CBC006BBCE2 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 804DA6A017ED65BF00F86495 /* MasterViewController.m */; };
 		382C655817EDAA7F006BBCE2 /* AddNewIssueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 382C655617EDAA7E006BBCE2 /* AddNewIssueViewController.m */; };
 		382C655917EDAA7F006BBCE2 /* AddNewIssueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 382C655717EDAA7E006BBCE2 /* AddNewIssueViewController.xib */; };
@@ -130,6 +133,9 @@
 		046C386E17ED8FEE00460C13 /* DummyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DummyViewController.h; sourceTree = "<group>"; };
 		046C386F17ED8FEE00460C13 /* DummyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DummyViewController.m; sourceTree = "<group>"; };
 		046C387017ED8FEE00460C13 /* DummyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DummyViewController.xib; sourceTree = "<group>"; };
+		04B555AB17EE81EA00642932 /* twitpic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitpic.png; sourceTree = "<group>"; };
+		04B555AD17EE87D200642932 /* fbbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fbbutton.png; sourceTree = "<group>"; };
+		04B555AF17EE8BE300642932 /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email.png; sourceTree = "<group>"; };
 		382C655517EDAA7E006BBCE2 /* AddNewIssueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNewIssueViewController.h; sourceTree = "<group>"; };
 		382C655617EDAA7E006BBCE2 /* AddNewIssueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNewIssueViewController.m; sourceTree = "<group>"; };
 		382C655717EDAA7E006BBCE2 /* AddNewIssueViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddNewIssueViewController.xib; sourceTree = "<group>"; };
@@ -283,6 +289,8 @@
 			isa = PBXGroup;
 			children = (
 				045AA88017EE583D006499F5 /* SECRCODE.TTF */,
+				04B555AB17EE81EA00642932 /* twitpic.png */,
+				04B555AD17EE87D200642932 /* fbbutton.png */,
 				383FDAA617EDC1AC00F80046 /* tag-flat.png */,
 				383FDA9617EDC1A400F80046 /* menu.png */,
 				383FDA9717EDC1A400F80046 /* menu@2x.png */,
@@ -297,6 +305,7 @@
 				383FDA9017EDC17700F80046 /* account.png */,
 				383FDA9117EDC17700F80046 /* account@2x.png */,
 				383FDA8617EDC16A00F80046 /* arrow.png */,
+				04B555AF17EE8BE300642932 /* email.png */,
 				383FDA8717EDC16A00F80046 /* arrow@2x.png */,
 				383FDA8817EDC16A00F80046 /* camera-white.png */,
 				383FDA8917EDC16A00F80046 /* check.png */,
@@ -409,6 +418,8 @@
 		804DA66E17ED54A800F86495 /* SoapBox */ = {
 			isa = PBXGroup;
 			children = (
+				5EB0A1A517ED7C4C003E6935 /* IssueViewController.h */,
+				5EB0A1A617ED7C4C003E6935 /* IssueViewController.m */,
 				5EECC1E017ED8F5600BDDF4E /* IssueViewController.xib */,
 				5E79FB7017EE048100430435 /* AddEmailViewController.h */,
 				5E79FB7117EE048100430435 /* AddEmailViewController.m */,
@@ -435,8 +446,6 @@
 				046C386E17ED8FEE00460C13 /* DummyViewController.h */,
 				046C386F17ED8FEE00460C13 /* DummyViewController.m */,
 				046C387017ED8FEE00460C13 /* DummyViewController.xib */,
-				5EB0A1A517ED7C4C003E6935 /* IssueViewController.h */,
-				5EB0A1A617ED7C4C003E6935 /* IssueViewController.m */,
 				5EB0A1A017ED70A2003E6935 /* AddIssueViewController.h */,
 				5EB0A1A117ED70A2003E6935 /* AddIssueViewController.m */,
 				5EB0A1AA17ED7CB6003E6935 /* Issue.h */,
@@ -584,6 +593,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				383FDAA317EDC1A400F80046 /* search@2x.png in Resources */,
+				04B555AE17EE87D200642932 /* fbbutton.png in Resources */,
 				5EECC1ED17ED8F5600BDDF4E /* IssueViewController.xib in Resources */,
 				383FDA8B17EDC16A00F80046 /* arrow.png in Resources */,
 				045AA87F17EE4CD8006499F5 /* CustomCell.xib in Resources */,
@@ -613,6 +623,8 @@
 				046C386717ED8ADF00460C13 /* MainMenuViewController.xib in Resources */,
 				38A7941D17ED70410078F048 /* ViewController.xib in Resources */,
 				382C655917EDAA7F006BBCE2 /* AddNewIssueViewController.xib in Resources */,
+				04B555AC17EE81EA00642932 /* twitpic.png in Resources */,
+				04B555B017EE8BE300642932 /* email.png in Resources */,
 				383FDA8517EDC15100F80046 /* camera-white.png in Resources */,
 				383FDA8F17EDC16A00F80046 /* check@2x.png in Resources */,
 				383FDAA117EDC1A400F80046 /* pin-black.png in Resources */,

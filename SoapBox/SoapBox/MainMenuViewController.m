@@ -61,12 +61,12 @@
   
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Menu" style:UIBarButtonItemStylePlain target:self action:@selector(openContainer)];
   [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor],
-                                                                    NSFontAttributeName: [UIFont fontWithName:@"SecretCode" size:30.0f]}];
+                                                                    NSFontAttributeName: [UIFont fontWithName:@"AvenirNextCondensed-Regular" size:30.0f]}];
   
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Menu" style:UIBarButtonItemStylePlain target:self action:@selector(openContainer)];
-  [self.navigationItem.leftBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:@"AvenirNext-Regular" size:20.0], NSFontAttributeName,nil] forState:UIControlStateNormal];
+  [self.navigationItem.leftBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:@"AvenirNextCondensed-Regular" size:20.0], NSFontAttributeName, nil] forState:UIControlStateNormal];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showIssueController)];
-  [self.navigationItem.rightBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:@"AvenirNext-Regular" size:30.0], NSFontAttributeName,nil] forState:UIControlStateNormal];
+  [self.navigationItem.rightBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:@"AvenirNextCondensed-Regular" size:30.0], NSFontAttributeName, nil] forState:UIControlStateNormal];
   
   // building title for the nav bar
   UILabel *title = [[UILabel alloc] initWithFrame:CGRectZero];
@@ -144,7 +144,7 @@
     }
 }
 - (void) viewWillDisappear:(BOOL)animated{
-  self.title = @"";
+  self.title = @"Back";
 }
 
 - (void)viewDidAppear:(BOOL)animated {

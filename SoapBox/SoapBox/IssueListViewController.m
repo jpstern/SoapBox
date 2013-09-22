@@ -31,6 +31,7 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+  
 }
 
 - (void)didReceiveMemoryWarning
@@ -42,6 +43,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [self.navigationItem.leftBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:@"AvenirNextCondensed-Regular" size:20.0], NSFontAttributeName,nil] forState:UIControlStateNormal];
   [[self tableView] setBackgroundColor:[UIColor colorWithRed:31.0/255 green:31.0/255 blue:31.0/255 alpha:1.0]];
   [[self tableView] setSeparatorColor:[UIColor blackColor]];
   
@@ -67,7 +69,6 @@
     }];
   }
   else if ([self.title isEqualToString:@"Friend's Issues"]) {
-      NSString *query = @"";
       
   }
 }
@@ -94,6 +95,10 @@
     if (cell == nil) {
       NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CustomCell" owner:self options:nil];
       cell = [nib objectAtIndex:0];
+      [cell.image.layer setBorderWidth:2];
+      [cell.image.layer setCornerRadius:5];
+      [cell.image.layer setBorderColor:[UIColor whiteColor].CGColor];
+      [cell.image.layer setMasksToBounds:YES];
     }
     Issue *issue = [self.issues objectAtIndex:indexPath.row];
   
@@ -109,6 +114,9 @@
     [cell.description setText: [[cell.description text] substringWithRange:range]];
     [cell.description setText: [[cell.description text] stringByAppendingString:@" …"]];
   }
+  
+  // image from the issue
+  [[cell image] setImage:issue.image];
   
   // friend who supports the issue (if "friends issues" was selected)
   [cell.fromFriend setTextColor:[UIColor yellowColor]];
