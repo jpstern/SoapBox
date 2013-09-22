@@ -16,6 +16,10 @@
 @property (nonatomic, strong)  UIView *filters;
 @property (nonatomic, strong)  UILabel *filterLabel;
 @property (nonatomic, strong) IBOutlet UIButton *filterMeTimbers;
+@property (nonatomic,strong) IBOutlet UIButton *hotButton;
+@property (nonatomic,strong) IBOutlet UIButton *closeButton;
+@property (nonatomic,strong) IBOutlet UIButton *friendsButton;
+@property (nonatomic,strong) IBOutlet UIButton *nowButton;
 
 -(void) removeAllAnnotations;
 
