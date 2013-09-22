@@ -11,6 +11,8 @@
 #import <MapKit/MapKit.h>
 #import "AddEmailViewController.h"
 #import <Social/Social.h>
+#import <MessageUI/MessageUI.h>
+#import <MessageUI/MFMailComposeViewController.h>
 
 @interface IssueViewController : UIViewController <AddEmailDelegate>
 
@@ -25,6 +27,6 @@
 
 - (IBAction)tweet:(UIButton *)sender;
 - (IBAction)fbook:(UIButton *)sender;
-- (IBAction)addEmail:(UIButton *)sender;
+- (IBAction)shootEmail:(UIButton *)sender;
 
 @end

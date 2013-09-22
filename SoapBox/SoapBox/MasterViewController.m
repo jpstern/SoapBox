@@ -29,6 +29,12 @@
     
 }
 
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+  
+  
+  
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -37,7 +43,7 @@
       
     [self updateParentView];
     [self updateChildView];
-
+  
 }
 
 -(void)viewWillAppear:(BOOL)animated {

@@ -8,7 +8,7 @@
 
 #import "IssueViewController.h"
 
-@interface IssueViewController ()
+@interface IssueViewController () <MFMailComposeViewControllerDelegate>
 
 @end
 
@@ -48,12 +48,40 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (IBAction)addEmail:(UIButton *)sender {
-    AddEmailViewController *emailController = [[AddEmailViewController alloc] initWithNibName:@"AddEmailViewController" bundle:nil];
-    emailController.delegate = self;
-    [self presentViewController:emailController animated:YES completion:^{
-        NSLog(@"SHowing Email View");
+-(void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error{
+  [self.masterContainer openContainer];
+  [self dismissViewControllerAnimated:YES completion:^{
+    CGRect frame = self.masterContainer.childView.frame;
+    frame.origin.y = self.masterContainer.view.frame.size.height - 60;
+    self.masterContainer.childView.frame = frame;
+  }];
+  
+  
+}
+
+- (IBAction)shootEmail:(UIButton *)sender {
+  NSLog(@"So you want to email...");
+  if ([MFMailComposeViewController canSendMail])
+  {
+    NSLog(@"Well now you can start!");
+    MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
+    mailViewController.mailComposeDelegate = self;
+    [mailViewController setSubject:@"Join in the issue!"];
+    [mailViewController setMessageBody:@"I would like you to join my issue on SoapBox." isHTML:NO];
+    [self.masterContainer.childController presentViewController:mailViewController animated:YES completion:^{
+      NSLog(@"GOGOGO!");
     }];
+  }
+  else
+  {
+    UIAlertView *alertView = [[UIAlertView alloc]
+                              initWithTitle:@"Sorry"
+                              message:@"Log into Twitter via Settings->Mail,Contacts,Calendars to post."
+                            delegate:self
+                            cancelButtonTitle:@"OK"
+                            otherButtonTitles:nil];
+  [alertView show];
+  }
 }
 
 - (IBAction)tweet:(UIButton *)sender{
@@ -66,6 +94,7 @@
     [tweetSheet setInitialText:tweet];
     [self presentViewController:tweetSheet animated:YES completion:^{
       NSLog(@"GOGOGO!");
+      [self.masterContainer openContainer];
     }];
   }
   else {

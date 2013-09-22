@@ -21,6 +21,7 @@
 		04B555AC17EE81EA00642932 /* twitpic.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B555AB17EE81EA00642932 /* twitpic.png */; };
 		04B555AE17EE87D200642932 /* fbbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B555AD17EE87D200642932 /* fbbutton.png */; };
 		04B555B017EE8BE300642932 /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B555AF17EE8BE300642932 /* email.png */; };
+		04B555B217EE9E1200642932 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B555B117EE9E1200642932 /* MessageUI.framework */; };
 		382C651917ED9CBC006BBCE2 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 804DA6A017ED65BF00F86495 /* MasterViewController.m */; };
 		382C655817EDAA7F006BBCE2 /* AddNewIssueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 382C655617EDAA7E006BBCE2 /* AddNewIssueViewController.m */; };
 		382C655917EDAA7F006BBCE2 /* AddNewIssueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 382C655717EDAA7E006BBCE2 /* AddNewIssueViewController.xib */; };
@@ -138,6 +139,7 @@
 		04B555AB17EE81EA00642932 /* twitpic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitpic.png; sourceTree = "<group>"; };
 		04B555AD17EE87D200642932 /* fbbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fbbutton.png; sourceTree = "<group>"; };
 		04B555AF17EE8BE300642932 /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email.png; sourceTree = "<group>"; };
+		04B555B117EE9E1200642932 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		382C655517EDAA7E006BBCE2 /* AddNewIssueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNewIssueViewController.h; sourceTree = "<group>"; };
 		382C655617EDAA7E006BBCE2 /* AddNewIssueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNewIssueViewController.m; sourceTree = "<group>"; };
 		382C655717EDAA7E006BBCE2 /* AddNewIssueViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddNewIssueViewController.xib; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04B555B217EE9E1200642932 /* MessageUI.framework in Frameworks */,
 				38FBF7B217ED67A9004695DA /* Social.framework in Frameworks */,
 				38F01EBE17EE7EA300FE87BA /* Parse.framework in Frameworks */,
 				38FCC07517EE5715007F1179 /* FacebookSDK.framework in Frameworks */,
@@ -397,6 +400,7 @@
 		804DA66717ED54A800F86495 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				04B555B117EE9E1200642932 /* MessageUI.framework */,
 				383FDAAA17EDD09700F80046 /* libz.dylib */,
 				383FDAA817EDCF0D00F80046 /* MapKit.framework */,
 				804DA6B917ED886900F86495 /* FacebookSDK */,
