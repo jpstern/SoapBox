@@ -5,7 +5,7 @@
 //  Created by Josh Stern on 9/21/13.
 //  Copyright (c) 2013 Josh. All rights reserved.
 //
-
+#import "MasterViewController.h"
 #import <UIKit/UIKit.h>
 
 @class MasterViewController;

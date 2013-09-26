@@ -27,6 +27,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
     }
 
 - (void)finishedWithEmail:(NSString *)email body:(NSString *)body {
@@ -136,12 +137,14 @@
 {
     [super viewDidLoad];
     NSLog(@"View did load");
+    
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
     self.issueTitle.text = self.issue.title;
     self.description.text = self.issue.description;
     image.image = self.issue.image;
     MKMapSnapshotOptions *options = [[MKMapSnapshotOptions alloc] init];
     options.size = self.mapImage.frame.size;
-    options.region = MKCoordinateRegionMake(self.issue.location, MKCoordinateSpanMake(0.001, 0.001));
+    options.region = MKCoordinateRegionMake(self.issue.location, MKCoordinateSpanMake(0.004, 0.004));
     MKMapSnapshotter *snapshotter = [[MKMapSnapshotter alloc] initWithOptions:options];
     [snapshotter startWithCompletionHandler:^(MKMapSnapshot *snapshot, NSError *error) {
         NSLog(@"Snapshot finished");

@@ -9,8 +9,6 @@
 #import "AppDelegate.h"
 
 #import "MasterViewController.h"
-#import "DummyTableViewController.h"
-#import "DummyMapViewController.h"
 #import "MapViewController.h"
 #import "MainMenuViewController.h"
 #import "ViewController.h"
@@ -38,6 +36,7 @@
 
     UINavigationController *dummyTableNav = [[UINavigationController alloc] initWithRootViewController:menu];
     dummyTableNav.navigationBar.translucent = NO;
+    [dummyTableNav.navigationItem setTitle:@"SoapBox"];
     master.parentController = dummyTableNav;
   
   // map view controller.

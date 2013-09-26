@@ -20,7 +20,7 @@
 
 @synthesize mapView = _mapView;
 @synthesize currentDist;
-@synthesize filterLabel, filters, filterMeTimbers;
+@synthesize filters, filterMeTimbers;
 @synthesize nowButton,closeButton,hotButton,friendsButton;
 
 -(void) removeAllAnnotations{
@@ -52,7 +52,6 @@
     [filterMeTimbers addTarget:self action:@selector(bringEmOut) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:filters];
-    [self.view addSubview:filterLabel];
     
     [self.masterContainer.parentController.navigationBar addSubview:filterMeTimbers];
     
@@ -75,11 +74,18 @@
     [closeButton setTitle:@"Close" forState:UIControlStateNormal];
     [friendsButton setTitle:@"Friends" forState:UIControlStateNormal];
     [hotButton setTitle:@"Hot" forState:UIControlStateNormal];
+    //set colors
     [nowButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [closeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [friendsButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [hotButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [nowButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    //set highlight colors
+    [nowButton setTitleColor:[UIColor yellowColor] forState:UIControlStateHighlighted];
+    [closeButton setTitleColor:[UIColor yellowColor] forState:UIControlStateHighlighted];
+    [friendsButton setTitleColor:[UIColor yellowColor] forState:UIControlStateHighlighted];
+    [hotButton setTitleColor:[UIColor yellowColor] forState:UIControlStateHighlighted];
+
     
     [self.navigationController setNavigationBarHidden:YES];
     
@@ -136,11 +142,6 @@
         
         [self refresh];
     }
-
-  [self setTitle:@"SoapBox"];
-  [[[self navigationController] navigationItem] setTitle:@"SoapBox"];
-  NSLog(@"%@",[[[self navigationController] navigationBar] titleTextAttributes]);
-  
 
     
     
@@ -382,7 +383,13 @@
     if([view.annotation isMemberOfClass:[MKUserLocation class]])return;
     
     IssueViewController *iVC = [[IssueViewController alloc]initWithNibName:@"IssueViewController" bundle:nil];
-    [self.masterContainer.parentController pushViewController:iVC animated:YES];
+    
+    //for now we need to figure out a clean way to pop to this
+    //maybe a modal?
+    
+    //[self.masterContainer.parentController pushViewController:iVC animated:YES];
+    
+    
     
 }
 

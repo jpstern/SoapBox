@@ -79,16 +79,10 @@
     lcVC = [[LocChooseViewController alloc] initWithNibName:@"LocChooseViewController" bundle:nil];
     tileArray = [[NSMutableArray alloc] init];
     
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
-    label.backgroundColor = [UIColor clearColor];
-    label.font = [UIFont boldSystemFontOfSize:20.0];
-    label.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.5];
-    label.textAlignment = NSTextAlignmentCenter;
-    // ^-Use UITextAlignmentCenter for older SDKs.
-    label.textColor = [UIColor yellowColor]; // change this color
-    self.navigationItem.titleView = label;
-    label.text = @"What's Your Issue?";
-    [label sizeToFit];
+    
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor],                                                                   NSFontAttributeName: [UIFont fontWithName:@"AvenirNextCondensed-Regular" size:25.0f]}];
+    [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
+    [self.navigationItem setTitle:@"What's Your Issue?"];
     
     CGFloat offset = 55;
     CGFloat versionOffset = 0;
@@ -201,6 +195,7 @@
 }
 
 - (void)cancelAdd{
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

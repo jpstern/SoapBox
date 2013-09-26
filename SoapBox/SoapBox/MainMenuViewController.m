@@ -10,6 +10,8 @@
 #import "AddNewIssueViewController.h"
 #import "SettingsViewController.h"
 #import "AboutSoapViewController.h"
+#import "UIViewController+MasterContainer.h"
+#import "UIViewController+Container.h"
 
 @interface MainMenuViewController ()
 
@@ -56,16 +58,21 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-  
-  self.title = @"HELLO";
-  
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Menu" style:UIBarButtonItemStylePlain target:self action:@selector(openContainer)];
+  NSLog(@"\n\n\n\n\n\t\tVIEWISLOADING!!!!!\n\n\n\n\n");
+  //main nav bar
   [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor],
                                                                     NSFontAttributeName: [UIFont fontWithName:@"AvenirNextCondensed-Regular" size:30.0f]}];
-  
+    [self.navigationItem setTitle:@"SoapBox"];
+    
+    
+    // left bar button
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Menu" style:UIBarButtonItemStylePlain target:self action:@selector(openContainer)];
+    [self.navigationItem.leftBarButtonItem setTintColor:[UIColor whiteColor]];
   [self.navigationItem.leftBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:@"AvenirNextCondensed-Regular" size:20.0], NSFontAttributeName, nil] forState:UIControlStateNormal];
+    
+    //right bar button
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showIssueController)];
+    [self.navigationItem.rightBarButtonItem setTintColor:[UIColor whiteColor]];
   [self.navigationItem.rightBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:@"AvenirNextCondensed-Regular" size:30.0], NSFontAttributeName, nil] forState:UIControlStateNormal];
   
   // building title for the nav bar
