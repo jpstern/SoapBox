@@ -916,9 +916,6 @@ AnimatedOverlay *animatedOverlay;
     [issueView setNewIssue:((IssueAnnotation *)view.annotation).issue];
     animatedOverlay.circle = ((IssueAnnotation *)view.annotation).circle;
     
-    
-      NSLog(@"\n\nIN DID_SELECT\n\n");
-    
     //animate here
     issueList.tag = 0;
     [self tableTopper];

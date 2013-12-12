@@ -14,7 +14,7 @@
 #import "MenuView.h"
 #import "MBProgressHUD.h"
 
-@interface MapViewController : UIViewController<MKMapViewDelegate, UITableViewDelegate, UITableViewDataSource, AddEmailDelegate, UIAlertViewDelegate>
+@interface MapViewController : UIViewController<MKMapViewDelegate, UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate>
 
 @property (nonatomic, strong) IBOutlet MKMapView *mapView;
 @property double currentDist;

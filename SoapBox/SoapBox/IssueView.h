@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "Issue.h"
 #import <MapKit/MapKit.h>
-#import "AddEmailViewController.h"
 #import <Social/Social.h>
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMailComposeViewController.h>

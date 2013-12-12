@@ -58,8 +58,6 @@
 		38FBF7B417ED67B7004695DA /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FBF7B317ED67B7004695DA /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		38FBF7B617ED68B9004695DA /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FBF7B517ED68B9004695DA /* libsqlite3.dylib */; };
 		5E79FB6E17EDD72A00430435 /* Issue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB0A1AB17ED7CB6003E6935 /* Issue.m */; };
-		5E79FB7317EE048100430435 /* AddEmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79FB7117EE048100430435 /* AddEmailViewController.m */; };
-		5E79FB7417EE048100430435 /* AddEmailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E79FB7217EE048100430435 /* AddEmailViewController.xib */; };
 		5EB9F04117EEE1310009B706 /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EB9F04017EEE1310009B706 /* circle.png */; };
 		5EECC1EB17ED8F5600BDDF4E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5EECC1DD17ED8F5600BDDF4E /* InfoPlist.strings */; };
 		804DA66917ED54A800F86495 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 804DA66817ED54A800F86495 /* Foundation.framework */; };
@@ -152,9 +150,6 @@
 		38FBF7B117ED67A9004695DA /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		38FBF7B317ED67B7004695DA /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		38FBF7B517ED68B9004695DA /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		5E79FB7017EE048100430435 /* AddEmailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEmailViewController.h; sourceTree = "<group>"; };
-		5E79FB7117EE048100430435 /* AddEmailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEmailViewController.m; sourceTree = "<group>"; };
-		5E79FB7217EE048100430435 /* AddEmailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddEmailViewController.xib; sourceTree = "<group>"; };
 		5EB0A1AA17ED7CB6003E6935 /* Issue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Issue.h; sourceTree = "<group>"; };
 		5EB0A1AB17ED7CB6003E6935 /* Issue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Issue.m; sourceTree = "<group>"; };
 		5EB9F04017EEE1310009B706 /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
@@ -245,8 +240,6 @@
 		38A7942417ED745F0078F048 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				5E79FB7017EE048100430435 /* AddEmailViewController.h */,
-				5E79FB7117EE048100430435 /* AddEmailViewController.m */,
 				382C655517EDAA7E006BBCE2 /* AddNewIssueViewController.h */,
 				382C655617EDAA7E006BBCE2 /* AddNewIssueViewController.m */,
 				382C655A17EDAD0C006BBCE2 /* LocChooseViewController.h */,
@@ -291,7 +284,6 @@
 		38FBF79C17ED6285004695DA /* XIBS */ = {
 			isa = PBXGroup;
 			children = (
-				5E79FB7217EE048100430435 /* AddEmailViewController.xib */,
 				382C655717EDAA7E006BBCE2 /* AddNewIssueViewController.xib */,
 				045AA87D17EE4CD8006499F5 /* CustomCell.xib */,
 				382C655C17EDAD0C006BBCE2 /* LocChooseViewController.xib */,
@@ -506,7 +498,6 @@
 				383FDA8F17EDC16A00F80046 /* check@2x.png in Resources */,
 				383EEAD21850081700A7D165 /* SoapboxLogin1.png in Resources */,
 				38A7941B17ED6D1E0078F048 /* MapViewController.xib in Resources */,
-				5E79FB7417EE048100430435 /* AddEmailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,7 +516,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E79FB7317EE048100430435 /* AddEmailViewController.m in Sources */,
 				5E79FB6E17EDD72A00430435 /* Issue.m in Sources */,
 				38FB7DF01844244600E206A7 /* FilterView.m in Sources */,
 				382C655D17EDAD0C006BBCE2 /* LocChooseViewController.m in Sources */,

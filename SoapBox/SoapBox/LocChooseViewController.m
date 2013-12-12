@@ -8,6 +8,7 @@
 
 #import "LocChooseViewController.h"
 
+
 @interface LocChooseViewController ()
 
 @end
@@ -150,14 +151,13 @@ didChangeDragState:(MKAnnotationViewDragState)newState
         NSLog(@"Snapshot finished");
         self.mapImage = snapshot.image;
         
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Are you sure"
+                                                        message:@"you want to change the location of this item?"
+                                                       delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"YES", nil];
+        [alert show];
         // add loading annimation
         
     }];
-    
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Are you sure"
-                                                    message:@"you want to change the location of this item?"
-                                                   delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"YES", nil];
-    [alert show];
     
 }
 

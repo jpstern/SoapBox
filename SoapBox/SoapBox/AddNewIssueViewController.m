@@ -264,31 +264,6 @@
 }
 
 
-- (void)generateTiles
-{
-    /*
-    int i = 0;
-    int j = 0;
-    while( i*4+j < 12){
-        UIButton *tile = [[UIButton alloc] initWithFrame:CGRectMake(j*80, i*77 + 9, 80, 77)];
-        [tile addTarget:self action:@selector(chooseTag:) forControlEvents:UIControlEventTouchUpInside];
-        tile.alpha = 0;
-        tile.backgroundColor = [UIColor whiteColor];
-        NSLog(@"num is %i\n\n", i*4+j);
-        [tile setTitle:[labels objectAtIndex:i*4 +j] forState:UIControlStateNormal];
-        [tile setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [tile.titleLabel setFont:[UIFont systemFontOfSize:12]];
-        [tile.titleLabel setTextAlignment:NSTextAlignmentCenter];
-        [tagScrollView addSubview:tile];
-        [tileArray addObject:tile];
-        j++;
-        if(j%4 ==0){
-            j = 0;
-            i++;
-        }
-    }
-     */
-}
 
 
 - (IBAction)chooseTag:(UIButton*)sender
@@ -302,51 +277,12 @@
     
 }
 
-- (void)showOrHideTiles:(BOOL)show
-{
-    /*
-    srand(time(NULL));
-    int i = 0;
-    NSMutableArray *tmpArray = [NSMutableArray arrayWithArray:tileArray];
-    while (tmpArray.count > 0) {
-        int index = rand() % tmpArray.count;
-        UIView *tmp = [tmpArray objectAtIndex:index];
-        [tmpArray removeObject:tmp];
-        i++;
-        [UIView animateWithDuration:0.5 delay:0.005 + 0.05*i options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-            tmp.alpha = show;
-        }completion:nil];
-        
-    }
-     */
-}
-
-- (IBAction)displayTags:(id)sender
-{
-    /*
-    NSLog(@"dsfsd");
-    if (tagsVisible) {
-        [UIView animateWithDuration:0.005 delay:1.5 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-            tagScrollView.center = CGPointMake(tagScrollView.center.x, tagScrollView.center.y+tagScrollView.frame.size.height);
-        } completion:nil];
-        tagsVisible = false;
-        [self showOrHideTiles:false];
-    } else {
-        [UIView animateWithDuration:0.005 delay:0.005 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-            tagScrollView.center = CGPointMake(tagScrollView.center.x, tagScrollView.center.y-tagScrollView.frame.size.height);
-        } completion:nil];
-        tagsVisible = true;
-        [self showOrHideTiles:true];
-    }
-     */
-}
-
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     NSLog(@"got picture");
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
-    [addPhotoBtn setImage:image forState:UIControlStateNormal];
     [self dismissViewControllerAnimated:YES completion:nil];
+    [addPhotoBtn setImage:image forState:UIControlStateNormal];
 }
 
 
