@@ -10,6 +10,10 @@
 
 @interface ViewController : UIViewController
 
-- (IBAction)login:(id)sender;
+@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UIButton *loginBtn;
+@property (nonatomic, strong) UIImageView *soapBoxPic;
+
+- (void)login:(id)sender;
 
 @end

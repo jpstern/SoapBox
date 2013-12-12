@@ -34,7 +34,7 @@
     return self;
 }
 
-- (void)viewWillAppear:(BOOL)animated
+- (void)viewDidAppear:(BOOL)animated
 {
     if(self.lcVC.mapImage){
         [self.addLocBtn setBackgroundImage:lcVC.mapImage forState:UIControlStateNormal];
@@ -163,7 +163,6 @@
     
     
     //changed to the check
-    //why do both of these create item????
     
     UIButton *addItem = [[UIButton alloc] initWithFrame:BARBUTTONFRAME];
     UIImage *check = [UIImage imageNamed:@"check@2x.png"];
@@ -180,7 +179,7 @@
     UIBarButtonItem *accept = [[UIBarButtonItem alloc] initWithCustomView:addItem];
     self.navigationItem.rightBarButtonItem = accept;
     
-    [self generateTiles];
+    //[self generateTiles];
     
     tagsVisible = false;
     
@@ -222,15 +221,13 @@
         
         PFGeoPoint *location = [PFGeoPoint geoPointWithLatitude:lcVC.coord.latitude longitude:lcVC.coord.longitude];
         [issue setObject:location forKey:@"Location"];
-        PFRelation *relation = [issue relationforKey:@"User"];
-        PFUser *user = [PFUser currentUser];
-        if(user){
-            [relation addObject:user];
-        }
         [issue setObject:titleTextView.text forKey:@"Title"];
+        [issue setObject:[[PFUser currentUser] objectForKey:@"facebookID"] forKey:@"userFacebookID"];
         [issue setObject:descriptionTextView.text forKey:@"Description"];
         [issue saveInBackgroundWithBlock:^(BOOL success, NSError *error) {
             if (success) {
+                [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
+
                 [self dismissViewControllerAnimated:YES completion:nil];
             } else {
                 NSLog(@"\n\n%@\n\n", [error localizedDescription]);
@@ -403,14 +400,44 @@
     
     if (textView.tag == 1) {
         if (textView.text.length <= 25) {
-            titleCounter.text = [NSString stringWithFormat:@"%i", 30 - textView.text.length];
+            unsigned long length = textView.text.length;
+            if([text isEqualToString:@""] ){
+                if(textView.text.length == 0 ){
+                  return false;
+                }
+                if(textView.text.length == 25){
+                    titleCounter.text = [NSString stringWithFormat:@"%i",1];
+                    return true;
+                }
+                length-=2;
+            }
+            if(textView.text.length == 25){
+                return false;
+            }
+            titleCounter.text = [NSString stringWithFormat:@"%lu", 25 - length-1];
             return true;
-        } else {
+        }
+        else {
             return false;
         }
-    } else {
+    }
+    else {
         if (textView.text.length <= 100) {
-            descriptionCounter.text = [NSString stringWithFormat:@"%i", 130 - textView.text.length];
+            int length = textView.text.length;
+            if([text isEqualToString:@""] ){
+                if(textView.text.length == 0 ){
+                    return false;
+                }
+                if(textView.text.length == 100){
+                    descriptionCounter.text = [NSString stringWithFormat:@"%i",1];
+                    return true;
+                }
+                length-=2;
+            }
+            if(textView.text.length == 100){
+                return false;
+            }
+            descriptionCounter.text = [NSString stringWithFormat:@"%d", 100 - length -1];
             return true;
         } else {
             return false;

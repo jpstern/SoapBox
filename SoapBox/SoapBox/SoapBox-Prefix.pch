@@ -13,8 +13,6 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
-    #import "UIViewController+MasterContainer.h"
-    #import "MasterViewController.h"
     #import <FacebookSDK/FacebookSDK.h>
     #import <Parse/Parse.h>
     #import "LocationGetter.h"

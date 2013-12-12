@@ -9,17 +9,29 @@
 #import "CustomCell.h"
 
 @implementation CustomCell
-@synthesize title, trend, accessoryView, image, fromFriend;
+@synthesize title, trend, accessoryView, image;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
-      [title setTextColor:[UIColor yellowColor]];
+        [self initalize];
     }
     return self;
 }
+
+
+-(void)awakeFromNib {
+    [super awakeFromNib];
+    [self initalize];
+}
+
+-(void) initalize {
+    [self.trend.layer setCornerRadius:self.trend.frame.size.width/2];
+    
+}
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {

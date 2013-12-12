@@ -149,6 +149,9 @@ didChangeDragState:(MKAnnotationViewDragState)newState
     [snapshotter startWithCompletionHandler:^(MKMapSnapshot *snapshot, NSError *error) {
         NSLog(@"Snapshot finished");
         self.mapImage = snapshot.image;
+        
+        // add loading annimation
+        
     }];
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Are you sure"

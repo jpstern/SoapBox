@@ -7,14 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Issue.h"
 
 @interface CustomCell : UITableViewCell
 
 @property (nonatomic, strong) IBOutlet UIImageView *image;
-@property (nonatomic, strong) IBOutlet UIImageView *trend;
+@property (nonatomic, strong) IBOutlet UILabel *trend;
 @property (nonatomic, strong) IBOutlet UILabel *title;
-@property (nonatomic, strong) IBOutlet UILabel *fromFriend;
-@property (nonatomic, strong) IBOutlet UILabel *description;
-
+@property (nonatomic, strong) Issue *issue;
 
 @end

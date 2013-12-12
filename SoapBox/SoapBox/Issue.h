@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Parse/Parse.h>
 
 @interface Issue : NSObject
 
@@ -14,6 +15,12 @@
 @property (strong, nonatomic) NSString *description;
 @property (strong, nonatomic) UIImage *image;
 @property (nonatomic) CLLocationCoordinate2D location;
-@property (nonatomic) CGFloat *metric;
+@property (nonatomic) NSNumber *metric;
+@property (nonatomic,strong) NSString *parseId;
+@property (nonatomic, strong) NSString *address;
+@property (nonatomic, strong) NSString *createdAt;
+
+
+-(id)initWithPFObject:(PFObject *)object;
 
 @end

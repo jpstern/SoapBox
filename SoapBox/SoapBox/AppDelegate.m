@@ -8,9 +8,7 @@
 
 #import "AppDelegate.h"
 
-#import "MasterViewController.h"
 #import "MapViewController.h"
-#import "MainMenuViewController.h"
 #import "ViewController.h"
 
 @implementation AppDelegate
@@ -28,26 +26,17 @@
     
     //FB STUFF
     [PFFacebookUtils initializeFacebook];
-    MasterViewController *master = [[MasterViewController alloc] init];
-    [self.window setRootViewController:master];
-  
-  // main menu view controller
-    MainMenuViewController *menu = [[MainMenuViewController alloc] init];
-
-    UINavigationController *dummyTableNav = [[UINavigationController alloc] initWithRootViewController:menu];
-    dummyTableNav.navigationBar.translucent = NO;
-    [dummyTableNav.navigationItem setTitle:@"SoapBox"];
-    master.parentController = dummyTableNav;
-  
-  // map view controller.
+    
+    // map view controller.
     MapViewController *map = [[MapViewController alloc] init];
     UINavigationController *mapNav = [[UINavigationController alloc] initWithRootViewController:map];
     mapNav.navigationBar.translucent = NO;
-    master.childController = mapNav;
-  
-//    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:19.0/255 green:19.0/255 blue:19.0/255 alpha:1.0]];
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:19.0/255 green:19.0/255 blue:19.0/255 alpha:1.0]];
 
+    
+    [self.window setRootViewController:mapNav];
+  
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:19.0/255 green:19.0/255 blue:19.0/255 alpha:1.0]];
+     
   
     [self.window makeKeyAndVisible];
     
