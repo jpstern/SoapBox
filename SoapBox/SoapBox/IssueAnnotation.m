@@ -18,7 +18,6 @@
         self.coordinate = issueForInit.location;
         self.title = issueForInit.title;
         self.subtitle = issueForInit.description;
-        //self.circle = [MKCircle circleWithCenterCoordinate:issueForInit.location radius:[issueForInit.metric doubleValue]];
     }
     return self;
 }
