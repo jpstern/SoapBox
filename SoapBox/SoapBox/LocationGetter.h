@@ -1,9 +1,9 @@
 //
 //  LocationGetter.h
-//  CurbList
+//  SoapBox
 //
 //  Created by Gregoire on 6/14/13.
-//  Copyright (c) 2013 BirwinApps. All rights reserved.
+//  Copyright (c) 2013 jhurrayApps. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

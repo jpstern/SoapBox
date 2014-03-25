@@ -93,8 +93,14 @@ didChangeDragState:(MKAnnotationViewDragState)newState
         CLLocationCoordinate2D droppedAt = annotationView.annotation.coordinate;
         NSLog(@"Pin dropped at %f,%f", droppedAt.latitude, droppedAt.longitude);
         _coord = CLLocationCoordinate2DMake(droppedAt.latitude, droppedAt.longitude);
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.4* NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+                [self.mapView2 setCenterCoordinate:_coord animated:YES];
+        });
+        
     }
 }
+
 
 
 -(void) viewDidAppear:(BOOL)animated{

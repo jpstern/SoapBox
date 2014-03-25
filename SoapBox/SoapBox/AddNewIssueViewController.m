@@ -7,6 +7,7 @@
 //
 
 #import "AddNewIssueViewController.h"
+#import "MapViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import <dispatch/dispatch.h>
 
@@ -17,13 +18,12 @@
 #define KEYBOARDHEIGHT 216
 
 @implementation AddNewIssueViewController
-@synthesize pictureImageView, titleTextView, descriptionTextView;
+@synthesize titleTextView, descriptionTextView;
 @synthesize titleCounter, descriptionCounter;
 @synthesize tagScrollView;
-@synthesize tagsVisible;
 @synthesize addPhotoBtn, addLocBtn, addTagBtn;
-@synthesize tileArray;
 @synthesize lcVC;
+@synthesize issueAddDelegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -46,23 +46,6 @@
     return YES;
 }
 
--(UIImage *)changeColorTo:(UIColor *)color fromImage:(UIImage *)image{
-    CGRect rect = CGRectMake(0, 0, image.size.width, image.size.height);
-    UIGraphicsBeginImageContext(rect.size);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextClipToMask(context, rect, image.CGImage);
-    CGContextSetFillColorWithColor(context, [color CGColor]);
-    CGContextFillRect(context, rect);
-    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    UIImage *flippedImage = [UIImage imageWithCGImage:img.CGImage
-                                                scale:1.0 orientation: UIImageOrientationDownMirrored];
-    
-    return flippedImage;
-}
-
-
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
     float space = self.view.bounds.size.height - KEYBOARDHEIGHT;
@@ -72,17 +55,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    lcVC = NULL;
     
     [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
     
-    
-    lcVC = [[LocChooseViewController alloc] initWithNibName:@"LocChooseViewController" bundle:nil];
-    tileArray = [[NSMutableArray alloc] init];
-    
-    
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor],                                                                   NSFontAttributeName: [UIFont fontWithName:@"AvenirNextCondensed-Regular" size:25.0f]}];
-    [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
-    [self.navigationItem setTitle:@"What's Your Issue?"];
+    [self.navigationController.navigationBar setBarTintColor:GRAY2];
+    [self.navigationItem setTitle:@"What's Up?"];
     
     CGFloat offset = 55;
     CGFloat versionOffset = 0;
@@ -124,15 +104,14 @@
     
     NSLog(@"screen height %f", DEVICEHEIGHT);
     
-    UIColor *secondaryColor = [UIColor lightGrayColor];
+    UIColor *secondaryColor = [UIColor grayColor];
     UIView *buttonBackground = [[UIView alloc] initWithFrame:CGRectMake(0, DEVICEHEIGHT-260+offset, DEVICEWIDTH, 244)];
     buttonBackground.backgroundColor = secondaryColor;
     [self.view addSubview:buttonBackground];
     
     
-    
     addPhotoBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, DEVICEHEIGHT-260+offset, 160, 210)];
-    addPhotoBtn.backgroundColor = secondaryColor;
+    //addPhotoBtn.backgroundColor = secondaryColor;
     [addPhotoBtn addTarget:self action:@selector(takePhoto) forControlEvents:UIControlEventTouchUpInside];
     [addPhotoBtn setTitle:@"Take a photo" forState:UIControlStateNormal];
     [addPhotoBtn setBackgroundColor:[UIColor lightGrayColor]];
@@ -141,14 +120,14 @@
     
     
     addLocBtn = [[UIButton alloc] initWithFrame:CGRectMake(160, DEVICEHEIGHT-260+offset, 160, 210)];
-    addLocBtn.backgroundColor = secondaryColor;
+    //addLocBtn.backgroundColor = secondaryColor;
     [addLocBtn addTarget:self action:@selector(changeLocation) forControlEvents:UIControlEventTouchUpInside];
     [addLocBtn setTitle:@"Set the pin" forState:UIControlStateNormal];
     [addLocBtn setBackgroundColor:[UIColor grayColor]];
     [addLocBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
     
-    //ADD ALL THE IMAGES
+    //ADD ALL THE VIEWS
     
     [self.view addSubview:tagScrollView];
     [self.view addSubview:titleTextView];
@@ -179,16 +158,15 @@
     UIBarButtonItem *accept = [[UIBarButtonItem alloc] initWithCustomView:addItem];
     self.navigationItem.rightBarButtonItem = accept;
     
-    //[self generateTiles];
-    
-    tagsVisible = false;
-    
-    
     
 }
 
 -(void)changeLocation{
     
+    
+    if(!lcVC){
+        lcVC = [[LocChooseViewController alloc] initWithNibName:@"LocChooseViewController" bundle:nil];
+    }
     UINavigationController *tmpNC = [[UINavigationController alloc] initWithRootViewController:lcVC];
     [self presentViewController:tmpNC animated:YES completion:nil];
 }
@@ -206,89 +184,138 @@
     if(titleTextView.text.length < 2 || [titleTextView.text isEqualToString:@"Title..."]){
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
                                                         message:@"You need a title with more than 2 characters"
-                                                       delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                                                       delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [alert show];
         return;
     }
     //everythings good
+    
+    //so no double clicks
+    [self.navigationItem.rightBarButtonItem setEnabled:NO];
+    
     backgroundQueue = dispatch_queue_create("upload dispatch queue", NULL);
     dispatch_async(backgroundQueue, ^{
-        PFObject *issue = [PFObject objectWithClassName:@"Issue"];
-        NSData *data = UIImageJPEGRepresentation(addPhotoBtn.imageView.image, 0.05f);
-        PFFile *imageFile = [PFFile fileWithName:@"image.png" data:data];
-        [imageFile save];
-        [issue setObject:imageFile forKey:@"Image"];
         
-        PFGeoPoint *location = [PFGeoPoint geoPointWithLatitude:lcVC.coord.latitude longitude:lcVC.coord.longitude];
+        //for issue with small image
+        PFObject *issue = [PFObject objectWithClassName:@"Issue"];
+        
+        if(self.addPhotoBtn.imageView.image){
+            
+            //for small image
+            NSData *data = UIImageJPEGRepresentation([self imageWithImage:self.addPhotoBtn.imageView.image scaledToSize:CGSizeMake(30, 30)], 0.05f);
+            PFFile *imageFile = [PFFile fileWithName:@"image.png" data:data];
+            [imageFile save];
+            [issue setObject:imageFile forKey:@"Image"];
+            
+        }
+        
+        PFGeoPoint *location;
+        if(!lcVC){
+            location = [PFGeoPoint geoPointWithLatitude:[[LocationGetter sharedInstance] getLatitude] longitude:[[LocationGetter sharedInstance]getLongitude ]];
+        }
+        else{
+            location = [PFGeoPoint geoPointWithLatitude:lcVC.coord.latitude longitude:lcVC.coord.longitude];
+        }
         [issue setObject:location forKey:@"Location"];
         [issue setObject:titleTextView.text forKey:@"Title"];
         [issue setObject:[[PFUser currentUser] objectForKey:@"facebookID"] forKey:@"userFacebookID"];
         [issue setObject:descriptionTextView.text forKey:@"Description"];
+        [issue setObject:[NSNumber numberWithBool:FALSE] forKey:@"flagged"];
         [issue saveInBackgroundWithBlock:^(BOOL success, NSError *error) {
             if (success) {
+                if(self.addPhotoBtn.imageView.image){
+                    
+                    dispatch_queue_t queue_low = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0);
+                    dispatch_async(queue_low, ^{
+                        [self saveLargeImage];
+                    });
+                }
                 [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
-
                 [self dismissViewControllerAnimated:YES completion:nil];
-            } else {
+                [self.issueAddDelegate addingNewIssue];
+                [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+            }
+            else {
                 NSLog(@"\n\n%@\n\n", [error localizedDescription]);
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
                                                                 message:@"Something went wrong"
-                                                               delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                                                               delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
                 [alert show];
             }
         }];
 
     });
     
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
 }
 
-- (void)dealloc {
+- (void)saveLargeImage {
+    
+    //for large Image
+    PFObject *largeImage = [PFObject objectWithClassName:@"FullSizeImage"];
+    NSData *dataLarge = UIImageJPEGRepresentation(self.addPhotoBtn.imageView.image, 0.05f);
+    PFFile *imageFileLarge = [PFFile fileWithName:@"image.png" data:dataLarge];
+    [imageFileLarge save];
+    [largeImage setObject:imageFileLarge forKey:@"Image"];
+    
+    PFQuery *issueQuery = [PFQuery queryWithClassName:@"Issue"];
+    [issueQuery setLimit:1];
+    [issueQuery orderByDescending:@"createdAt"];
+    [issueQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if(error || objects.count == 0){
+            NSLog(@"\n\n%@\n\n", [error localizedDescription]);
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                            message:@"Photo Failed to Save"
+                                                           delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+        }
+        else{
+            PFObject *issue = [objects objectAtIndex:0];
+            [largeImage setObject:[issue objectId] forKey:@"issueId"];
+            [largeImage saveEventually];
+        }
+    }];
+    
     
 }
+
+static UIImagePickerController *imagePicker;
 
 - (void)takePhoto
 {
-    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
-    imagePicker.delegate = self;
-    imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    imagePicker.allowsEditing = true;
-    [self presentViewController:imagePicker animated:YES completion:nil];
-}
-
--(UIColor*) inverseColor: (UIColor *)color
-{
-    CGFloat r,g,b,a;
-    [color getRed:&r green:&g blue:&b alpha:&a];
-    return [UIColor colorWithRed:1.-r green:1.-g blue:1.-b alpha:a];
-}
-
-
-
-
-- (IBAction)chooseTag:(UIButton*)sender
-{
-    if(sender.backgroundColor == [UIColor whiteColor]){
-        [sender setBackgroundColor:[UIColor greenColor]];
-    }
-    else{
-        [sender setBackgroundColor:[UIColor whiteColor]];
+    if(!imagePicker){
+        imagePicker = [[UIImagePickerController alloc] init];
     }
     
+    imagePicker.delegate = self;
+    imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    //imagePicker.allowsEditing = true;
+    [self presentViewController:imagePicker animated:YES completion:nil];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     NSLog(@"got picture");
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [picker dismissViewControllerAnimated:YES completion:nil];
     [addPhotoBtn setImage:image forState:UIControlStateNormal];
+}
+
+-(UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
+    //UIGraphicsBeginImageContext(newSize);
+    // In next line, pass 0.0 to use the current device's pixel scaling factor (and thus account for Retina resolution).
+    // Pass 1.0 to force exact pixel size.
+    UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
+    [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
 }
 
 
 - (IBAction)backgroundTouched:(id)sender
 {
-    NSLog(@"dsfasd");
     [self.view endEditing:YES];
 }
 
@@ -336,7 +363,7 @@
     
     if (textView.tag == 1) {
         if (textView.text.length <= 25) {
-            unsigned long length = textView.text.length;
+            NSUInteger length = textView.text.length;
             if([text isEqualToString:@""] ){
                 if(textView.text.length == 0 ){
                   return false;
@@ -350,7 +377,7 @@
             if(textView.text.length == 25){
                 return false;
             }
-            titleCounter.text = [NSString stringWithFormat:@"%lu", 25 - length-1];
+            titleCounter.text = [NSString stringWithFormat:@"%lu", (long unsigned)(25 - length-1)];
             return true;
         }
         else {
@@ -359,7 +386,7 @@
     }
     else {
         if (textView.text.length <= 100) {
-            int length = textView.text.length;
+            NSUInteger length = textView.text.length;
             if([text isEqualToString:@""] ){
                 if(textView.text.length == 0 ){
                     return false;
@@ -373,7 +400,7 @@
             if(textView.text.length == 100){
                 return false;
             }
-            descriptionCounter.text = [NSString stringWithFormat:@"%d", 100 - length -1];
+            descriptionCounter.text = [NSString stringWithFormat:@"%lu", (long unsigned)(100 - length -1)];
             return true;
         } else {
             return false;

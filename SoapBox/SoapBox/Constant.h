@@ -13,7 +13,7 @@
 
 #define METERS_PER_MILE 1609.344
 
-#define APP_LINK "itms://itunes.com/apps/soapbox"
+#define APP_LINK "itms://itunes.com/apps/soapboxx"
 
 #define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
 
@@ -24,13 +24,13 @@
 
 #define GRAY2 [UIColor colorWithRed:31/255.0f green:31/255.0f blue:31/255.0f alpha:1.0f]
 
-#define RADIUS_SCALAR 120
+#define RADIUS_SCALAR 75
 
 //for colors
-#define BLUE 2
-#define GREEN 4
-#define YELLOW 6
-#define ORANGE 8
-#define RED 10
+#define BLUE 4
+#define GREEN 8
+#define YELLOW 12
+#define ORANGE 16
+#define RED 20
 
 #endif

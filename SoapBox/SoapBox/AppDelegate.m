@@ -28,16 +28,14 @@
     [PFFacebookUtils initializeFacebook];
     
     // map view controller.
-    MapViewController *map = [[MapViewController alloc] init];
-    UINavigationController *mapNav = [[UINavigationController alloc] initWithRootViewController:map];
-    mapNav.navigationBar.translucent = NO;
-
+    ViewController *login = [[ViewController alloc] init];
     
-    [self.window setRootViewController:mapNav];
+    
+    [self.window setRootViewController:[[UINavigationController alloc] initWithRootViewController:login]];
   
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:19.0/255 green:19.0/255 blue:19.0/255 alpha:1.0]];
+    [[UINavigationBar appearance] setBarStyle:UIBarStyleBlackTranslucent];
+    [[UINavigationBar appearance] setShadowImage:[UIImage new]];
      
-  
     [self.window makeKeyAndVisible];
     
     // Override point for customization after application launch.
@@ -71,11 +69,14 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    [FBSession.activeSession handleDidBecomeActive];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    [FBSession.activeSession close];
 }
 
 @end

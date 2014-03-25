@@ -7,7 +7,6 @@
 //
 
 #import "MenuView.h"
-#import "ViewController.h"
 
 @implementation MenuView
 
@@ -16,7 +15,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         
-        [self setBackgroundColor:GRAY1];
+        [self setBackgroundColor:GRAY2];
         // Initialization code
         NSArray *segmentNames = [NSArray arrayWithObjects:@"About SoapBox", @"Logout", nil];
         self.menuControl = [[UISegmentedControl alloc] initWithItems:segmentNames];
@@ -41,7 +40,7 @@
         self.about = [[UITextView alloc] initWithFrame:CGRectMake(20, 120, 300, 280)];
         [self.about setBackgroundColor:[UIColor clearColor]];
         [self.about setTextColor:[UIColor whiteColor]];
-        [self.about setText:@"Long ago when people wanted to be heard, they would stand on a SoapBox and holler. We believe our SoapBox gives the modern user a step up when it comes to being heard and hearing others. We aggregate data about issues taking into account proximity, friends, whats trending, and advanced machine learning to let our user know whats important."];
+        [self.about setText:@"Long ago when people wanted to be heard, they would stand on a SoapBox and holler. We believe our SoapBox gives the modern user a step up when it comes to being heard and hearing others. We aggregate data about issues taking into account proximity, friends, whats trending, and advanced machine learning (using the Alchemy API) to let our user know whats important."];
         [self.about setFont:[UIFont fontWithName:@"AvenirNextCondensed-Regular" size:18]];
         [self.about setScrollEnabled:false];
     

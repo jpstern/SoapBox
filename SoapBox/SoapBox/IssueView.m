@@ -11,6 +11,8 @@
 
 @implementation IssueView
 
+@synthesize flag;
+
 CGFloat btnDiameter = 320/5;
 CGFloat btnYCoord = 45;
 
@@ -30,7 +32,7 @@ CGFloat btnYCoord = 45;
         [self.issueTitle setText:self.issue.title];
         [self.issueTitle setTextColor:[UIColor whiteColor]];
         [self.issueTitle setBackgroundColor:[UIColor clearColor]];
-        [self.issueTitle setFont:[UIFont fontWithName:@"AvenirNextCondensed-Regular" size:26]];
+        [self.issueTitle setFont:[UIFont fontWithName:@"AvenirNextCondensed-Regular" size:22]];
         [self.issueTitle setTextAlignment:NSTextAlignmentCenter];
         [self addSubview:self.issueTitle];
         
@@ -65,7 +67,7 @@ CGFloat btnYCoord = 45;
         [self.createdAt setTextAlignment:NSTextAlignmentLeft];
         //[self addSubview:self.createdAt];
         
-        self.image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 460)];
+        self.image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, DEVICEHEIGHT-20)];
         self.image.image = self.issue.image;
         [self.image setBackgroundColor:GRAY2];
         
@@ -80,7 +82,7 @@ CGFloat btnYCoord = 45;
         [self.back2.layer setCornerRadius:25];
         
         self.backToList = [UIButton buttonWithType:UIButtonTypeCustom];
-        [self.backToList setFrame:CGRectMake(280, 0, 40, 40)];
+        [self.backToList setFrame:CGRectMake(DEVICEWIDTH-40, 0, 40, 40)];
         [self.backToList setBackgroundColor:[UIColor clearColor]];
         [self.backToList setTitle:@"list" forState:UIControlStateNormal];
         [self.backToList setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -145,10 +147,43 @@ CGFloat btnYCoord = 45;
         [self.agree setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [self.agree.layer setCornerRadius:btnDiameter/2];
         [self.agree setTitle:@"+1" forState:UIControlStateNormal];
-        [self addSubview:self.agree];        
+        [self addSubview:self.agree];
+        
+        flag = [UIButton buttonWithType:UIButtonTypeCustom];
+        [flag setBackgroundColor:[UIColor redColor]];
+        [flag setFrame:CGRectMake(0, DEVICEHEIGHT-90, DEVICEWIDTH,30)];
+        [flag setTitle:@"Flag as inappropriate" forState:UIControlStateNormal];
+        [flag setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [flag addTarget:self action:@selector(pictureFlaggedAsInappropriate) forControlEvents:UIControlEventTouchUpInside];
+        [flag setAlpha:0];
         
     }
     return self;
+}
+
+-(void) pictureFlaggedAsInappropriate{
+    
+    NSLog(@"Start flagging process");
+    [self.delegate sendEmailAfterFlagged];
+    //[self back2TouchHandler];
+    //if I deem that picture isnt innapropriate I will unflag the Issue
+}
+
+-(void)flaggingEmailSentWithIssueId:(NSString *)issueId{
+    PFObject *issueToUpdate = [PFObject objectWithoutDataWithClassName:@"Issue" objectId:(issueId)];
+    [issueToUpdate setObject:[NSNumber numberWithBool:TRUE] forKey:@"flagged"];
+    [issueToUpdate saveInBackgroundWithBlock:^(BOOL success,NSError *error ){
+        if(!success){
+            NSLog(@"\n\n%@\n\n", [error localizedDescription]);
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                            message:@"Something went wrong. Try again."
+                                                           delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [alert show];
+        }
+        else{
+            //anything after email is sent
+        }
+    }];
 }
 
 
@@ -159,16 +194,15 @@ CGFloat btnYCoord = 45;
         [self.createdAt setAlpha:0];
         [self addSubview:self.createdAt];
         [self addSubview:self.address];
-        
+        [self addSubview:flag];
         [UIView animateWithDuration:0.2
                               delay:0.0f
                             options: UIViewAnimationOptionBeginFromCurrentState
                          animations:^{
-                             
+                             [self.flag setAlpha:0.7];
                              [self.address setAlpha:1];
                              [self.createdAt setAlpha:1];
                              [self.description setFrame:CGRectMake(10, 120, 310, 160)];
-                             [self.description setFont:[UIFont fontWithName:@"AvenirNextCondensed-Regular" size:24]];
                          }
                          completion:^(BOOL finished) {
                              
@@ -183,6 +217,7 @@ CGFloat btnYCoord = 45;
                          animations:^{
                              
                              [self.address setAlpha:0];
+                             [self.flag setAlpha:0.0];
                              [self.createdAt setAlpha:0];
                              [self.description setFrame:CGRectMake(10, 120, 310, 80)];
                              [self.description setFont:[UIFont fontWithName:@"AvenirNextCondensed-Regular" size:14]];
@@ -190,51 +225,75 @@ CGFloat btnYCoord = 45;
                          completion:^(BOOL finished) {
                              [self.address removeFromSuperview];
                              [self.createdAt removeFromSuperview];
+                             [self.flag removeFromSuperview];
                          }];
         
     }
 }
 
 -(void)presentPicture{
-
+    
     UILabel *noPhoto = [[UILabel alloc] initWithFrame:CGRectMake(0, 150, 320, 150)];
-    [noPhoto setText:@"No Photo"];
+    [noPhoto setText:@"Loading..."];
     [noPhoto setTextColor:[UIColor whiteColor]];
     [noPhoto setFont:[UIFont fontWithName:@"AvenirNextCondensed-Regular" size:40]];
     [noPhoto setTextAlignment:NSTextAlignmentCenter];
     
     [self.image setAlpha:0];
     [self.back2 setAlpha:0];
+    [noPhoto setAlpha:0];
     [self addSubview:self.image];
+    //[self addSubview:flag];
     [self addSubview:self.back2];
-    if(!self.image.image){
-        [noPhoto setAlpha:0];
-        [self.image addSubview:noPhoto];
+    [self.image setUserInteractionEnabled:YES];
+    [self.image addSubview:noPhoto];
+    if(!self.issue.image){
+        [noPhoto setText:@"No Photo"];
     }
+    
+    if(!self.image.image && self.issue.image){
+        PFQuery *picQuery = [PFQuery queryWithClassName:@"FullSizeImage"];
+        [picQuery whereKey:@"issueId" equalTo:self.issue.parseId];
+        [picQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if(error || objects.count == 0){
+                [noPhoto setFont:[UIFont fontWithName:@"AvenirNextCondensed-Regular" size:30]];
+                [noPhoto setText:@"Something went wrong..."];
+            }
+            else{
+                PFFile *imageFile = [[objects objectAtIndex:0] objectForKey:@"Image"];
+                [noPhoto removeFromSuperview];
+                [self.image setImage:[UIImage imageWithData:imageFile.getData]];
+                //[self animateAfterPicLoad];
+            }
+        }];
+    }
+    [self.back2 setAlpha:1];
+    if(!self.image.image){
+        [noPhoto setAlpha:1];
+    }
+    [self.image setAlpha:1];
+    
+}
+
+-(void)animateAfterPicLoad{
     
     [UIView animateWithDuration:0.2
                           delay:0.0f
                         options: UIViewAnimationOptionBeginFromCurrentState
                      animations:^{
-                         [self.image setAlpha:1];
-                         [self.back2 setAlpha:1];
-                         if(!self.image.image){
-                             [noPhoto setAlpha:1];
-                         }
+                         
                      }
                      completion:^(BOOL finished) {
                          
                      }];
-    
 }
-
 
 -(void)back2TouchHandler{
     
+
     for(id label in self.image.subviews){
         [label removeFromSuperview];
     }
-    
         [UIView animateWithDuration:0.2f
                               delay:0.0f
                             options: UIViewAnimationOptionBeginFromCurrentState
@@ -251,7 +310,7 @@ CGFloat btnYCoord = 45;
 -(void)setNewIssue:(Issue *)issue{
     
     self.issue = issue;
-    self.image.image = issue.image;
+    self.image.image = nil;
     self.issueTitle.text = issue.title;
     self.description.text = issue.description;
     self.address.text = issue.address;

@@ -19,6 +19,7 @@
 @property (nonatomic,strong) NSString *parseId;
 @property (nonatomic, strong) NSString *address;
 @property (nonatomic, strong) NSString *createdAt;
+@property BOOL flagged;
 
 
 -(id)initWithPFObject:(PFObject *)object;

@@ -22,6 +22,7 @@
         PFFile *file = [object valueForKey:@"Image"];
         self.image = [UIImage imageWithData:file.getData];
         self.parseId = [object objectId];
+        self.flagged = FALSE;
         
         NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"yyyy-MM-dd"];

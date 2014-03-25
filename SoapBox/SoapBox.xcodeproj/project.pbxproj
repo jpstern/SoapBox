@@ -51,7 +51,6 @@
 		38FBF7A617ED6480004695DA /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FBF7A517ED6480004695DA /* MobileCoreServices.framework */; };
 		38FBF7A817ED648A004695DA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FBF7A717ED648A004695DA /* QuartzCore.framework */; };
 		38FBF7AA17ED6492004695DA /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FBF7A917ED6492004695DA /* Security.framework */; };
-		38FBF7AC17ED649B004695DA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FBF7AB17ED649B004695DA /* StoreKit.framework */; };
 		38FBF7AE17ED64A9004695DA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FBF7AD17ED64A9004695DA /* SystemConfiguration.framework */; };
 		38FBF7B017ED67A2004695DA /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FBF7AF17ED67A2004695DA /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		38FBF7B217ED67A9004695DA /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FBF7B117ED67A9004695DA /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -144,7 +143,6 @@
 		38FBF7A517ED6480004695DA /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		38FBF7A717ED648A004695DA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		38FBF7A917ED6492004695DA /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		38FBF7AB17ED649B004695DA /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		38FBF7AD17ED64A9004695DA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		38FBF7AF17ED67A2004695DA /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		38FBF7B117ED67A9004695DA /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -189,7 +187,6 @@
 				38FBF7B417ED67B7004695DA /* Accounts.framework in Frameworks */,
 				38FBF7B017ED67A2004695DA /* AdSupport.framework in Frameworks */,
 				38FBF7AE17ED64A9004695DA /* SystemConfiguration.framework in Frameworks */,
-				38FBF7AC17ED649B004695DA /* StoreKit.framework in Frameworks */,
 				38FBF7AA17ED6492004695DA /* Security.framework in Frameworks */,
 				38FBF7A817ED648A004695DA /* QuartzCore.framework in Frameworks */,
 				38FBF7A417ED6476004695DA /* libz.1.1.3.dylib in Frameworks */,
@@ -335,7 +332,6 @@
 				38FBF7B117ED67A9004695DA /* Social.framework */,
 				38FBF7AF17ED67A2004695DA /* AdSupport.framework */,
 				38FBF7AD17ED64A9004695DA /* SystemConfiguration.framework */,
-				38FBF7AB17ED649B004695DA /* StoreKit.framework */,
 				38FBF7A917ED6492004695DA /* Security.framework */,
 				38FBF7A717ED648A004695DA /* QuartzCore.framework */,
 				38FBF7A517ED6480004695DA /* MobileCoreServices.framework */,
@@ -446,6 +442,11 @@
 				TargetAttributes = {
 					804DA66417ED54A800F86495 = {
 						DevelopmentTeam = 43LEM8BQ2H;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+						};
 					};
 					804DA68517ED54A800F86495 = {
 						TestTargetID = 804DA66417ED54A800F86495;
@@ -675,6 +676,7 @@
 				INFOPLIST_FILE = "SoapBox/SoapBox-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -702,6 +704,7 @@
 				INFOPLIST_FILE = "SoapBox/SoapBox-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;

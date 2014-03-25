@@ -8,7 +8,7 @@
 
 #import "AnimatedOverlay.h"
 
-#define MAX_RATIO 1.5
+#define MAX_RATIO 1.7
 #define MIN_RATIO 0.01
 #define STEP_RATIO 0.05
 
@@ -35,19 +35,19 @@
     UIColor *colorForAnimation;
     double metric = [self.circle.title doubleValue];
     
-    if(metric > RED){
+    if(metric >= RED){
         colorForAnimation = [UIColor redColor];
     }
-    else if(metric > ORANGE){
+    else if(metric >= ORANGE){
         colorForAnimation = [UIColor orangeColor];
     }
-    else if(metric > YELLOW){
+    else if(metric >= YELLOW){
         colorForAnimation = [UIColor yellowColor];
     }
-    else if (metric > GREEN){
+    else if (metric >= GREEN){
         colorForAnimation = [UIColor greenColor];
     }
-    else if (metric > BLUE){
+    else if (metric >= BLUE){
         colorForAnimation = [UIColor blueColor];
     }
     else{
@@ -78,7 +78,7 @@
     opacityAnimation.repeatCount = ANIMATION_REPEAT;
     //theAnimation.autoreverses=YES;
     opacityAnimation.fromValue = [NSNumber numberWithFloat:0.85];
-    opacityAnimation.toValue = [NSNumber numberWithFloat:0.025];
+    opacityAnimation.toValue = [NSNumber numberWithFloat:0.15];
     
     //resize animation setup
     CABasicAnimation *transformAnimation;

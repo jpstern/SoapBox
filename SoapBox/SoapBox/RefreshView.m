@@ -15,6 +15,8 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        [self setBackgroundColor:[UIColor clearColor]];
+        
         self.prompt = [[UILabel alloc] initWithFrame:CGRectMake(20, 0, 130, 45)];
         [self.prompt setText:@"Refresh Results?"];
         [self.prompt setTextColor:[UIColor whiteColor]];

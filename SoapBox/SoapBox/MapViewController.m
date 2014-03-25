@@ -7,7 +7,6 @@
 //
 
 #import "MapViewController.h"
-#import "AddNewIssueViewController.h"
 #import "ViewController.h"
 #include "IssueAnnotation.h"
 #include "CustomCell.h"
@@ -40,17 +39,14 @@
 {
     [super viewDidLoad];
     
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    
     // Do any additional setup after loading the view from its nib.
 
     if (!([PFUser currentUser] && // Check if a user is cached
           [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]])) // Check if user is linked to Facebook
     {
-        ViewController *loginVC = [[ViewController alloc] init];
-        UINavigationController *loginNav = [[UINavigationController alloc] initWithRootViewController:loginVC];
-        
-        [self presentViewController:loginNav animated:YES completion:^{
-            
-        }];
+        [self.navigationController popToRootViewControllerAnimated:YES];
     
     }
     
@@ -81,8 +77,18 @@
     
     [self fbDataLoader];
     
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
+    
     [self.navigationController setNavigationBarHidden:NO];
-    [self.navigationController.navigationBar setBackgroundColor:GRAY1];
+    [self.navigationController.navigationBar setBarTintColor:GRAY2];
+    [self.navigationController.navigationBar setTranslucent:NO];
+    
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+    
+    //[self.navigationController.navigationBar.layer setBorderWidth:6.0];// Just to make sure its working
+    //[self.navigationController.navigationBar.layer setBorderColor:GRAY1.CGColor];
+    
     // left bar button
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Menu" style:UIBarButtonItemStylePlain target:self action:@selector(menuTouched)];
     [self.navigationItem.leftBarButtonItem setTintColor:[UIColor whiteColor]];
@@ -101,15 +107,15 @@
     title.text = @"SoapBox";
     [title setFont:[UIFont fontWithName:@"AvenirNextCondensed-Regular" size:25]];
     [self.navigationItem setTitleView:title];
-    [self.navigationItem setTitleView:title];
+
     
     
     //init the views
     filters = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 0)];
-    filters.backgroundColor = GRAY1;
+    [filters setBackgroundColor:GRAY2];
     filters.tag = 1;
     
-    filterSheet = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 00)];
+    filterSheet = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 0)];
     filterSheet.backgroundColor = GRAY1;
     filterSheet.alpha = 0.7;
     filterSheet.tag = 1;
@@ -129,6 +135,7 @@
     [filterView.fbSwitch addTarget:self action:@selector(changeMadeToFilterView) forControlEvents:UIControlEventTouchUpInside];
     
     //issue view buttons
+    issueView.delegate = self;
     [issueView.backToList addTarget:self action:@selector(tableTopper) forControlEvents:UIControlEventTouchUpInside];
     [issueView.twitter addTarget:self action:@selector(twitterPost) forControlEvents:UIControlEventTouchUpInside];
     [issueView.facebook addTarget:self action:@selector(fbPost) forControlEvents:UIControlEventTouchUpInside];
@@ -142,9 +149,8 @@
     [filterMeTimbers addTarget:self action:@selector(bringEmOut) forControlEvents:UIControlEventTouchUpInside];
     [filterMeTimbers setBackgroundColor:[UIColor clearColor]];
     
-    
-    [self.view addSubview:filters];
     [self.view addSubview:filterSheet];
+    [self.view addSubview:filters];
     
     [self.navigationController.navigationBar addSubview:filterMeTimbers];
     
@@ -205,10 +211,7 @@
 
 -(void)logout{
     [PFUser logOut];
-    ViewController *lVC = [[ViewController alloc]init];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:lVC];
-    
-    [ self presentViewController:nav animated:YES completion:nil];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 /********************************************** ALERT VIEW DELEGATE ************************************************************ */
@@ -266,6 +269,8 @@
                              [issueView.more setTitle:@"less ^" forState:UIControlStateNormal];
                              [issueView setFrame:CGRectMake(0, 20, 320, DEVICEHEIGHT-20)];
                              [issueView.more setFrame:CGRectMake(0, DEVICEHEIGHT-40, 320, 20)];
+                             [issueView.description setFont:[UIFont fontWithName:@"AvenirNextCondensed-Regular" size:24]];
+                             [issueView.description setFrame:CGRectMake(10, 120, 310, 160)];
                          }
                          completion:^(BOOL finished) {
                              [issueView showMore:YES];
@@ -282,15 +287,11 @@
                              [filterSheet setFrame:CGRectMake(0, 0, 320, 230)];
                              [issueView setFrame:CGRectMake(0, 20, 320, 230)];
                              [issueView.more setFrame:CGRectMake(0, 210, 320, 20)];
+                             [issueView.description setFont:[UIFont fontWithName:@"AvenirNextCondensed-Regular" size:14]];
+                             [issueView.description setFrame:CGRectMake(10, 120, 310, 80)];
                          }
                          completion:^(BOOL finished) {
-                             [UIView animateWithDuration:0.3
-                                                   delay:0
-                                                 options:UIViewAnimationOptionBeginFromCurrentState
-                                              animations:^{
-                                                  
-                                              }
-                                              completion:nil];
+                             
                          }];
     }
     
@@ -589,14 +590,15 @@ static NSDate *lastFired;
                                              options: UIViewAnimationOptionBeginFromCurrentState
                                           animations:^{
                                               [issueList setFrame:CGRectMake(0, 100, 320, DEVICEHEIGHT-160)];
-                                              
+                                              [filterView.fbSwitch setOn:filterView.fbSwitchIsOn animated:YES];
+                                              [filterView.sortingControl setSelectedSegmentIndex:filterView.segmentVal];
                                           }
                                           completion:nil];
                      }];
 }
 
 -(void)refreshResponderYes{
-    
+    [self removeAnimatedOverlay];
     [self refresh];
     [filterView chagesMade];
     [UIView animateWithDuration:0.3f
@@ -628,11 +630,13 @@ static NSDate *lastFired;
 -(void)showIssueController {
     
     AddNewIssueViewController *addIssue = [[AddNewIssueViewController alloc] init];
+    addIssue.issueAddDelegate = self;
     UINavigationController *addIssueNav = [[UINavigationController alloc] initWithRootViewController:addIssue];
-    
-    [self presentViewController:addIssueNav animated:YES completion:^{
-        
-    }];
+    [self presentViewController:addIssueNav animated:YES completion:nil];
+}
+
+-(void) addingNewIssue{
+    [self refresh];
 }
 
 /********************************************** REFRESHERS ************************************************************ */
@@ -640,6 +644,7 @@ static NSDate *lastFired;
 
 -(void) refreshMap{
     [self removeAllAnnotations];
+    [self removeAnimatedOverlay];
     for(Issue *issue in self.data){
         IssueAnnotation *tmpAnnotation = [[IssueAnnotation alloc] initWithIssue:issue];
         
@@ -659,6 +664,7 @@ static NSDate *lastFired;
     
 }
 
+static NSString *recentlyFlaggedId = @"nada";
 
 -(void)refresh{
     NSLog(@"\n\nrefrehing\n\n");
@@ -683,7 +689,11 @@ static NSDate *lastFired;
     CGFloat kilometers = currentDist/1000;
     
     PFQuery *query = [PFQuery queryWithClassName:@"Issue"];
-    [query setLimit:20];
+    [query setLimit:50];
+    [query whereKey:@"flagged" equalTo:[NSNumber numberWithBool:FALSE]];
+    [query whereKey:@"objectId" notEqualTo:recentlyFlaggedId];
+
+    //for no flagged Id;
     
     if(filterView.fbSwitch.isOn){
         [query whereKey:@"userFacebookID" containedIn:fbFriendsWithApp];
@@ -712,15 +722,14 @@ static NSDate *lastFired;
     self.data = array;
     [self refreshMap];
     [self refreshTableView];
+    recentlyFlaggedId = @"nada";
 }
-
-
 
 /**********************************************MAP VIEW DELEGATE STUFF************************************************************ */
 
 
 //animated overlay to be passed around... static instance
-AnimatedOverlay *animatedOverlay;
+static AnimatedOverlay *animatedOverlay;
 
 -(void)addAnimatedOverlayToIssueAnnotationWithCircle:(MKCircle *)circle{
     
@@ -753,15 +762,16 @@ AnimatedOverlay *animatedOverlay;
     [self removeAnimatedOverlay];
     
     for(NSObject <MKAnnotation> *n in _mapView.annotations){
-        if(issueView.issue.parseId == ((IssueAnnotation *)n).issue.parseId){
+        //NSLog(@"issue parse id is %@ vs %@",issueView.issue.parseId , ((IssueAnnotation *)n).issue.parseId);
+        if([issueView.issue.parseId isEqualToString:((IssueAnnotation *)n).issue.parseId]){
             
             if([_mapView.selectedAnnotations containsObject:n] ){
                 [_mapView deselectAnnotation:n animated:NO];
             }
-            
+            [_mapView selectAnnotation:n animated:YES];
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.3 * NSEC_PER_SEC), dispatch_get_main_queue(), ^
                            {
-                               [_mapView selectAnnotation:n animated:YES];
+                               
                            });
         }
     }
@@ -771,10 +781,8 @@ AnimatedOverlay *animatedOverlay;
     
     CLLocationCoordinate2D track = issueView.issue.location;
     if(!center){
-        track.latitude += _mapView.region.span.latitudeDelta*0.15;
+        track.latitude += _mapView.region.span.latitudeDelta*0.213;
     }
-    
-    track.latitude += _mapView.region.span.latitudeDelta*0.1;
     
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(track, currentDist,currentDist);
     
@@ -797,11 +805,7 @@ AnimatedOverlay *animatedOverlay;
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, currentDist,currentDist);
     
     [_mapView setRegion:viewRegion animated:YES];
-    
-    //refresh
-    if( fbFriendsWithApp){
-        [self refresh];
-    }
+
 }
 
 
@@ -825,23 +829,23 @@ AnimatedOverlay *animatedOverlay;
         CGFloat insideAlpha = 0.2;
         CGFloat rimAlpha = 0.7;
         
-        if(metric > RED){
+        if(metric >= RED){
             circleView.fillColor = [[UIColor redColor] colorWithAlphaComponent:insideAlpha];
             circleView.strokeColor = [[UIColor redColor] colorWithAlphaComponent:rimAlpha];
         }
-        else if(metric > ORANGE){
+        else if(metric >= ORANGE){
             circleView.fillColor = [[UIColor orangeColor] colorWithAlphaComponent:insideAlpha];
             circleView.strokeColor = [[UIColor orangeColor] colorWithAlphaComponent:rimAlpha];
         }
-        else if(metric > YELLOW){
+        else if(metric >= YELLOW){
             circleView.fillColor = [[UIColor yellowColor] colorWithAlphaComponent:insideAlpha];
             circleView.strokeColor = [[UIColor yellowColor] colorWithAlphaComponent:rimAlpha];
         }
-        else if (metric > GREEN){
+        else if (metric >= GREEN){
             circleView.fillColor = [[UIColor greenColor] colorWithAlphaComponent:insideAlpha];
             circleView.strokeColor = [[UIColor greenColor] colorWithAlphaComponent:rimAlpha];
         }
-        else if (metric > BLUE){
+        else if (metric >= BLUE){
             circleView.fillColor = [[UIColor blueColor] colorWithAlphaComponent:insideAlpha];
             circleView.strokeColor = [[UIColor blueColor] colorWithAlphaComponent:rimAlpha];
         }
@@ -868,9 +872,6 @@ AnimatedOverlay *animatedOverlay;
         annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
         annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
         
-        
-        [annotationView.rightCalloutAccessoryView setTintColor:GRAY1];
-        
         annotationView.enabled = YES;
         annotationView.canShowCallout = NO;
         
@@ -880,7 +881,7 @@ AnimatedOverlay *animatedOverlay;
     } else {
         annotationView.annotation = annotation;
     }
-    
+
     return annotationView;
     
 }
@@ -967,19 +968,19 @@ AnimatedOverlay *animatedOverlay;
     
     double metric = [tmpIssue.metric doubleValue];
     
-    if(metric > RED){
+    if(metric >= RED){
         [cell.trend setBackgroundColor:[UIColor redColor]];
     }
-    else if(metric > ORANGE){
+    else if(metric >= ORANGE){
         [cell.trend setBackgroundColor:[UIColor orangeColor]];
     }
-    else if(metric > YELLOW){
+    else if(metric >= YELLOW){
         [cell.trend setBackgroundColor:[UIColor yellowColor]];
     }
-    else if(metric > GREEN){
+    else if(metric >= GREEN){
         [cell.trend setBackgroundColor:[UIColor greenColor]];
     }
-    else if(metric > BLUE){
+    else if(metric >= BLUE){
         [cell.trend setBackgroundColor:[UIColor blueColor]];
     }
     else{
@@ -1163,7 +1164,31 @@ AnimatedOverlay *animatedOverlay;
     }
 }
 
-
+-(void)sendEmailAfterFlagged{
+    if ([MFMailComposeViewController canSendMail])
+    {
+        MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
+        [mailViewController setToRecipients:[NSArray arrayWithObjects:@"jhurray@umich.edu", nil]];
+        mailViewController.mailComposeDelegate = self;
+        [mailViewController setSubject:@"Issue has been flagged!"];
+        mailViewController.navigationBar.barStyle = UIBarStyleBlack;
+        mailViewController.navigationItem.rightBarButtonItem.style = UIBarButtonItemStylePlain;
+        [mailViewController setMessageBody:[NSString stringWithFormat:@"IssueId = %@\n\nPlease detail below why you believe this issue is innapropriate.\n\n", issueView.issue.parseId] isHTML:NO];
+        [self presentViewController:mailViewController animated:YES completion:^{
+            NSLog(@"GOGOGO!");
+        }];
+    }
+    else
+    {
+        UIAlertView *alertView = [[UIAlertView alloc]
+                                  initWithTitle:@"Sorry"
+                                  message:@"Cant Send Email Right Now."
+                                  delegate:nil
+                                  cancelButtonTitle:@"OK"
+                                  otherButtonTitles:nil];
+        [alertView show];
+    }
+}
 
 
 - (void)sendEmail{
@@ -1172,6 +1197,7 @@ AnimatedOverlay *animatedOverlay;
     {
         NSLog(@"Well now you can start!");
         MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
+        [mailViewController setTitle:@"Share!"];
         mailViewController.mailComposeDelegate = self;
         [mailViewController setSubject:@"Join in the issue!"];
         mailViewController.navigationBar.barStyle = UIBarStyleBlack;
@@ -1186,7 +1212,7 @@ AnimatedOverlay *animatedOverlay;
         UIAlertView *alertView = [[UIAlertView alloc]
                                   initWithTitle:@"Sorry"
                                   message:@"Cant Send Email Right Now."
-                                  delegate:self
+                                  delegate:nil
                                   cancelButtonTitle:@"OK"
                                   otherButtonTitles:nil];
         [alertView show];
@@ -1207,8 +1233,23 @@ AnimatedOverlay *animatedOverlay;
     if(result == MFMailComposeResultCancelled){
         return;
     }
-    
-    [self updateIssueMetric:issueView.issue withVal:3];
+    if ([controller.title isEqualToString:@"Share!"]) {
+        [self updateIssueMetric:issueView.issue withVal:3];
+    }
+    else{
+        //give time for an issue to be flagged
+        [issueView flaggingEmailSentWithIssueId:issueView.issue.parseId];
+        [self mapBtnTouched];
+        recentlyFlaggedId = issueView.issue.parseId;
+        [self removeAnimatedOverlay];
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.5*NSEC_PER_SEC);
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            // Do something...
+            [self refresh];
+            
+        });
+    }
+
 }
 
 - (void)canceled{
@@ -1224,7 +1265,7 @@ AnimatedOverlay *animatedOverlay;
         return;
     }
 
-    NSMutableArray *agreesForUser = [[PFUser currentUser] objectForKey:@"agreesWith"];
+    NSMutableArray *agreesForUser = [NSMutableArray arrayWithArray:[[PFUser currentUser] objectForKey:@"agreesWith"]];
     [agreesForUser addObject:issueView.issue.parseId];
     [[PFUser currentUser] setObject:agreesForUser forKey:@"agreesWith"];
     [[PFUser currentUser] saveInBackground];
@@ -1252,6 +1293,11 @@ AnimatedOverlay *animatedOverlay;
         else{
             NSLog(@"\n\nUPDATE SUCCESFUL on %@ with id %@\n", tmpIssue.title, tmpIssue.parseId);
             [self refresh];
+            dispatch_time_t delay = dispatch_time(DISPATCH_TIME_NOW, 0.2*NSEC_PER_SEC);
+            dispatch_after(delay, dispatch_get_main_queue(), ^(void){
+                [self selectAnotation];
+                [animatedOverlay startAnimating];
+            });
         }
     }];
     

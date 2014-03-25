@@ -13,8 +13,15 @@
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMailComposeViewController.h>
 
-@interface IssueView : UIView 
+@protocol IssueViewDelegate <NSObject>
 
+-(void)sendEmailAfterFlagged;
+
+@end
+
+@interface IssueView : UIView <MFMailComposeViewControllerDelegate>
+
+@property (nonatomic, weak) id <IssueViewDelegate> delegate;
 @property (nonatomic, strong) Issue *issue;
 @property (strong, nonatomic)  UILabel *issueTitle;
 @property (strong, nonatomic)  UIImageView *image;
@@ -30,9 +37,10 @@
 @property (strong, nonatomic) UIButton *backToList;
 @property (strong, nonatomic) UIButton *backToMap;
 @property (strong, nonatomic) UIButton *back2;
+@property (strong, nonatomic) UIButton *flag;
 
 -(void)setNewIssue:(Issue *) issue ;
-
+-(void)flaggingEmailSentWithIssueId:(NSString *)issueId;
 -(void)animateShareButtons;
 -(void) showMore:(BOOL)more;
 -(void)resetShareButtons;
